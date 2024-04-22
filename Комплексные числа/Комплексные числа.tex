@@ -12,179 +12,178 @@
 %----------------------------------------------------------------------------------------
 
 %\begin{document}\normalsize
-\begin{document}\large
+\begin{document}
+    \large
 
+    \setcounter{task_boxed}{0}
 
-\setcounter{task_boxed}{0}
+    \begin{definition_boxed}
+        \textbf{\textit{Комплексное число}} — число вида $z = a+bi \in \CC$, где $i$ — комплексная единица: $i^2 = -1$, а $a, b \in \R$ такая форма записи называется \textbf{\textit{алгебраической}}.\\
+        \textbf{\textit{Вещественной частью}} $z$ называется число $\text{Re}(z) = a$\\
+        \textbf{\textit{Мнимой частью}} $z$ называется число $\text{Im}(z) = b$
+    \end{definition_boxed}
 
-\begin{definition_boxed}
-	\textbf{\textit{Комплексное число}} — число вида $z = a+bi \in \CC$, где $i$ — комплексная единица: $i^2 = -1$, а $a, b \in \R$ такая форма записи называется \textbf{\textit{алгебраической}}.\\
-	\textbf{\textit{Вещественной частью}} $z$ называется число $\text{Re}(z) = a$\\
-	\textbf{\textit{Мнимой частью}} $z$ называется число $\text{Im}(z) = b$
-\end{definition_boxed}
+    \begin{example}
+        $1 + 2i \in \CC$
+    \end{example}
 
-\begin{example}
-$1 + 2i \in \CC$
-\end{example}
+    \begin{definition_boxed}
+        Сложение и вычитание комплексных чисел определяется так:
+        \[(a + bi) \pm (c + di) = (a \pm c) + (b \pm d)i\]
+    \end{definition_boxed}
 
+    \begin{definition_boxed}
+        Умножение комплексных чисел определяется так:
+        \[(a + bi) \cdot (c + di) = (ac - bd) + (ad + bc)i\]
+    \end{definition_boxed}
 
-\begin{definition_boxed}
-	Сложение и вычитание комплексных чисел определяется так:
-	\[(a + bi) \pm (c + di) = (a \pm c) + (b \pm d)i\]
-\end{definition_boxed}
+    \begin{definition_boxed}
+        \textbf{\textit{Сопряженное}} комплексное число к $z = a + bi$ это $\overline{z} = a - bi$
+    \end{definition_boxed}
 
-\begin{definition_boxed}
-	Умножение комплексных чисел определяется так:
-	\[(a + bi) \cdot (c + di) = (ac - bd) + (ad + bc)i\]
-\end{definition_boxed}
+    \begin{example}
+        $z + \overline{z} \in \R$
+    \end{example}
 
-\begin{definition_boxed}
-	\textbf{\textit{Сопряженное}} комплексное число к $z = a + bi$ это $\overline{z} = a - bi$
-\end{definition_boxed}
+    \begin{example}
+        $z \cdot \overline{z} \in \R$
+    \end{example}
 
-\begin{example}
-	$z + \overline{z} \in \R$
-\end{example}
+    \begin{task_boxed}
+        Пусть $x_0$, $x_1$, $x_2\in \mathbb{C}$, $f(x)$ --- многочлен с вещественными коэффициентами.
+        Докажите, что
+        \begin{enumerate}
+            \item $\overline{x_1+x_2}=\overline{x_1}+\overline{x_2}$,
+            \item $\overline{x_1\cdot x_2}=\overline{x_1}\cdot \overline{x_2}$,
+            \item $\overline{x_1/x_2}=\overline{x_1}/\overline{x_2}$,
+            \item $\overline{f(x_0)}=f(\overline{x_0})$.
+            \item Докажите, что если $x_0$ --- корень многочлена $f(x)$.
+            Докажите, что и $\overline{x_0}$ корень $f(x)$.
+        \end{enumerate}
+    \end{task_boxed}
 
-\begin{example}
-	$z \cdot \overline{z} \in \R$
-\end{example}
+    \begin{task_boxed}
+        Докажите, что если есть комплексное число $t$, такое, что $t + z \in \R$, $t \cdot z \in \R$, и $\text{Im}(z) \neq 0$. Тогда $t = \overline{z}$
+    \end{task_boxed}
 
-\begin{task_boxed}
-	Пусть $x_0$, $x_1$, $x_2\in \mathbb{C}$, $f(x)$ --- многочлен с вещественными коэффициентами.
-	Докажите, что
-	\begin{enumerate}
-		\item $\overline{x_1+x_2}=\overline{x_1}+\overline{x_2}$,
-		\item $\overline{x_1\cdot x_2}=\overline{x_1}\cdot \overline{x_2}$,
-		\item $\overline{x_1/x_2}=\overline{x_1}/\overline{x_2}$,
-		\item $\overline{f(x_0)}=f(\overline{x_0})$.
-		\item Докажите, что если $x_0$ --- корень многочлена $f(x)$.
-		Докажите, что и $\overline{x_0}$ корень $f(x)$.
-	\end{enumerate}
-\end{task_boxed}
+    \begin{definition_boxed}
+        \textbf{\textit{Модулем}} комплексного числа $z = a + bi$ является $|z| = \sqrt{a^2 + b^2}$
+    \end{definition_boxed}
 
-\begin{task_boxed}
-	Докажите, что если есть комплексное число $t$, такое, что $t + z \in \R$, $t \cdot z \in \R$, и $\text{Im}(z) \neq 0$. Тогда $t = \overline{z}$
-\end{task_boxed}
+    \begin{example}
+        $z \cdot \overline{z} = |z|^2$
+    \end{example}
 
-\begin{definition_boxed}
-	\textbf{\textit{Модуль}} комплексного числа к $z = a + bi$ является $|z| = \sqrt{a^2 + b^2}$
-\end{definition_boxed}
+    \begin{task_boxed}
+        Докажите, что $|z_1|\cdot|z_2| = |z_1\cdot z_2|$
+    \end{task_boxed}
 
-\begin{example}
-	$z \cdot \overline{z} = |z|^2$
-\end{example}
+    \begin{definition_boxed}
+        Обратное к комплексному числу $z = a + bi$ является $\dfrac{1}{z} = \dfrac{\overline{z}}{|z|^2}$
+    \end{definition_boxed}
 
-\begin{task_boxed}
-	Докажите, что $|z_1|\cdot|z_2| = |z_1\cdot z_2|$
-\end{task_boxed}
+    \begin{task_boxed}
+        Выведите формулу деления комплексного числа $a + bi$ на $c + di$
+    \end{task_boxed}
 
-\begin{definition_boxed}
-	Обратное к комплексному числу $z = a + bi$ является $\dfrac{1}{z} = \dfrac{\overline{z}}{|z|^2}$
-\end{definition_boxed}
+    \begin{task_boxed}
+        Найдите $\dfrac{1+4i}{2-3i} + 3i - 4$
+    \end{task_boxed}
 
-\begin{task_boxed}
-	Выведите формулу деления комплексного числа $a + bi$ на $c + di$
-\end{task_boxed}
+    \begin{theorem_boxed}[ Эйлера]
+        \[e^{i\theta} = \cos(\theta) + i\sin(\theta)\]
+    \end{theorem_boxed}
 
-\begin{task_boxed}
-	Найдите $\dfrac{1+4i}{2-3i} + 3i - 4$
-\end{task_boxed}
+    \begin{definition_boxed}
+        \textbf{\textit{Тригонометрической формой}} записи комплексного числа $z = a + bi$ является запись $z = r(\cos(\varphi) + i \sin(\varphi)) = re^{i\varphi}$\\
+        $\arg(z) = \varphi$~--- \textbf{\textit{аргумент}} комплексного числа $z$
+    \end{definition_boxed}
 
-\begin{theorem_boxed}[ Эйлера]
-	\[e^{i\theta} = \cos(\theta) + i\sin(\theta)\]
-\end{theorem_boxed}
+    \begin{task_boxed}
+        Найдите тригонометрическую форму для $z=10+10\sqrt{3}i$
+    \end{task_boxed}
 
-\begin{definition_boxed}
-	\textbf{\textit{Тригонометрической формой}} записи комплексного числа $z = a + bi$ является запись $z = r(\cos(\varphi) + i \sin(\varphi)) = re^{i\varphi}$\\
-	$\arg(z) = \varphi$~--- \textbf{\textit{аргумент}} комплексного числа $z$
-\end{definition_boxed}
+    \begin{task_boxed}
+        Найти множество точек комплексной плоскости, удовлетворяющих: $|z-i| = 1$
+    \end{task_boxed}
 
-\begin{task_boxed}
-Найдите тригонометрическую форму для $z=10+10\sqrt{3}i$
-\end{task_boxed}
+    \begin{task_boxed}
+        Найти на плоскости множество решений, удовлетворяющих данному условию: $1 < |z + 3 + i| < 3$
+    \end{task_boxed}
 
-\begin{task_boxed}
-	Найти множество точек комплексной плоскости, удовлетворяющих: $|z-i| = 1$
-\end{task_boxed}
+    \begin{task_boxed}
+        Докажите, что $\arg(z_1 \cdot z_2) = \arg(z_1) + \arg(z_2)$
+    \end{task_boxed}
 
-\begin{task_boxed}
-	Найти на плоскости множество решений, удовлетворяющих данному условию: $1 < |z + 3 + i| < 3$
-\end{task_boxed}
+    \begin{task_boxed}
+        Найдите формулу умножения комплексных чисел в тригонометрической форме
+    \end{task_boxed}
 
-\begin{task_boxed}
-	Докажите, что $\arg(z_1 \cdot z_2) = \arg(z_1) + \arg(z_2)$
-\end{task_boxed}
+    \begin{task_boxed}
+        Найдите формулу деления комплексных чисел в тригонометрической форме
+    \end{task_boxed}
 
-\begin{task_boxed}
-	Найдите формулу умножения комплексных чисел в тригонометрической форме
-\end{task_boxed}
+    \begin{task_boxed}
+        Докажите, что \textbf{возведение в целую степень} комплексного числа $z = r(\cos(\varphi) + i \sin(\varphi)) = re^{i\varphi}$ работает так:
 
-\begin{task_boxed}
-	Найдите формулу деления комплексных чисел в тригонометрической форме
-\end{task_boxed}
+        \[z^n = r^n e^{in\varphi} = r^n(\cos(n\varphi) + i \sin(n\varphi))\]
+    \end{task_boxed}
 
-\begin{task_boxed}
-	Докажите, что \textbf{возведение в целую степень} комплексного числа $z = r(\cos(\varphi) + i \sin(\varphi)) = re^{i\varphi}$ работает так:
+    \begin{task_boxed}
+        Найти $(1 + \sqrt{3}i)^{9}$
+    \end{task_boxed}
 
-	\[z^n = r^n e^{in\varphi} = r^n(\cos(n\varphi) + i \sin(n\varphi))\]
-\end{task_boxed}
+    \begin{task_boxed}
+        Найти $(1 + i)^{1000}$
+    \end{task_boxed}
 
-\begin{task_boxed}
-Найти $(1 + \sqrt{3}i)^{9}$
-\end{task_boxed}
+    \begin{definition_boxed}
+        \textbf{Взятие корня} $n$-той степени из комплексного числа $z = r(\cos(\varphi) + i \sin(\varphi)) = re^{i\varphi}$\\
+        работает так:
+        \[\sqrt[n]{z} = \sqrt[n]{r} e^{i\frac{\varphi + 2\pi k}{n}} = r^n\lr*{\cos\lr*{\frac{\varphi + 2\pi k}{n}} + i \sin\lr*{\frac{\varphi + 2\pi k}{n}}} \forall k \in \{1,2,\dotsc, n\}\]
+    \end{definition_boxed}
 
-\begin{task_boxed}
-Найти $(1 + i)^{1000}$
-\end{task_boxed}
+    \begin{task_boxed}
+        Извлеките корень из числа $z=3+4i$
+    \end{task_boxed}
 
-\begin{definition_boxed}
-	\textbf{Взятие корня} $n$-той степени из комплексного числа $z = r(\cos(\varphi) + i \sin(\varphi)) = re^{i\varphi}$\\
-	работает так:
-	\[\sqrt[n]{z} = \sqrt[n]{r} e^{i\frac{\varphi + 2\pi k}{n}} = r^n\lr*{\cos\lr*{\frac{\varphi + 2\pi k}{n}} + i \sin\lr*{\frac{\varphi + 2\pi k}{n}}} \forall k \in \{1,2,\dotsc, n\}\]
-\end{definition_boxed}
+    \begin{task_boxed}
+        Решите уравнение $z^3=-1$
+    \end{task_boxed}
 
-\begin{task_boxed}
-	Извлеките корень из числа $z=3+4i$
-\end{task_boxed}
+    \begin{task_boxed}
+        Вычислите корни третьей степени из комплексного числа $2+2i$
+    \end{task_boxed}
 
-\begin{task_boxed}
-	Решите уравнение $z^3=-1$
-\end{task_boxed}
+    \begin{task_boxed}
+        Решите в комплексных числах следующие квадратные уравнения:
 
-\begin{task_boxed}
-	Вычислите корни третьей степени из комплексного числа $2+2i$
-\end{task_boxed}
+        а)  $z^2 + z + 1 = 0$
 
-\begin{task_boxed}
-	Решите в комплексных числах следующие квадратные уравнения:
+        б)  $z^2 + 4z + 29 = 0$
 
-	а)  $z^2 + z + 1 = 0$
+    \end{task_boxed}
 
-	б)  $z^2 + 4z + 29 = 0$
+    \begin{task_boxed}
+        Известно, что  $z + z^{-1} = 2\cos{\alpha}$.\\
+        Докажите, что  $z^n + z^{-n} = 2\cos{(\alpha \cdot n)}$.
+    \end{task_boxed}
 
-\end{task_boxed}
+    \begin{task_boxed}
+        Пусть $P(x^n)$ делится на  $x - 1$.
+        Докажите, что $P(x^n)$ делится на  $x^n - 1$.
+    \end{task_boxed}
 
-\begin{task_boxed}
-	Известно, что  $z + z^{-1} = 2\cos{\alpha}$.\\
-	Докажите, что  $z^n + z^{-n} = 2\cos{(\alpha \cdot n)}$.
-\end{task_boxed}
+    \begin{task_boxed}
+        Вычислите
 
-\begin{task_boxed}
-	Пусть $P(x^n)$ делится на  $x - 1$.
-	Докажите, что $P(x^n)$ делится на  $x^n - 1$.
-\end{task_boxed}
+        а) $C_{100}^0 - C_{100}^2 + C_{100}^4 \dots + C_{100}^{100} $
 
-\begin{task_boxed}
-	Вычислите
-
-	а) $C_{100}^0 - C_{100}^2 + C_{100}^4 \dots + C_{100}^{100} $
-
-	б) $C_{100}^1 - C_{100}^3 + C_{100}^5 \dots - C_{100}^{99} $
-\end{task_boxed}
-\begin{task_boxed}
-Докажите, что многочлен  $P(x) = (\cos{\varphi} + x\sin{\varphi})^n - \cos{(\varphi\cdot n)} - x\sin{(\varphi\cdot n)}$  делится на  $x^2 + 1$.
-\end{task_boxed}
+        б) $C_{100}^1 - C_{100}^3 + C_{100}^5 \dots - C_{100}^{99} $
+    \end{task_boxed}
+    \begin{task_boxed}
+        Докажите, что многочлен  $P(x) = (\cos{\varphi} + x\sin{\varphi})^n - \cos{(\varphi\cdot n)} - x\sin{(\varphi\cdot n)}$  делится на  $x^2 + 1$.
+    \end{task_boxed}
 
 %\begin{task_boxed}
 %	На доске написаны три функции:  $$f_1(x) = x + 1/x,   f_2(x) = x^2,   f_3(x) = (x - 1)^2.$$\\
@@ -199,21 +198,17 @@ $1 + 2i \in \CC$
 %	то получить $1/x$ невозможно.
 %\end{task_boxed}
 
-\begin{task_boxed}
-	Докажите, что для произвольных комплексных чисел $z$ и $w$ выполняется равенство  $|z + w|^2 + | z - w|^2 = 2(|z|^2 + |w|^2)$.
-	Какой геометрический смысл оно имеет?
-\end{task_boxed}
+    \begin{task_boxed}
+        Докажите, что для произвольных комплексных чисел $z$ и $w$ выполняется равенство  $|z + w|^2 + | z - w|^2 = 2(|z|^2 + |w|^2)$.
+        Какой геометрический смысл оно имеет?
+    \end{task_boxed}
 
-\begin{task_boxed}
-	 Докажите данное равенство: $\sin{\dfrac{2\pi}{n}} + \sin{\dfrac{4\pi}{n}} \dots +\sin{\dfrac{2(n-1)\pi}{n}} = 0$
-\end{task_boxed}
+    \begin{task_boxed}
+        Докажите данное равенство: $\sin{\dfrac{2\pi}{n}} + \sin{\dfrac{4\pi}{n}} \dots +\sin{\dfrac{2(n-1)\pi}{n}} = 0$
+    \end{task_boxed}
 
-\begin{task_boxed}
-При каких вещественных $p$ и $q$ двучлен  $x^4 + 1$  делится на  $x^2 + px + q$?%разложить левую часть на два многочлена
-\end{task_boxed}
-
-
-
-
+    \begin{task_boxed}
+        При каких вещественных $p$ и $q$ двучлен  $x^4 + 1$  делится на  $x^2 + px + q$?%разложить левую часть на два многочлена
+    \end{task_boxed}
 
 \end{document}
