@@ -1,130 +1,111 @@
 \documentclass{article}
-\usepackage[12pt]{extsizes}
-\usepackage[T2A]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[english, russian]{babel}
 
-\usepackage{amssymb}
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage{enumitem}
-\usepackage{graphics}
+\include{../commons/libraries}
+\include{../commons/aliases}
 
-\usepackage{lipsum}
+\smallindent
 
-
-
-\usepackage{geometry} % Меняем поля страницы
-\geometry{left=1cm}% левое поле
-\geometry{right=1cm}% правое поле
-\geometry{top=1.5cm}% верхнее поле
-\geometry{bottom=1cm}% нижнее поле
-
-\newtheorem{definition}{Опредление}
-\usepackage{fancyhdr} % Headers and footers
-\pagestyle{fancy} % All pages have headers and footers
-\fancyhead{} % Blank out the default header
-\fancyfoot{} % Blank out the default footer
-\fancyhead[L]{ЦРОД $\bullet$ Математика}
-\fancyhead[C]{\textit{Логика}}
-\fancyhead[R]{Май 2022}% Custom header text
+\header{ЦРОД $\bullet$ Математика}{\textit{Логика}}{Май 2022}
 
 
 %----------------------------------------------------------------------------------------
 
 %\begin{document}\normalsize
-\begin{document}\large
-	
-	
-\begin{center}
-	\textbf{Булева логика}
-\end{center}
+\begin{document}
+    \large
 
-\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
-	
-	\item Мистер Бруно уверен, что можно вырезать из шахматной доски $8 \times 8$ ровно $4$ клетки так, чтобы оставшуюся доску можно было разрезать на “доминошки”, то есть прямоугольники $1 \times 2$. Прав ли Мистер Бруно?
-	
-	\item Мистер Бруно так понравилось вырезать из доски $8 \times 8$ четыре клетки и разбивать оставшуюся часть на доминошки, что теперь он уверен, что как ни вырежи $4$ клетки из шахматной доски $8 \times 8$, всегда оставшуюся фигурку можно разрезать на доминошки. Не ошибается ли Мистер Бруно?
-	
-	\item Cоставьте утверждения, подходящие под формулу:
-	\begin{itemize}
-		\item 
-		$A =$ «На полдник выдали сырки»
-		
-		$B =$ «На полдник выдали печенье»
-		
-		$C =$ «На полдник не выдали сок или чай» 
-		
-		$(A\vee B)\wedge \overline{C}$
-		
-		\item 
-		$A =$ «Пираты идут на абордаж»
-		
-		$B =$ «На улице град»
-		
-		$C =$ «Ниндзя съел суши»
-		
-		$D =$ «Роботы не захватили планету Земля» 
-		
-		$(\overline{A}\vee B)\wedge (C \vee \overline{D})$
-		
-	\end{itemize}
-	
-	\item Постройте таблицу истинности для выражений:
-	\begin{itemize}
-		
-		\item $\overline{\overline{\overline{a}}}$
-		
-		\item $a \oplus b$
-		
-		\item $a \wedge (b \vee \overline{a})$
-		
-	\end{itemize} 
-	
-	\item Упростите выражения:
-	\begin{itemize}
-		
-		\item $(a \rightarrow b) \wedge (b \rightarrow a)$
-		
-		\item $(\overline{a} \wedge b) \vee  (a \wedge b) \vee  (a \wedge \overline{b})$
-		
-		\item $(a \rightarrow b) \wedge (\overline{a} \rightarrow \overline{b})$
-		
-	\end{itemize} 
-	
-	\item Докажите с помощью таблиц истинности, что  
-	\begin{itemize}
-		
-		\item $(a \vee b) \wedge c = (a \wedge c) \vee (b \wedge c)$
-		
-		\item  $(a \wedge b) \vee c = (a \vee c) \wedge (b \vee c)$
-		
-		\item  $\overline{a \wedge b}= \overline{a} \vee \overline{b}$
-		
-		\item  $\overline{a \vee b}= \overline{a} \wedge \overline{b}$
-		
-	\end{itemize} 
-	
-	\item Постройте отрицание к утверждениям:
-	\begin{itemize}
-		\item "Поле шахматной доски - белое";
-		
-		\item "Верблюд синий и весит хотя бы 100 кг";
-		
-		\item "Я рыцарь или ты лжец".
-		
-		\item "Ёжик не пойдёт сегодня в лес, если будет дождь";
-	\end{itemize}
-	
-	\item Верны ли утверждения:
-	\begin{itemize}
-		\item "$2 \times 2 = 5$ или $2 + 2 = 4$";
-		
-		\item "На поток приедет К.А. Сухов и лжецы иногда говорят правду";
-		
-		\item "Это утверждение ложно";
-	\end{itemize}
 
-\end{enumerate}
+    \begin{center}
+        \textbf{Булева логика}
+    \end{center}
+
+    \begin{enumerate_boxed}
+
+        \item Мистер Бруно уверен, что можно вырезать из шахматной доски $8 \times 8$ ровно $4$ клетки так, чтобы оставшуюся доску можно было разрезать на “доминошки”, то есть прямоугольники $1 \times 2$.
+        Прав ли Мистер Бруно?
+
+        \item Мистер Бруно так понравилось вырезать из доски $8 \times 8$ четыре клетки и разбивать оставшуюся часть на доминошки, что теперь он уверен, что как ни вырежи $4$ клетки из шахматной доски $8 \times 8$, всегда оставшуюся фигурку можно разрезать на доминошки.
+        Не ошибается ли Мистер Бруно?
+
+        \item Cоставьте утверждения, подходящие под формулу:
+        \begin{itemize}
+            \item
+            $A =$ «На полдник выдали сырки»
+
+            $B =$ «На полдник выдали печенье»
+
+            $C =$ «На полдник не выдали сок или чай»
+
+            $(A\vee B)\wedge \overline{C}$
+
+            \item
+            $A =$ «Пираты идут на абордаж»
+
+            $B =$ «На улице град»
+
+            $C =$ «Ниндзя съел суши»
+
+            $D =$ «Роботы не захватили планету Земля»
+
+            $(\overline{A}\vee B)\wedge (C \vee \overline{D})$
+
+        \end{itemize}
+
+        \item Постройте таблицу истинности для выражений:
+        \begin{itemize}
+
+            \item $\overline{\overline{\overline{a}}}$
+
+            \item $a \oplus b$
+
+            \item $a \wedge (b \vee \overline{a})$
+
+        \end{itemize}
+
+        \item Упростите выражения:
+        \begin{itemize}
+
+            \item $(a \rightarrow b) \wedge (b \rightarrow a)$
+
+            \item $(\overline{a} \wedge b) \vee  (a \wedge b) \vee  (a \wedge \overline{b})$
+
+            \item $(a \rightarrow b) \wedge (\overline{a} \rightarrow \overline{b})$
+
+        \end{itemize}
+
+        \item Докажите с помощью таблиц истинности, что
+        \begin{itemize}
+
+            \item $(a \vee b) \wedge c = (a \wedge c) \vee (b \wedge c)$
+
+            \item  $(a \wedge b) \vee c = (a \vee c) \wedge (b \vee c)$
+
+            \item  $\overline{a \wedge b}= \overline{a} \vee \overline{b}$
+
+            \item  $\overline{a \vee b}= \overline{a} \wedge \overline{b}$
+
+        \end{itemize}
+
+        \item Постройте отрицание к утверждениям:
+        \begin{itemize}
+            \item <<Поле шахматной доски - белое>>;
+
+            \item <<Верблюд синий и весит хотя бы 100 кг>>;
+
+            \item <<Я рыцарь или ты лжец>>.
+
+            \item <<Ёжик не пойдёт сегодня в лес, если будет дождь>>;
+        \end{itemize}
+
+        \item Верны ли утверждения:
+        \begin{itemize}
+            \item <<$2 \times 2 = 5$ или $2 + 2 = 4$>>;
+
+            \item <<На поток приедет К.А. Сухов и лжецы иногда говорят правду>>;
+
+            \item <<Это утверждение ложно>>;
+        \end{itemize}
+
+    \end{enumerate_boxed}
 
 \end{document}
