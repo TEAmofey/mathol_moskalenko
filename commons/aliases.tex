@@ -1,0 +1,40 @@
+\newcommand{\range}{\mathrm{range}}
+\newcommand{\dom}{\mathrm{dom}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\Prime}{\mathbb{P}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\CC}{\mathbb{C}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\lr{(}{)}
+\DeclarePairedDelimiter\lrf{\{}{\}}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+
+\newcommand{\smallindent}{
+    \geometry{left=1cm}% левое поле
+    \geometry{right=1cm}% правое поле
+    \geometry{top=1.5cm}% верхнее поле
+    \geometry{bottom=1cm}% нижнее поле
+}
+
+\newcommand{\header}[3]{
+    \pagestyle{fancy} % All pages have headers and footers
+    \fancyhead{} % Blank out the default header
+    \fancyfoot{} % Blank out the default footer
+    \fancyhead[L]{#1}
+    \fancyhead[C]{#2}
+    \fancyhead[R]{#3}
+}
+
+\newenvironment{enumerate_boxed}[1][enumi]{\begin{enumerate}[label*=\protect\fbox{\arabic{#1}}]}{\end{enumerate}}
+

@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage[12pt]{extsizes}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{graphics}
+\usepackage{graphicx}
+
+\usepackage{lipsum}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+
+
+\usepackage{geometry} % Меняем поля страницы
+\geometry{left=1cm}% левое поле
+\geometry{right=1cm}% правое поле
+\geometry{top=1.5cm}% верхнее поле
+\geometry{bottom=1cm}% нижнее поле
+
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[L]{Математика}
+\fancyhead[C]{\textit{Алгебра}}
+\fancyhead[R]{8 февраля 2023}% Custom header text
+
+
+%----------------------------------------------------------------------------------------
+
+%\begin{document}\normalsize
+\begin{document}\large
+	
+
+\begin{center}
+\textbf{Рациональность}
+\end{center}
+
+\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
+
+\item Числа $x, y$ и $z$ таковы,что все три числа $x+ y z, y+ z x$ и $z+ x y$ рациональны, а $x^2 +  y^2 = 1$. Докажите, что число  $x y z^2$ также рационально.
+
+\item Один из корней уравнения  $x^2 +  a x +  b = 0$ равен $1 + \sqrt{3}$. Найдите $a$ и $b$, если известно, что они рациональны.
+
+
+\item Олег нарисовал пустую таблицу $50 \times 50$ и написал сверху от каждого столбца и слева от каждой строки по числу. Оказалось, что все 100 написанных чисел различны, причём 50 из них рациональные, а остальные 50 – иррациональные. Затем в каждую клетку таблицы он записал произведение чисел, написанных около её строки и её столбца (”таблица умножения”). Какое наибольшее количество произведений в этой таблице могли оказаться рациональными числами?
+
+\item Десять попарно различных ненулевых чисел таковы, что для каждых двух из них либо сумма этих чисел, либо их произведение – рациональное число. Докажите, что квадраты всех чисел рациональны.
+
+\item Докажите, что если выражение  $\dfrac{x}{x^2 + x + 1}$ принимает рациональное значение, то и выражение  $\dfrac{x^2}{x^4 + x^2 + 1}$  также рационально.
+
+\item Числовое множество $M$, содержащее 2023 различных положительных числа, таково, что для любых трех различных элементов  $a,  b, c$ из $M$ число  $a^2 +  bc$ рационально. Докажите, что можно выбрать такое натуральное $n$, что для любого $a$ из $M$ число  $a\sqrt{n}$ рационально.
+
+\item Пусть $A$ и $B$ – два прямоугольника. Из прямоугольников, равных $A$, сложили прямоугольник, подобный $B$. Докажите, что из прямоугольников, равных $B$, можно сложить прямоугольник, подобный $A$.
+
+\end{enumerate}
+\end{document}

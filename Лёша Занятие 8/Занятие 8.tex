@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage[12pt]{extsizes}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{graphics}
+\usepackage{graphicx}
+
+\usepackage{lipsum}
+
+\newtheorem{theorem}{Теорема}
+\newtheorem{task}{Задача}
+\newtheorem{lemma}{Лемма}
+\newtheorem{definition}{Определение}
+\newtheorem{example}{Пример}
+\newtheorem{statement}{Утверждение}
+\newtheorem{corollary}{Следствие}
+
+
+\usepackage{geometry} % Меняем поля страницы
+\geometry{left=1cm}% левое поле
+\geometry{right=1cm}% правое поле
+\geometry{top=1.5cm}% верхнее поле
+\geometry{bottom=1cm}% нижнее поле
+
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[L]{Математика}
+\fancyhead[C]{\textit{Разнобой}}
+\fancyhead[R]{13 ноября 2023}% Custom header text
+
+
+%----------------------------------------------------------------------------------------
+
+%\begin{document}\normalsize
+\begin{document}\large
+	
+\begin{center}
+	\textbf{Разнобой}
+\end{center}
+
+
+\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
+
+\item Сколько треугольников изображено на рисунке ниже?
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.3\linewidth]{img.png}
+\end{figure}
+
+\item Можно ли разбить квадрат $8\times 8$ с отрезанным уголком на прямоугольники $1\times 3$?
+
+\item Можно ли из квадрата $7\times 7$ вырезать 10 квадратов $2\times2$?
+
+\item В кружке художественного свиста у каждого ровно один друг и ровно один враг. Докажите, что в кружке четное число людей.
+
+\item Треугольник разбит на треугольнички (25 штук), как показано на рисунке. Жук может ходить по треугольнику, переходя между соседними (по стороне) треугольничками. Какое максимальное количество треугольничков может пройти жук, если в каждом он побывал не больше одного раза?
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.3\linewidth]{img.png}
+\end{figure}
+
+
+\end{enumerate}
+
+
+\end{document}

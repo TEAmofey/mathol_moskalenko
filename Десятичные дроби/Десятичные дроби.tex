@@ -1,0 +1,110 @@
+\documentclass{article}
+\usepackage[12pt]{extsizes}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{graphics}
+\usepackage{graphicx}
+
+\usepackage{lipsum}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+
+
+\usepackage{geometry} % Меняем поля страницы
+\geometry{left=1cm}% левое поле
+\geometry{right=1cm}% правое поле
+\geometry{top=1.5cm}% верхнее поле
+\geometry{bottom=1cm}% нижнее поле
+
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[L]{ЦРОД $\bullet$ Математика}
+\fancyhead[C]{\textit{Алгебра}}
+\fancyhead[R]{3 ноября 2023}% Custom header text
+
+
+%----------------------------------------------------------------------------------------
+
+%\begin{document}\normalsize
+\begin{document}\large
+	
+
+\begin{center}
+\textbf{Десятичные дроби}
+\end{center}
+
+Здесь и далее, число $b$~-- знаменатель дроби, a $a$~--числитель.
+
+\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
+
+\item Докажите, что дробь является конечной тогда и только тогда, когда $b$ имеет вид $2^n5^m$.
+
+\end{enumerate}
+
+{В дальнейшем считаем, что $b\neq 2^n5^m$.}
+
+Вспомним {\bf алгоритм деления столбиком}.\\
+При правильном взгляде на вещи он состоит в следующем. Полагаем $r_0=a$ и считаем рекуррентно $10\cdot r_{i-1}=bq_i+r_i$  (деление с остатком). При этом $q_i$ -- $i$-тая цифра после запятой в равенстве $\frac{a}{b}=0,q_1q_2q_3\dots$ .
+
+\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
+	
+\setcounter{enumi}{1}
+\item 
+\begin{enumerate}
+	\item Докажите, что при делении в столбик получается периодическая дробь с периодом не более $b-1$;
+	\item и даже сумма длин периода и предпериода не более $b-1$.
+\end{enumerate}
+
+\end{enumerate}
+
+{Еще одно понимание алгоритма деления столбиком}  состоит в следующем.
+Делим с остатком: $a\cdot 10^k=bQ_k+r_k$.
+Тогда $Q_k$ --- число, образованное первыми $k$ цифрами после запятой,
+$r_k$ --- то же самое, что ранее (тем самым $r_k$ оказывается остатком при делении $a\cdot 10^k$ на $b$).
+\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
+	\setcounter{enumi}{2}
+\item 
+\begin{enumerate}
+	\item Докажите, что если $(b,10)=1$, то $(r_i,b)=1$.
+	\item Докажите, что длина периода не превосходит $\varphi(b)$.
+\end{enumerate}
+
+\item Докажите, что если $(b,10)=1$, то зацикливание происходит без предпериода. При этом длина периода не зависит от $a$
+и равна наименьшему $t$, для которого $10^t-1 \,\vdots\, b$, т.е. показателю числа 10 по модулю $b$.
+
+\item Пусть наименьший период некоторой последовательности равен $\ell$, а $L$ --- некоторый другой период. Докажите, что $L \,\vdots\, \ell$.
+
+\item Докажите, что дробь $0,RTTT\dots$ ($R$ --- из $k$ цифр, $T$ --- из $t$ цифр)
+равна $\frac{R}{10^k}+\frac{T}{10^k(10^t-1)}$.
+
+\item Докажите, что если $(b,10)\neq 1$, то в десятичной записи $\frac{a}{b}$ обязательно есть предпериод.
+
+\item Пусть $a<b$, $(a,b)=1$, $b=2^x\cdot 5^y\cdot b'$, $\ell=\max\{x,y\}$. Докажите, что период дроби
+$\frac{a}{b}$ равен периоду дроби $\frac{1}{b'}$,  а предпериод
+в точности равен $\ell$, и не может быть меньше.
+
+\item Каково наибольшее значение длины предпериода среди всех несократимых дробей со знаменателем 
+не превосходящим 2024?
+
+\item Приведите пример дробей с предпериодами, при сложении которых предпериод исчезает, а период
+меньше, чем оба периода слагаемых.
+
+\item Докажите, что период суммы (разности) двух дробей является делителем НОКа периодов, 
+а предпериод не превосходит максимума предпериодов.
+
+\item Пусть $p>5$ --- простое число. Известно, что длина наименьшего периода десятичной записи дроби $1/p$ равна $2n$. 
+Докажите, что если этот период разбить на два $n$-значных куска,
+то сумма чисел в этих кусках равна $99\dots 9$ ($n$ девяток).  
+Например, $1/7=0.(142857)$, $142+857=999$.
+
+\end{enumerate}
+\end{document}

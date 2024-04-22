@@ -1,0 +1,95 @@
+\documentclass{article}
+\usepackage[12pt]{extsizes}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{graphics}
+\usepackage{graphicx}
+
+\usepackage{lipsum}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+
+
+\usepackage{geometry} % Меняем поля страницы
+\geometry{left=1cm}% левое поле
+\geometry{right=1cm}% правое поле
+\geometry{top=1.5cm}% верхнее поле
+\geometry{bottom=1cm}% нижнее поле
+
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[L]{ЦРОД $\bullet$ Математика}
+\fancyhead[C]{\textit{Алгебра}}
+\fancyhead[R]{3 ноября 2022}% Custom header text
+
+
+%----------------------------------------------------------------------------------------
+
+%\begin{document}\normalsize
+\begin{document}\large
+	
+
+\begin{center}
+\textbf{Многочлены третей и четвёртой степени}
+\end{center}
+
+Для решения уравнений третьей степени вида $x^3 + px + q = 0$ есть формула Кардано:
+$$\boxed{x=\sqrt[3]{-\frac{q^2}{4} + \sqrt{\frac{q^2}{4} +\frac{p^3}{27}}} + \sqrt[3]{-\frac{q^2}{4} - \sqrt{\frac{q^2}{4} +\frac{p^3}{27}}}}$$
+
+
+\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
+
+\item Решите уравнение: $x^3 - 15 x - 126 = 0.$
+
+\item Решите уравнение: $x^3 - 6x^2 - 6x - 2 = 0.$
+
+\item Решите уравнение: $x^3 - 6x - 4 = 0.$
+
+\item Решите уравнение: $x^3 - 6x - 40 = 0.$
+
+\item Решите уравнение: $x^3 - 6x^2 - 6x - 2 = 0.$
+
+
+\end{enumerate}
+
+А для решения уравнений четвёртой степени вида $x^4 + ax^2+ bx + c = 0$ есть метод Феррари.
+$$x^4 + (2\alpha - \beta^2)  x^2  -2\beta\gamma x + \alpha^2- \gamma^2 = 0$$
+$$(x^2 + \alpha)^2 - (\beta x + \gamma)^2 = 0$$
+$$(x^2 + \alpha - \beta x - \gamma)(x^2 + \alpha + \beta x + \gamma) = 0$$
+
+Мы хотим найти $\alpha, \beta, \gamma$ такие, что
+
+\begin{equation*}
+	\begin{cases}
+		2\alpha - \beta^2 = a,
+		\\
+		-2\beta\gamma = b,
+		\\
+		\alpha^2- \gamma^2 = c.
+	\end{cases}
+\end{equation*}
+
+Тогда корни исходного уравнения четвёртой степени будут корни двух получившихся квадратных трёхчленов.
+
+\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
+
+\item Решите уравнение: $x^4 - 8x^2 + 16 = 0.$
+
+\item Решите уравнение: $x^4 - 9x^2 + 2x + 15 = 0.$
+
+\item Решите уравнение: $x^4 + 4x^3 - 4x^2 - 20x - 5 = 0.$
+
+\end{enumerate}
+
+Для многочленов пятой степени и выше общей формулы нахождения решений не существует. Пример:
+$$x^5 - 4x + 2 = 0$$
+\end{document}

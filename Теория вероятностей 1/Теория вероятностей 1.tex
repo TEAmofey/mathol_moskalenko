@@ -1,0 +1,83 @@
+\documentclass{article}
+\usepackage[12pt]{extsizes}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{graphics}
+\usepackage{graphicx}
+
+\usepackage{lipsum}
+
+\newtheorem{theorem}{Теорема}
+\newtheorem{task}{Задача}
+\newtheorem{lemma}{Лемма}
+\newtheorem{definition}{Определение}
+\newtheorem{example}{Пример}
+\newtheorem{statement}{Утверждение}
+\newtheorem{corollary}{Следствие}
+
+
+\usepackage{geometry} % Меняем поля страницы
+\geometry{left=1cm}% левое поле
+\geometry{right=1cm}% правое поле
+\geometry{top=1.5cm}% верхнее поле
+\geometry{bottom=1cm}% нижнее поле
+
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[L]{Математика}
+\fancyhead[C]{\textit{Теория вероятностей}}
+\fancyhead[R]{16 апреля}% Custom header text
+
+
+%----------------------------------------------------------------------------------------
+
+%\begin{document}\normalsize
+\begin{document}\large
+	
+\begin{center}
+	\textbf{Случайные события}
+\end{center}
+
+
+\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
+	
+\item Брошено 6 игральных кубиков. Найти вероятность следующих событий:
+\begin{itemize}
+	\item $A= \{\text{среди выпавших нет единиц}\}.$
+	\item $B= \{\text{выпало ровно 3 двойки}\}.$
+	\item $C= \{\text{выпала хотя бы 1 единица}\}.$
+	\item $D= \{\text{все цифры выпали хотя бы по одному разу}\}.$
+\end{itemize}
+
+\item Карточка <<спортлото>> содержит 36 чисел. Игрок может выбрать 6, а выигрышных номеров в тираже определяется тоже 6. Какова вероятность того, что верно будет угадано ровно 3 числа?
+
+\item Подбрасывают симметричную монету.
+\begin{itemize}
+	\item С какой вероятностью при $n$ подбрасываниях выпадет ровно $k$ орлов?
+	\item Какое $k$ наиболее вероятно?
+\end{itemize}
+
+\item  При бросании неправильной монеты орел выпадает с вероятностью $p$, решка — с вероятностью $q=  1-p$. С какой вероятностью после $n$ бросков выпадет четное число орлов?
+
+\item Из колоды карт (52 карты) наугад вытаскивают 5. Что более вероятно — вытащить ровно3 карты одного номинала или вытащить ровно 2 пары карт одного номинала?
+
+\item Колоду карт случайным образом делят на 2 части (необязательно равного размера). С какой вероятностью в каждой части будет по 2 туза?
+
+\item Из контейнера $A$, в котором было 1000 зеленых яблок и 3000 красных яблок, взяли половину яблок и перенесли в контейнер $B$, в котором к тому времени уже лежало 3000 зеленых и 1000 красных яблок. Затем из контейнера $B$ извлекли одно яблоко. Найти вероятность того, что оно зеленое.
+
+\item Рассмотрим простейшее случайное блуждание на прямой: частица находится в 0 и каждым шагом сдвигается на 1 вправо или влево. Всего сделано $n$ шагов, все траектории равновероятны. Найти вероятность события $$A_k = \{\text{блуждание завершилось в точке с координатой $k$}\}.$$
+
+\item Каждый из двух игроков подбрасывает симметричную монету $n$ раз. С какой вероятно-стью у них выпадет одинаковое число орлов?
+
+
+\end{enumerate}
+\end{document}

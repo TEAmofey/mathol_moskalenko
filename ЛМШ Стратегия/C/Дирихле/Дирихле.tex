@@ -1,0 +1,213 @@
+\documentclass[b5paper,usehyperref, twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{indentfirst}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage{eurosym}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{icomma}
+\usepackage{hhline}
+\newcommand{\sol}{\textbf{Решение.\ }}
+\newcommand{\dzz}{\medskip\textbf{Для самостоятельного решения\\ }}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\al}{\alpha}
+
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}%
+	{\hbox{$\mathsurround=0pt #1$}}{}}
+%\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}
+%\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\graphicspath{{Pics/}}
+
+\newcommand{\be}{\beta}
+\newcommand{\ga}{\gamma}
+
+\newcommand{\ra}{\rightarrow}
+\newcommand{\Ra}{\Rightarrow}
+\newcommand{\Lra}{\Leftrightarrow}
+\newcommand{\cd}{\cdot}
+\newcommand{\gs}{\geqslant}
+\newcommand{\ls}{\leqslant}
+\newcommand{\tx}{\text}
+\newcommand{\ti}{\times}
+\newcommand{\opr}{\textbf{Определение.\ }}
+\newcommand{\ov}{\overline}
+\newcommand{\df}{\ds\frac}
+\newcommand{\an}{\angle}
+\newcommand{\tr}{\triangle}
+\newcommand{\pa}{\parallel}
+\newcommand{\ig}{\includegraphics}
+\newcommand{\eq}{\equiv}
+\renewcommand{\mod}{\operatorname{mod}}
+\newcommand{\ba}{\begin{array}{c}}
+	\newcommand{\ea}{\end{array}}
+\renewcommand{\sb}{\left\{\ba}
+\newcommand{\se}{\ea\right.}
+\newcommand{\ovr}{\overrightarrow}
+\newcommand{\om}{\omega}
+\renewcommand{\tg}{\operatorname{tg}}
+\renewcommand{\ctg}{\operatorname{ctg}}
+\renewcommand{\phi}{\varphi}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\de}{\mathop{\raisebox{-2pt}{\vdots}}}
+\newcommand{\ub}{\underbrace}
+\newcommand{\arc}{\smile\!}
+
+\usepackage{multirow}
+\usepackage{epigraph}
+
+\tikzset{
+	treenode/.style = {shape=rectangle, rounded corners,
+		draw, align=center,
+		top color=white, bottom color=blue!20},
+	root/.style     = {treenode, font=\Large, bottom color=red!30},
+	env/.style      = {treenode, font=\ttfamily\normalsize},
+	dummy/.style    = {circle,draw}
+}
+
+
+\usepackage[paperheight=20.5cm,paperwidth=14cm, left=0.6cm,right=0.9cm,top=1.8cm,bottom=1.5cm]{geometry}
+
+\parindent=0pt
+\parskip=1pt
+\tolerance=1100
+
+\addto\captionsrussian{\renewcommand{\partname}{Раздел}}
+
+\def\thepart{\arabic{part}}
+
+\hypersetup{pdfstartview=FitH,  linkcolor=linkcolor,urlcolor=urlcolor, colorlinks=true}
+
+\definecolor{linkcolor}{HTML}{000000} % цвет ссылок
+\definecolor{urlcolor}{HTML}{000000} % цвет гиперссылок
+
+
+\newtheorem{Lemma}{Лемма}
+\theoremstyle{definition}
+\newtheorem{Remark}{Замечание}
+\newtheorem{Claim}{Утверждение}
+\newtheorem{Cor}{Следствие}
+\newtheorem{Theorem}{Теорема}
+\newtheorem*{known}{Теорема}
+\def\proofname{Доказательство}
+\theoremstyle{definition}
+\newtheorem{Def}{Определение}
+%\newcounter{partsec}[section]
+%\def\thepartsec{\arabic{part}.\arabic{section}}
+\newtheorem{Task}{}
+
+
+\newtheorem{Example}{}
+
+
+\usepackage{fancyhdr} %загрузим пакет
+\pagestyle{fancy} %применим колонтитул
+\fancyhead[LO]{Летняя математическая школа Стратегия, группа C} %очистим хидер на всякий случай
+\fancyhead[RO]{2023.07.09}
+%\fancyhead[LE,RO]{\thepage} %номер страницы слева сверху на четных и справа на нечетных
+%\fancyhead[CO]{текст-центр-нечетные}  %текст-центр-нечетные
+%\fancyhead[LO]{текст-слева-нечетные}  %текст-слева-нечетные
+%\fancyhead[CE]{текст-центр-четные}    %текст-центр-четные
+\fancyfoot{} %футер будет пустой
+
+\begin{document}
+	\newcounter{totalpics}
+	\newcounter{totaltables}
+	%\setcounter{tocdepth}{2}
+	
+	%
+	%\begin{document}
+	%\begin{center}
+	
+	
+	%\begin{figure}[bh]
+	%\noindent\centering{
+		%\includegraphics[width=70mm]{logo}
+		% }
+	%\label{figCurves}
+	%\end{figure}
+	%\end{center}
+	\centerline{\LARGE Принцип Дирихле}
+	
+	%\begin{center}
+	%Преподаватель Подаев М.
+	%\end{center}
+	\textit{Принцип Дирихле}~--- если кролики рассажены в клетки, причём число кроликов больше числа клеток, то хотя бы в одной из клеток находится более одного кролика.
+	
+	\begin{Task} 
+		 В ковре размером $4 \times 4$ метра моль проела 15 дырок. Всегда ли можно вырезать коврик размером $1 \times 1$, не содержащий внутри дырок? (Дырки считаются точечными).
+	 \end{Task}
+
+	\begin{Task} 
+		В лагере "Стратегия" учатся 38 человек. Докажите, что среди них найдутся четверо, родившихся в один месяц.
+	 \end{Task}
+	
+	%с подлянкой
+	\begin{Task} 
+		Даны $n$ точек. Некоторые из них соединены отрезками. Докажите, что найдутся две точки, из которых выходит поровну отрезков.
+	\end{Task}
+
+\centerline{\LARGE Основные задачи}
+	\begin{Task} 
+		 Обязательно ли среди двадцати пяти монет достоинством 1, 2, 5 и 10 рублей найдётся семь монет одинакового достоинства?
+	 \end{Task}
+ 
+	 \begin{Task} 
+	 	В мешке лежат 16 шариков черного цвета и 8 белого. Какое наименьшее число шариков нужно вынуть из мешка вслепую так, чтобы среди них заведомо оказались два шарика одного цвета?
+	 \end{Task}
+ 
+	\begin{Task} 
+		В квадрат со стороной 2 метра бросили 76 точек. Докажите, что какие-то четыре из них можно накрыть квадратом со стороной 40 см.
+	\end{Task}
+	
+	\begin{Task} 
+		 Какое наибольшее число королей можно поставить на шахматной доске так, чтобы никакие два из них не били друг друга?
+	 \end{Task}
+	
+	\begin{Task} 
+		В клетках таблицы $3 \times 3$ расставлены числа –1, 0, 1. Докажите, что какие-то две из восьми сумм по всем строкам, всем столбцам и двум главным диагоналям будут равны.
+	 \end{Task}
+
+	\begin{Task} 
+		В мешке 70 шаров, отличающихся только цветом: 20 красных, 20 синих, 20 жёлтых, остальные – чёрные и белые. 
+		Какое наименьшее число шаров надо вынуть из мешка, не видя их, чтобы среди них было не менее 10 шаров одного цвета?
+	\end{Task}
+	
+	
+%	\begin{Task} 
+%		10 школьников на олимпиаде решили 35 задач, причем известно, что среди них есть школьники, решившие ровно одну задачу, школьники, решившие ровно две задачи и школьники, решившие ровно три задачи. Докажите, что есть школьник, решивший не менее пяти задач.
+%	 \end{Task}
+	
+	
+	\centerline{\LARGE Посложнее}
+	
+	\begin{Task} 
+		В каждой вершине куба написано число 1 или число 0. На каждой грани куба написана сумма четырёх чисел, написанных в вершинах этой грани. Может ли оказаться, что все числа, написанные на гранях, различны? 
+	\end{Task}
+
+	%с подлянкой
+%	\begin{Task} 
+%		 Дано 8 различных натуральных чисел, не больших 15. Докажите, что среди их положительных попарных разностей есть три одинаковых.
+%	 \end{Task}
+%	
+	
+	\begin{Task} 
+		Докажите, что в любой компании найдутся два человека, имеющие одинаковое число друзей (из этой компании).
+	 \end{Task}
+	
+	%хард
+	\begin{Task} 
+		Докажите, что среди любых шести человек есть либо трое попарно знакомых, либо трое попарно незнакомых.
+	 \end{Task}
+	
+%	\begin{Task} 
+%		В дискуссии приняли участие 15 депутатов. Каждый из них в своем выступлении раскритиковал ровно $k$ из оставшихся 14 депутатов. При каком наименьшем $k$ можно утверждать, что найдутся два депутата, которые раскритиковали друг друга?
+%	 \end{Task}
+
+	
+\end{document}

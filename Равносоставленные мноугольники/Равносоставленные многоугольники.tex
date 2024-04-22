@@ -1,0 +1,134 @@
+\documentclass{article}
+\usepackage[12pt]{extsizes}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{asymptote}
+
+\usepackage{lipsum}
+
+\newtheorem{theorem}{Теорема}
+\newtheorem{task}{Задача}
+\newtheorem{lemma}{Лемма}
+\newtheorem{definition}{Определение}
+\newtheorem{example}{Пример}
+\newtheorem{statement}{Утверждение}
+\newtheorem{corollary}{Следствие}
+
+
+\usepackage{geometry} % Меняем поля страницы
+\geometry{left=1cm}% левое поле
+\geometry{right=1cm}% правое поле
+\geometry{top=1.5cm}% верхнее поле
+\geometry{bottom=1cm}% нижнее поле
+
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[L]{Математика}
+\fancyhead[C]{\textit{Геометрия}}
+\fancyhead[R]{1 июня 2023}% Custom header text
+
+
+%----------------------------------------------------------------------------------------
+
+%\begin{document}\normalsize
+\begin{document}\large
+	
+\begin{center}
+	\textbf{Равносоставленные многоугольники}
+\end{center}
+
+\begin{definition}
+	Две фигуры \textbf{равновелики}, если у них одинаковые площади.
+\end{definition}
+
+\begin{definition}
+	Два многоугольника \textbf{равносоставлены}, если один из них можно разрезать на части, из которых можно сложить другой (без наложений, используя все части).
+\end{definition}
+
+\begin{theorem}[Бойяи–Гервина]
+	Любые два равновеликих многоугольника равносоставлены.
+\end{theorem}
+
+\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
+	
+	
+\item Докажите что произвольный треугольник равносоставлен какому-то прямоугольнику
+
+\item Докажите \textit{транзитивность} равносоставленности (если фигуры $A$ и $B$ равносоставлены, и фигуры $B$ и $C$ равносоставлены, то фигуры $A$ и $C$ равносоставлены).
+
+\item Докажите, что два равновеликих параллелограмма с общим основанием равносоставлены.
+
+\item Докажите, что любые два равновеликих прямоугольника равносоставлены.
+
+\item Докажите, что любой треугольник равносоставлен некоторому прямоугольнику со стороной 1.
+%
+%\begin{figure}[h]
+%	\begin{asy} 
+%	size(10cm, 0);
+%	include geometry;
+%	
+%	point pA = (0,0), pB = (4, 0);
+%	point pD = (2,3), pC = (6, 3);
+%	point pE = (-1,3), pF = (-5, 3);
+%	
+%	dot("$A$", pA, S);
+%	dot("$B$", pB, S);
+%	dot("$C$", pC, N);
+%	dot("$D$", pD, N);
+%	dot("$E$", pE, N);
+%	dot("$F$", pF, N);
+%	
+%	draw(pF -- pE);
+%	draw(pA -- pB);
+%	draw(pA -- pF);
+%	draw(pA -- pD);
+%	draw(pB -- pE);
+%	draw(pD -- pC);
+%	draw(pB -- pC);
+%	draw(pE -- pD, linetype(new real[] {3,6}));
+%	\end{asy}
+%\end{figure}
+
+\item Докажите \textbf{теорему Бойяи–Гервина}.
+
+\end{enumerate}
+
+\begin{definition}
+	Фигуры называются \textbf{равнодополняемыми}, если их можно получить, отрезая от равных фигур одну или несколько равных частей.
+\end{definition}
+
+
+\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
+
+\setcounter{enumi}{6}
+\item Докажите, что равнодополняемые фигуры равновелики.
+
+\item Докажите, что параллелограмм равнодополняем некоторому прямоугольнику.
+
+\item Докажите, что равновеликие многоугольники равнодополняемы.
+
+\item Перекроите прямоугольник $1 \times 3$ в квадрат.
+
+\item Перекроите квадрат в правильный треугольник, разрезав его не более, чем на 10 частей.
+
+\item Перекроите прямоугольник $3\times 4$ в квадрат, разрезав его всего на 3 части.
+
+\item Перекроите прямоугольник $1 \times 3$ в квадрат, разрезав его не более чем на 6 частей.
+
+\item Перекроите квадрат в 3 равных квадрата, разрезав его не более чем на а) 10 частей; б) 7 частей.
+
+\item Докажите, что правильный пятиугольник можно разрезать на 4 части, из которых без просветов и наложений можно сложить прямоугольник.
+
+\end{enumerate}
+\end{document}

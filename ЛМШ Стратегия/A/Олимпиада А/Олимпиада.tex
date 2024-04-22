@@ -1,0 +1,159 @@
+\documentclass[b5paper,usehyperref, twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{indentfirst}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage{eurosym}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{icomma}
+\usepackage{hhline}
+\newcommand{\sol}{\textbf{Решение.\ }}
+\newcommand{\dzz}{\medskip\textbf{Для самостоятельного решения\\ }}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\al}{\alpha}
+
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}%
+	{\hbox{$\mathsurround=0pt #1$}}{}}
+%\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}
+%\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\graphicspath{{Pics/}}
+
+\newcommand{\be}{\beta}
+\newcommand{\ga}{\gamma}
+
+\newcommand{\ra}{\rightarrow}
+\newcommand{\Ra}{\Rightarrow}
+\newcommand{\Lra}{\Leftrightarrow}
+\newcommand{\cd}{\cdot}
+\newcommand{\gs}{\geqslant}
+\newcommand{\ls}{\leqslant}
+\newcommand{\tx}{\text}
+\newcommand{\ti}{\times}
+\newcommand{\opr}{\textbf{Определение.\ }}
+\newcommand{\ov}{\overline}
+\newcommand{\df}{\ds\frac}
+\newcommand{\an}{\angle}
+\newcommand{\tr}{\triangle}
+\newcommand{\pa}{\parallel}
+\newcommand{\ig}{\includegraphics}
+\newcommand{\eq}{\equiv}
+\renewcommand{\mod}{\operatorname{mod}}
+\newcommand{\ba}{\begin{array}{c}}
+	\newcommand{\ea}{\end{array}}
+\renewcommand{\sb}{\left\{\ba}
+\newcommand{\se}{\ea\right.}
+\newcommand{\ovr}{\overrightarrow}
+\newcommand{\om}{\omega}
+\renewcommand{\tg}{\operatorname{tg}}
+\renewcommand{\ctg}{\operatorname{ctg}}
+\renewcommand{\phi}{\varphi}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\de}{\mathop{\raisebox{-2pt}{\vdots}}}
+\newcommand{\ub}{\underbrace}
+\newcommand{\arc}{\smile\!}
+
+\usepackage{multirow}
+\usepackage{epigraph}
+
+\tikzset{
+	treenode/.style = {shape=rectangle, rounded corners,
+		draw, align=center,
+		top color=white, bottom color=blue!20},
+	root/.style     = {treenode, font=\Large, bottom color=red!30},
+	env/.style      = {treenode, font=\ttfamily\normalsize},
+	dummy/.style    = {circle,draw}
+}
+
+
+\usepackage[paperheight=20.5cm,paperwidth=14cm, left=0.6cm,right=0.9cm,top=1.8cm,bottom=1.5cm]{geometry}
+
+\parindent=0pt
+\parskip=1pt
+\tolerance=1100
+
+\addto\captionsrussian{\renewcommand{\partname}{Раздел}}
+
+\def\thepart{\arabic{part}}
+
+\hypersetup{pdfstartview=FitH,  linkcolor=linkcolor,urlcolor=urlcolor, colorlinks=true}
+
+\definecolor{linkcolor}{HTML}{000000} % цвет ссылок
+\definecolor{urlcolor}{HTML}{000000} % цвет гиперссылок
+
+
+\newtheorem{Lemma}{Лемма}
+\theoremstyle{definition}
+\newtheorem{Remark}{Замечание}
+\newtheorem{Claim}{Утверждение}
+\newtheorem{Cor}{Следствие}
+\newtheorem{Theorem}{Теорема}
+\newtheorem*{known}{Теорема}
+\def\proofname{Доказательство}
+\theoremstyle{definition}
+\newtheorem{Def}{Определение}
+%\newcounter{partsec}[section]
+%\def\thepartsec{\arabic{part}.\arabic{section}}
+\newtheorem{Task}{}
+
+
+\newtheorem{Example}{}
+
+
+\usepackage{fancyhdr} %загрузим пакет
+\pagestyle{fancy} %применим колонтитул
+\fancyhead[LO]{Летняя математическая школа Стратегия, группа A} %очистим хидер на всякий случай
+\fancyhead[RO]{2023.07.10}
+%\fancyhead[LE,RO]{\thepage} %номер страницы слева сверху на четных и справа на нечетных
+%\fancyhead[CO]{текст-центр-нечетные}  %текст-центр-нечетные
+%\fancyhead[LO]{текст-слева-нечетные}  %текст-слева-нечетные
+%\fancyhead[CE]{текст-центр-четные}    %текст-центр-четные
+\fancyfoot{} %футер будет пустой
+\begin{document}\large
+	
+
+\begin{center}
+\textbf{Финальная олимпиада}
+\end{center}
+
+
+\begin{Task}
+	 Лиза нарисовала на бесконечном листе бумаги несколько окружностей, которые разделили весь лист на части. Покажите, что она может покрасить эти части в белый и чёрный цвета так, чтобы соседние части, это те, что имеют общую дугу границы, были бы разного цвета.
+\end{Task}
+
+
+\begin{Task}
+	На каждой клетке-треугольничке треугольной доски со стороной 7 сидит лягушка. В некоторый момент все лягушки прыгают и приземляются на соседние (по стороне) клетки этой доски. Докажите, что тогда найдутся по крайней мере 7 пустых клеток.
+\end{Task}
+
+\begin{Task}
+	Васе очень сильно понравилась задача про кубик сыра и мышь поэтому, придя домой, он захотел сделать 15 кубических котлет. Дома была всего одна большая сковородка. Котлеты оказались довольно маленькими, так что на одну сковородку помещается целых 10 кубо-котлет. Васе уже не терпится их съесть и он хочет приготовить их как можно быстрее. Он посчитал, что каждую котлету нужно пожарить с каждой стороны в течение одной минуты. Объясните Васе, как ему нужно действовать, и докажите, что быстрее точно не получится.
+\end{Task}
+
+\begin{Task}
+	Сколько существует различных пятизначных чисел, в которых цифры идут в порядке убывания?
+\end{Task}
+
+\begin{Task}
+	Сколькими способами можно выбрать две кости домино так, чтобы их можно было приложить друг к другу (то есть, чтобы какое-то число встречалось на обоих костях).
+\end{Task}
+
+\begin{Task}
+	В стране несколько мегаполисов (из которых выходит по 43 дороги) и несколько провинциальных городов (из которых выходит по 4 дороги). Докажите, что из любого мегаполиса можно проехать в некоторый другой мегаполис.
+\end{Task}
+
+\begin{Task}
+	На доске написаны числа 2, 3, 9. Разрешается взять любые два из написанных чисел $a$ и $b$, стереть их, а вместо них написать числа $3a-2b$ и $3b-2a$. Можно ли несколькими такими операциями получить числа 5, 6, 7?
+\end{Task}
+
+
+\begin{Task}
+	Все жители острова прошли социальный опрос. Некоторые из них заявили, что на острове четное число рыцарей, а остальные — что на острове нечетное число лжецов. Может ли число жителей острова быть равно $2023$? Известно, что хотя бы один рыцарь и хотя бы один лжец на острове есть.
+\end{Task}
+
+\end{document}

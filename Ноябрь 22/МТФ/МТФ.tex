@@ -1,0 +1,92 @@
+\documentclass{article}
+\usepackage[12pt]{extsizes}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{graphics}
+\usepackage{graphicx}
+
+\usepackage{lipsum}
+
+\newtheorem{theorem}{Теорема}
+\newtheorem{task}{Задача}
+\newtheorem{lemma}{Лемма}
+\newtheorem{definition}{Определение}
+\newtheorem{example}{Пример}
+\newtheorem{statement}{Утверждение}
+\newtheorem{corollary}{Следствие}
+
+
+\usepackage{geometry} % Меняем поля страницы
+\geometry{left=1cm}% левое поле
+\geometry{right=1cm}% правое поле
+\geometry{top=1.5cm}% верхнее поле
+\geometry{bottom=1cm}% нижнее поле
+
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[L]{ЦРОД $\bullet$ Математика}
+\fancyhead[C]{\textit{Теория чисел}}
+\fancyhead[R]{3 ноября 2022}% Custom header text
+
+
+%----------------------------------------------------------------------------------------
+
+%\begin{document}\normalsize
+\begin{document}\large
+	
+\begin{center}
+	\textbf{Малая теорема Ферма}
+\end{center}
+
+\begin{theorem}
+	Для любого простого $p$ и целого $a$ верно сравнение $a^p \equiv a \pmod p$
+\end{theorem}
+
+\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
+	
+\item Докажите, что $7^{120} - 1$  делится на $143$.
+	
+\item Докажите, что $60^{111}+111^{60}$ делится на 61.
+
+\item Пусть $p$ – простое число. Докажите, что  $(a + b)^p \equiv a^p + b^p$ (mod $p$) для любых целых $a$ и $b$.
+
+\item Известно, что  $a^{12} + b^{12} + c^{12} + d^{12} + e^{12} + f^{12}$  делится на 13 ($a, b, c, d, e, f$ – целые числа). Докажите, что $abcdef$ делится на 4826809.
+
+\item Докажите, что если $p$ --- простое число и $p > 2$, то $7^p - 5^p - 2$ делится на $6p$.
+
+\item Пусть $p>5$ --- простое число. Докажите, что $\underbrace{11\dots 1}_{p-1}$ делится на $p$.
+
+\item Пусть $n$ – натуральное число, не кратное 17. Докажите, что либо $n^8 + 1$,  либо $n^4 + 1$,  либо $n^2 + 1$,  либо $n + 1$, либо $n - 1$  делится на 17.
+
+\item Докажи, что $a^{73} - a$  делится на $2\cdot3\cdot5\cdot7\cdot13\cdot19\cdot37\cdot73$.
+
+\item Докажите, что ни при каком целом $k$ число $k^2 + k + 1$  не делится на 101.
+
+\item Андрей берет натуральное число $a$ и сначала прибавляет к нему число $a^2$, потом --- $a^3$, потом --- $a^4$ и т.д. Докажите, что когда-нибудь его сумма поделится на простое число $p$.
+
+\item Пусть $p = 4k+3$ --- простое, а $m^2 + n^2 \, \vdots \, p$. Докажите, что $m,n \, \vdots \, p$.
+
+\item Найти все такие натуральные числа $p$, что $p$ и $p^6 + 6$ – простые
+
+\item 
+a) Докажите, что равенство $\frac{10^n-1}{m}=\overline{a_1a_2\dots a_n}$ равносильно тому, что десятичная запись дроби $1/m$ имеет вид $0,(a_1a_2\dots a_n)$.
+
+b) Пусть $p>5$ --- простое число.  Докажите, что $1/p=0,(a_1a_2\dots a_n)$ (т.е. дробь не имеет предпериода).
+
+c) Запишем $1/p=0,(a_1a_2\dots a_n)$. Докажите, что $p-1$ делится на $n$.
+
+d) Запишем $1/p=0,(a_1a_2\dots a_n)$. Докажите, что дробь $0,(a_2a_3\dots a_na_1)$ --- тоже дробь со знаменателем $p$.
+
+\item Найдите такое шестизначное число $x$, что $x$, $2x$, $3x$, $4x$, $5x$ и $6x$ записываются одинаковым набором цифр, но в различном порядке.
+
+\end{enumerate}
+\end{document}

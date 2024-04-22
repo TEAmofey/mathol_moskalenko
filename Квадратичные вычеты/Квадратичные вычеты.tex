@@ -1,0 +1,120 @@
+\documentclass{article}
+\usepackage[12pt]{extsizes}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{graphics}
+\usepackage{graphicx}
+
+\usepackage{lipsum}
+
+\newtheorem{theorem}{Теорема}
+\newtheorem{task}{Задача}
+\newtheorem{lemma}{Лемма}
+\newtheorem{definition}{Определение}
+\newtheorem{example}{Пример}
+\newtheorem{statement}{Утверждение}
+\newtheorem{corollary}{Следствие}
+
+
+\usepackage{geometry} % Меняем поля страницы
+\geometry{left=1cm}% левое поле
+\geometry{right=1cm}% правое поле
+\geometry{top=1.5cm}% верхнее поле
+\geometry{bottom=1cm}% нижнее поле
+
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[L]{Математика}
+\fancyhead[C]{\textit{Теория чисел}}
+\fancyhead[R]{25 ноября 2023}% Custom header text
+
+
+%----------------------------------------------------------------------------------------
+
+%\begin{document}\normalsize
+\begin{document}\large
+	
+\begin{center}
+	\textbf{Квадратичные вычеты}
+\end{center}
+
+\textbf{Определение:} 
+Зафиксируем простое число $p$. Для числа $a$, не делящегося на $p$, рассмотрим сравнение $x^2 \equiv a \pmod{p}$. Если это сравнение имеет решение, то число $a$ называется квадратичным вычетом по модулю $p$, в противном случае — квадратичным невычетом по модулю $p$. Достаточно часто слово «квадратичный» мы будем опускать.
+
+\textbf{Свойства:}  
+
+\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
+	
+\item Пусть $p > 2$. Докажите, что
+
+\begin{enumerate}
+	
+	\item по модулю $p$ существует ровно $\frac{p-1}{2}$ квадратичных вычетов и столько же невычетов;
+	
+	\item произведение двух квадратичных вычетов — вычет; 
+	
+	\item произведение вычета на невычет — невычет;
+	
+	\item произведение двух невычетов — вычет.
+	
+\end{enumerate}
+
+\item Докажите, что все квадратичные вычеты являются корнями многочлена $x^{\frac{p-1}{2}} - 1 \in \mathbb{F}_p[x]$, а все невычеты — корнями многочлена $x^{\frac{p-1}{2}} + 1 \in \mathbb{F}_p[x]$.
+
+\end{enumerate}
+
+\textbf{Определение:} \textit{Символом Лежандра} называется выражение, обозначаемое $\left(\frac{a}{p}\right)$, равное 1, если $a$ — квадратичный вычет по модулю $p$; равное $-1$, если $a$ — невычет по модулю $p$ и 0, если $a$ кратно $p$. 
+
+Из свойств 1 и 2 следует, что $\left(\frac{a}{p}\right) \cdot \left(\frac{b}{p}\right) = \left(\frac{ab}{p}\right)$, а также $\left(\frac{a}{p}\right) \equiv a^{\frac{p-1}{2}} \pmod{p}$.
+
+\textbf{Задачи:}  
+
+\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
+
+\item Пусть $p = 163$, $\left(\frac{a}{p}\right)$ — символ Лежандра. Чему равно $\sum\limits_{a = 1}^p\left(\frac{a}{p}\right)$?
+
+\item Докажите, что если $x^2 + 1$ делится на $p$, то $p$ имеет вид $4k + 1$.
+
+\item Покажите, что для каждого простого числа $ p $ существуют целые числа $ a $ и $ b $, такие что $ a^2 + b^2 +1 $ кратно $ p $.
+
+\item Докажите, что $\left(\frac{-1}{p}\right) = (-1)^{\frac{p - 1}{2}}$.
+
+\item Решите в целых числах уравнение $z(y^2 - 5) = x^2 + 1$.
+
+\item Докажите, что уравнение $4xy - x - y = z^2$ (a) не имеет решений в натуральных числах; (b) имеет бесконечно много решений в целых числах.
+
+\item Решите в целых числах уравнение $x^3 + 7 = y^2$.
+
+
+
+\item Докажите, что $\left(\frac{2}{p}\right) = (-1)^{\frac{p^2 - 1}{8}}$.
+
+\item \textbf{Лемма Эйзенштейна} Докажите, что $$\left(\frac{a}{p}\right) = (-1)^{\sum\limits_{n=1}^{(p-1)/2}\left\lfloor\frac{2an}{p}\right\rfloor}.$$
+
+\item Четность числа $\varepsilon(q)$ совпадает с четностью числа целых точек в треугольнике, заданном неравенствами $0 < x<\frac{p}{2} , 0 < y < \frac{q}{2}, y < \frac{qx}{p}$
+
+\item \textbf{Квадратичный закон взаимности} Для различных нечетных простых чисел имеет место равенство $$\left(\frac{p}{q}\right) \cdot \left(\frac{q}{p}\right) = (-1)^{\frac{p-1}{2}\cdot\frac{q-1}{2}}$$
+
+\item Является ли число 74 квадратичным вычетом по модулю 131?
+
+\item Целое число $a$ таково, что $a^2 - 6a + 3$ делится на некоторое простое $p$. Докажите, что
+существует целое число $b$ такое, что $b^2 - 2b - 53$ делится на $p$.
+
+\item Дано натуральное $a$, не делящееся на простое $p$. Рассмотрим перестановку чисел $0, 1, \ldots, p-1$, на $i$-м месте которой стоит остаток $ai$ от деления на $p$. Докажите, что эта перестановка четна при $\left(\frac{a}{p}\right) = 1$ и нечетна при $\left(\frac{a}{p}\right) = -1$
+
+\item Для простого $p$ найдите значение выражения $$\sum\limits_{a = 1}^{p-1}\left(\frac{a^2 + a}{p}\right)$$
+
+\item Докажите, что для простого числа $p > 2$ наименьший квадратичный невычет по модулю $p$ меньше $1 + \sqrt{p}$.
+
+	
+\end{enumerate}
+\end{document}

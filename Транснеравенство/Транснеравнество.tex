@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage[12pt]{extsizes}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{graphics}
+
+\usepackage{lipsum}
+
+
+
+\usepackage{geometry} % Меняем поля страницы
+\geometry{left=1cm}% левое поле
+\geometry{right=1cm}% правое поле
+\geometry{top=1.5cm}% верхнее поле
+\geometry{bottom=1cm}% нижнее поле
+
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[L]{Математика}
+\fancyhead[C]{\textit{Алгебра}}
+\fancyhead[R]{6 апреля 2023}% Custom header text
+
+
+%----------------------------------------------------------------------------------------
+
+%\begin{document}\normalsize
+\begin{document}\large
+	
+	\begin{center}
+		\textbf{Транснеравенство}
+	\end{center}
+	
+	\textbf{Транснеравенство.} \textit{Пусть $a_1 \geqslant a_2 \geqslant a_3 \geqslant \ldots \geqslant a_n$ и $b_1 \geqslant b_2 \geqslant b_3 \geqslant \ldots \geqslant b_n$. И пусть числа $c_1, c_2, \ldots, c_n$ --- некоторая перестановка чисел $b_1, b_2, \ldots, b_n$. Тогда $$a_1b_1 + a_2b_2 + \ldots + a_nb_n \geqslant a_1c_1 + a_2c_2 + \ldots + a_nc_n \geqslant a_1b_n + a_2b_{n-1} + \ldots + a_nb_1.$$}
+	
+	Во всех предложенных задачах подразумевается, что рассматриваемые числа положительны.\\[5pt]
+	
+	
+	\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
+		
+		\item  Докажите, что $$a^4 + b^4 + c^4 \geqslant a^3b + b^3c + c^3a.$$
+		
+		\item Докажите, что $$\frac{a^3}{b} + \frac{b^3}{c} + \frac{c^3}{a} \geqslant a^2 + b^2 + c^2.$$
+		
+		\item Докажите, что $$\frac{a_1}{a_2} + \frac{a_2}{a_3} + \ldots \frac{a_{n-1}}{a_n} + \frac{a_n}{a_1} \geqslant n.$$
+		
+		\item Докажите, что $$\frac{x}{x+y} + \frac{y}{y+z} + \frac{z}{z+x} \leqslant \frac{x}{y+z} + \frac{y}{z+x} + \frac{z}{x+y}.$$
+		
+		\item Докажите неравенство $$a + b + c \geqslant \frac{a(b+1)}{a+1} + \frac{b(c+1)}{b+1} + \frac{c(a+1)}{c+1}.$$
+		
+		\item Докажите неравенство $$\sqrt{ab} + \sqrt{ac} + \sqrt{ad} + \sqrt{bc} + \sqrt{bd} + \sqrt{cd} \leqslant \frac{3}{2}(a + b + c + d).$$
+		
+		\item Докажите неравенство $$\frac{a}{b(b+c)} + \frac{b}{c(c+a)} + \frac{c}{a(a+b)} \geqslant \frac{1}{a+b} + \frac{1}{b+c} + \frac{1}{c+a}.$$
+		
+		%\item Докажите, что: 
+		%\footnotesize
+		%$$\frac{((a-2)^2 + 2bc)((b-2)^2 + 2ca)}{(c-2)^2 + 2ab} + \frac{((b-2)^2 + 2ca)((c-2)^2 + 2ab)}{(a-2)^2 + 2bc} + \frac{((c-2)^2 + 2ab)((a-2)^2 + 2bc)}{(b-2)^2 + 2ca} \ge 8.$$
+		
+		\normalsize
+		\item\textbf{Неравенство Чебышева.} Пусть $a_1 \geqslant a_2 \geqslant \ldots \geqslant a_n$ и $b_1 \geqslant b_2 \geqslant \ldots \geqslant b_n$. Докажите, что $$\frac{a_1b_1 + a_2b_2 + \ldots a_nb_n}{n} \geqslant \frac{a_1 + a_2 + \ldots + a_n}{n} \cdot \frac{b_1 + b_2 + \ldots b_n}{n}.$$
+		
+	\end{enumerate}
+\end{document}

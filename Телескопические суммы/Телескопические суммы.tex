@@ -1,0 +1,120 @@
+\documentclass{article}
+\usepackage[12pt]{extsizes}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{graphics}
+\usepackage{graphicx}
+
+\usepackage{lipsum}
+
+\newcommand{\definebox}[3]{%
+	\newcounter{#1}
+	\newenvironment{#1}[1][]{%
+		\stepcounter{#1}%
+		\mdfsetup{%
+			frametitle={%
+				\tikz[baseline=(current bounding box.east),outer sep=0pt]
+				\node[anchor=east,rectangle,fill=white]
+				{\strut #2~\csname the#1\endcsname\ifstrempty{##1}{}{##1}};}}%
+		\mdfsetup{innertopmargin=1pt,linecolor=#3,%
+			linewidth=3pt,topline=true,
+			frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}%
+		\begin{mdframed}[]\relax%
+		}{\end{mdframed}}%
+}
+
+\definebox{definition}{Определение}{blue!24}
+\definebox{task}{Задача}{orange!24}
+
+\usepackage{geometry} % Меняем поля страницы
+\geometry{left=1cm}% левое поле
+\geometry{right=1cm}% правое поле
+\geometry{top=1.5cm}% верхнее поле
+\geometry{bottom=1cm}% нижнее поле
+
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[L]{ЦРОД $\bullet$ Математика}
+\fancyhead[C]{\textit{Алгебра и Теория Чисел}}
+\fancyhead[R]{ЛФМШ 2023}% Custom header text
+
+
+
+%----------------------------------------------------------------------------------------
+
+%\begin{document}\normalsize
+\begin{document}\large
+	
+	
+	\begin{center}
+		\textbf{Телескопические суммы}
+	\end{center}
+
+Слагаемые разных знаков могут компенсировать друг друга или давать более простую разность. То же верно и для сомножителей.
+
+\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
+
+\setcounter{enumi}{-3}
+
+\item $(1\cdot 3+3\cdot 5+5\cdot 7+...+99\cdot 101) - (2^2+4^2+6^2+ \dotsc +100^2).$
+\end{enumerate}
+
+Взаимно уничтожающиеся слагаемые можно получить, заменив каждое слагаемое на разность.
+
+\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
+	
+\setcounter{enumi}{-2}
+
+\item $\dfrac{1}{1 \cdot 2} + \dfrac{1}{2 \cdot 3} + \dotsc +  \dfrac{1}{(n-1) \cdot n}.$
+	
+
+
+\end{enumerate}
+
+Разность может отличаться от члена суммы в несколько раз или содержать дополнительное слагаемое. Но и общий множитель, и лишние слагаемые часто удаётся учесть или сосчитать отдельно.
+
+\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
+	
+	\setcounter{enumi}{-1}
+	
+	\item $\dfrac{1}{1 \cdot 4} + \dfrac{1}{4 \cdot 7} + \dotsc +  \dfrac{1}{97 \cdot 100}.$
+	
+\end{enumerate}
+
+Если мы «подозреваем» формулу $F(n)$ для суммы $n$ первых членов, это немедленно дает нам представление $n$-го члена как разности $F(n)-F(n-1)$. Для подозрений есть основания: сумма линейных выражений (арифметической прогресии) всегда квадратична, квадратичных – кубична, и т.д. Коэффициенты можно подобрать.
+
+
+\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
+	
+	\setcounter{enumi}{0}
+	
+	\item $(1\cdot 3+3\cdot 5+5\cdot 7+...+99\cdot 101) - (1^2+3^2+5^2+ \dotsc +99^2).$
+	\item $\left(1+ \dfrac{1}{2}\right) \cdot  \left(1+ \dfrac{1}{3}\right) \cdot  \left(1+ \dfrac{1}{4}\right) \cdot  \dotsc \cdot  \left(1+ \dfrac{1}{100}\right).$
+	
+	\item $1!\cdot 1 + 2!\cdot 2 + 3!\cdot 3 + ... +100!\cdot 100.$
+	
+	\item $\dfrac{2^2}{1 \cdot 3} + \dfrac{4^2}{3 \cdot 5} + \dotsc +  \dfrac{100^2}{99 \cdot 101}.$
+	
+	\item $3\cdot 1\cdot 2 + 3\cdot 2\cdot 3 + 3\cdot 3\cdot 4 + ... +3\cdot 99\cdot 100.$ 
+	
+	\item $\dfrac{1}{1^2 \cdot 3^2} + \dfrac{2}{3^2 \cdot 5^2} + \dotsc +  \dfrac{50}{99^2 \cdot 101^2}.$
+	
+	Найдите формулу зависящую от $n$ 
+	\item $1^2 + 2^2 + 3^2 + \dotsc +n^2$
+	\item $1^3 + 2^3 + 3^3 + \dotsc +n^3$
+	\item $1^4 + 2^4 + 3^4 + \dotsc +n^4$
+	
+	\item Для каждого натурального $n \ge 2$ вычислите сумму $$\dfrac{1}{1} + \dfrac{1}{2} + \dotso +  \dfrac{1}{n} + \dfrac{1}{1 \cdot 2} + \dfrac{1}{1 \cdot 3} + \dotso +  \dfrac{1}{(n-1) \cdot n} + \dotso + \dfrac{1}{1 \cdot 2 \cdot \dotso \cdot n}$$.
+	
+\end{enumerate}
+
+\end{document}

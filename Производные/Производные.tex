@@ -1,0 +1,104 @@
+\documentclass{article}
+\usepackage[12pt]{extsizes}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[inline]{enumitem}
+\usepackage{enumitem}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{multicol}
+
+\usepackage{lipsum}
+
+\newtheorem{theorem}{Теорема}
+\newtheorem{task}{Задача}
+\newtheorem{lemma}{Лемма}
+\newtheorem{definition}{Определение}
+\newtheorem{example}{Пример}
+\newtheorem{statement}{Утверждение}
+\newtheorem{corollary}{Следствие}
+
+
+\usepackage{geometry} % Меняем поля страницы
+\geometry{left=1cm}% левое поле
+\geometry{right=1cm}% правое поле
+\geometry{top=1.5cm}% верхнее поле
+\geometry{bottom=1cm}% нижнее поле
+
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[L]{Математика}
+\fancyhead[C]{\textit{Математический анализ}}
+\fancyhead[R]{2024}% Custom header text
+
+
+%----------------------------------------------------------------------------------------
+
+%\begin{document}\normalsize
+\begin{document}\large
+	
+	
+	\begin{center}
+		\textbf{Производные}
+	\end{center}
+	
+	
+	Свойства производных
+	\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
+		\item $$(A\cdot f(x) + B\cdot g(x))' = A \cdot f'(x) + B\cdot g'(x)$$
+		\item $$(f(ax + b))' = a \cdot f'(ax + b)$$
+		\item $$(f(x)g(x))' = f'(x)g(x) + f(x)g'(x)$$
+		\item $$\left(\frac{f(x)}{g(x)}\right)' = \frac{f'(x)g(x) - f(x)g'(x)}{g(x)^2}$$
+		\item $$(f(g(x)))' = f'(g(x)) \cdot g'(x)$$
+	\end{enumerate}
+	
+	Вычислите производные следующих функций:\\
+\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
+	\setcounter{enumi}{5}
+	\begin{multicols}{4}
+\item $x^2$
+
+\item $e^x$
+
+\item $\ln(x)$
+
+\item $2^x$
+
+\item $\sin(x)$
+
+\item $\cos(x)$
+
+\item $\tg(x)$
+
+\item $\frac{1}{x}$
+
+\item $\frac{1}{\sqrt{x}}$
+
+\item $\frac{1}{1 + x^4}$
+
+\item $\sqrt{1 + x^2}$
+
+\item $\dfrac{\cos(x)}{x^5 - 1}$
+
+\item $2^x\sin(x)$
+
+\item $e^{\tg(x)}$
+
+\item $\frac{e^x}{x^2}$
+
+\item $\sin^n(x)$
+
+\item $\ln(\sin(x))$
+
+\item[\protect\fbox{23*}] $x^x$
+\end{multicols}
+\end{enumerate}
+\end{document}\textsl{}

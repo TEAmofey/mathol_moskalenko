@@ -1,0 +1,99 @@
+\documentclass{article}
+\usepackage[12pt]{extsizes}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{graphics}
+\usepackage{graphicx}
+
+\usepackage{lipsum}
+
+\newcommand{\definebox}[3]{%
+	\newcounter{#1}
+	\newenvironment{#1}[1][]{%
+		\stepcounter{#1}%
+		\mdfsetup{%
+			frametitle={%
+				\tikz[baseline=(current bounding box.east),outer sep=0pt]
+				\node[anchor=east,rectangle,fill=white]
+				{\strut #2~\csname the#1\endcsname\ifstrempty{##1}{}{##1}};}}%
+		\mdfsetup{innertopmargin=1pt,linecolor=#3,%
+			linewidth=3pt,topline=true,
+			frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}%
+		\begin{mdframed}[]\relax%
+		}{\end{mdframed}}%
+}
+
+\definebox{definition}{Определение}{blue!24}
+\definebox{task}{Задача}{orange!24}
+
+\usepackage{geometry} % Меняем поля страницы
+\geometry{left=1cm}% левое поле
+\geometry{right=1cm}% правое поле
+\geometry{top=1.5cm}% верхнее поле
+\geometry{bottom=1cm}% нижнее поле
+
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[L]{Математика}
+\fancyhead[C]{\textit{Алгебра}}
+\fancyhead[R]{27 сентября 2023}% Custom header text
+
+
+
+%----------------------------------------------------------------------------------------
+
+%\begin{document}\normalsize
+\begin{document}\large
+	
+	
+	\begin{center}
+		\textbf{Тригонометрия}
+	\end{center}
+
+
+\begin{table}[h]\label{table-2} 
+	\centering
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		\textbf{$\alpha$} & \textbf{$0^\circ$} & \textbf{$30^\circ$} & \textbf{$45^\circ$} & \textbf{$60^\circ$} \\\hline
+		$\sin(\alpha)$ & $0$ & $\dfrac{1}{2}$ & $\dfrac{\sqrt{2}}{2}$ & $\dfrac{\sqrt{3}}{2}$ \\[3mm]\hline
+		$\cos(\alpha)$ & $1$ & $\dfrac{\sqrt{3}}{2}$  & $\dfrac{\sqrt{2}}{2}$ & $\dfrac{1}{2}$ \\[3mm]\hline
+		$\tg(\alpha)$ & $0$ & $\dfrac{\sqrt{3}}{3}$ & $1$ & $\sqrt{3}$ \\[3mm]\hline
+	\end{tabular}
+	\caption{Тригонометрическая таблица (Обязательно запомнить)}
+\end{table}
+
+
+\textbf{Задачи:}
+
+\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
+	
+	\setcounter{enumi}{0}
+	
+	\item Вычислите значение выражение $\sin 20^\circ \sin 40^\circ \sin 60^\circ \sin 80^\circ$.
+
+	\item Вычислите значение выражение $\cos 20^\circ \cos 40^\circ \cos 60^\circ \cos 80^\circ$.
+	
+	\item Упростите выражение $\cos (a) \cdot \cos (2a) \cdot \cos (4a) \cdot \dotsc \cdot \cos (2^{n-1}a)$.
+	
+	\item Известно, что  $\tg \alpha + \tg \beta = 2$ и $\ctg \alpha + \ctg \beta = 3$.  Найдите $ \tg (\alpha + \beta) $.
+	
+	\item Найдите $ \sin(15^\circ) $ и  $ \cos(15^\circ) $ 
+	
+	\item Найдите $ \sin(10^\circ) $ и $ \cos(10^\circ) $ 
+	
+	\item Что больше $\dfrac{\sin1^\circ}{\sin2^\circ}$ или $\dfrac{\sin3^\circ}{\sin4^\circ}$
+
+	\item При каких значениях $c$ числа $ \sin \alpha $  и $ \cos \alpha $ являются корнями квадратного уравнения  $5x^2 - 3x + c = 0$  ($ \alpha $~--- некоторый угол)?
+\end{enumerate}
+
+\end{document}

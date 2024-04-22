@@ -1,0 +1,175 @@
+\documentclass{article}
+\usepackage[12pt]{extsizes}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{graphics}
+
+\usepackage{lipsum}
+
+
+\newtheorem{theorem}{Теорема}
+\newtheorem{task}{Задача}
+\newtheorem{lemma}{Лемма}
+\newtheorem{definition}{Определение}
+\newtheorem{example}{Пример}
+\newtheorem{statement}{Утверждение}
+\newtheorem{corollary}{Следствие}
+
+
+\usepackage{geometry} % Меняем поля страницы
+\geometry{left=1cm}% левое поле
+\geometry{right=1cm}% правое поле
+\geometry{top=1.5cm}% верхнее поле
+\geometry{bottom=1cm}% нижнее поле
+
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[L]{ЦРОД $\bullet$ Математика}
+\fancyhead[C]{\textit{Теория множеств}}
+\fancyhead[R]{Ноябрь 2022}% Custom header text
+
+
+%----------------------------------------------------------------------------------------
+
+%\begin{document}\normalsize
+\begin{document}\large
+	
+	
+\begin{center}
+	\textbf{Бесконечные множества}
+\end{center}
+
+\begin{definition}
+	Множество - неупорядоченная совокупность элементов.
+\end{definition}
+
+\textbf{Пример 1:} $\{1,2,3\} = \{3,2,1\} = \{1,1,3,2,3,3\}$
+
+\textbf{Пример 2:} $\{\} =\varnothing$
+
+\textbf{Пример 3:} $\{a,\{b,c\},\{\{d\},e\},\varnothing\}$
+
+\begin{definition}
+	$a \in A$ - означает, что во множестве $A$ есть элемент $a$
+\end{definition}
+
+\begin{definition}
+	$B \subseteq A$ - означает, что если $b \in B$, то $b \in A$.
+\end{definition}
+
+\textbf{Пример 4:} $1\in\{1,2,3\},\{1,2\}\subseteq\{1,2,3\}$
+
+\textbf{Пример 5:} $1\notin\varnothing$
+
+\textbf{Пример 6:} $\{b,c\}\in \{a,\{b,c\},\{\{d\},e\},\varnothing\}$
+
+\begin{definition}
+	Введём особые символы для часто использующихся множеств. 
+	
+	$\mathbb{N} = \{1,2,3,4,\dotsc \}$ - множество натуральных чисел 
+	
+	$\mathbb{N}_0 = \{0,1,2,3,4,\dotsc \}$ - множество натуральных чисел и ноль
+	
+	$\mathbb{Z} = \{\dotsc, -3, -2, -1, 0,1,2,3,\dotsc \}$ - множество целых чисел 
+	
+	$\mathbb{Q}$ - множество рациональных чисел
+	
+	$\mathbb{R}$ - множество вещественных чисел 
+	
+	$\mathbb{R\backslash Q}$ - множество иррациональных чисел 
+	
+	$\mathbb{A}$ - множество алгебраических чисел (числа, которые могут быть корнями многочленов с целыми коэффициентами)
+	
+\end{definition}
+
+\textbf{Пример 7:} $\mathbb{N} \subset \mathbb{N}_0 \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{A} \subset \mathbb{R}$
+
+\begin{definition}
+ 	$|A|$ - мощность множества $A$ - количество элементов в нем.
+ 	
+ 	$|A| = |B|$ - множества $A$ и $B$ равномощны --- между ними есть биекция 
+\end{definition}
+
+
+\textbf{Пример 8:} $|\{a,\{b,c\},\{\{d\},e\},\varnothing\}| = |\{0,1,2,3\}| = 4$
+
+\begin{definition}
+	$A \times B$ - множество упорядоченных пар $(a,b)$, где $a\in A, b\in B$
+	
+	$A^n = \underbrace{A\times A \times \dotsc \times A}_{n \text{ раз}}$
+\end{definition}
+
+\textbf{Пример 9:} $\{a,b\}\times \{0,1,2\} = \{(a,0),(a,1),(a,2),(b,0),(b,1),(b,2)\} $
+
+\textbf{Пример 10:} $\{a,b\}^2 = \{(a,a),(a,b),(b,a),(b,b)\} $
+
+\begin{definition}
+	$A^* = \{\varnothing\} \cup A \cup A^2 \cup A^3 \dotsc$ - множество всех конечных подпоследовательностей
+\end{definition}
+
+\textbf{Пример 10:} $\{a,b\}^* = \{\varnothing, a,b,aa,ab,ba,bb,aaa,aab,\dotsc\} $
+
+\begin{definition}
+	$2^A$ - множество всех подмножеств множества $A$
+\end{definition}
+
+\textbf{Пример 11:} $2^{\{1,2,3\}} = \{\{\}, \{1\},\{2\},\{3\},\{1,2\},\{1,3\},\{2,3\},\{1,2,3\}\} $
+
+\begin{definition}
+	$|A| = |B|$ - если между множествами $A$ и $B$ есть взаимно однозначное соответствие (биекция)
+\end{definition}
+
+\begin{definition}
+	Если $|A| = |\mathbb{N}|$, то $A$ называется счётным множеством (его элементы можно пересчитать)
+\end{definition}
+
+\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
+	
+\item Докажите, что $|$Чётных положительных$| = |\mathbb{N}| $
+
+\item Докажите, что $|$Нечётных положительных$| = |\mathbb{N}| $
+
+\item Докажите, что $|\mathbb{Z}| = |\mathbb{N}|$
+
+\item $|\mathbb{Q}| \stackrel{?}{=} |\mathbb{N}|$
+
+\item $|\mathbb{N}^2| \stackrel{?}{=} |\mathbb{N}|$
+
+\item Докажите, что если $|A| = |B| = |\mathbb{N}|$, то $A\cup B = |\mathbb{N}|$
+
+\item $|\mathbb{N}^*| \stackrel{?}{=} |\mathbb{N}|$
+
+\item $|\mathbb{A}| \stackrel{?}{=} |\mathbb{N}|$
+
+\item Докажите, что $|\mathbb{R}| = |2^{\mathbb{N}}|$
+
+\item Докажите, что $|\mathbb{R}| \neq |\mathbb{N}|$
+
+\item Докажите, что для любого множества $A$: $|2^A| \neq |A|$
+
+\item Докажите, что множество точек интервала $(0,1)$ равномощно множеству точек прямой $\mathbb{R}$
+
+\item Докажите, что $|\mathbb{R}^2| = |\mathbb{R}|$
+
+\item Докажите, что $|\mathbb{R}^n| = |\mathbb{R}|$
+
+\item Докажите, что $|\mathbb{R}^*| = |\mathbb{R}|$
+
+
+
+
+
+
+
+
+\end{enumerate}
+\end{document}

@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage[12pt]{extsizes}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{graphics}
+\usepackage{graphicx}
+
+\usepackage{lipsum}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+
+
+\usepackage{geometry} % Меняем поля страницы
+\geometry{left=1cm}% левое поле
+\geometry{right=1cm}% правое поле
+\geometry{top=1.5cm}% верхнее поле
+\geometry{bottom=1cm}% нижнее поле
+
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[L]{Математика}
+\fancyhead[C]{\textit{Алгебра}}
+\fancyhead[R]{17 октября 2023}% Custom header text
+
+%----------------------------------------------------------------------------------------
+
+%\begin{document}\normalsize
+\begin{document}\large
+	
+
+\begin{center}
+\textbf{Многочлены}
+\end{center}
+
+\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
+	
+\item Докажите, что любой многочлен нечётной степени имеет хотя бы один корень
+
+\item Дан многочлен $P(x)$ с вещественными коэффициентами нечетной степени. Докажите, что уравнение $P(P(x)) = 0$ имеет не меньше различных вещественных корней, чем уравнение $P(x) = 0$.
+
+\item Последовательность многочленов $P_1(x), P_2(x), \ldots, P_n(x), \ldots$ удовлетворяет равенствам $P_1(x) = x$ и $P_{n+1}(x) = P_n(x - 1)P_n(x + 1)$. Найдите наибольшее натуральное $k$, для которого $P_{2021}(x)$ делится на $x^k$.
+
+\item В выражении $(x^4 + x^3 - 3x^2 + x + 2)^{2019}$ раскрыли скобки и привели подобные слагаемые. Докажите, что при некоторой степени переменной $x$ получился отрицательный коэффициент.
+
+\item Даны два различных приведенных кубических многочлена $F(x)$ и $G(x)$. Выписали все корни уравнений $F(x) = 0$, $G(x) = 0$, $F(x) = G(x)$. Оказалось, что выписаны 8 различных чисел. Докажите, что наибольшее и наименьшее из них не могут одновременно являться корнями многочлена $F(x)$.
+
+\item Многочлен $P(x)$ с целыми коэффициентами имеет 100 различных целых корней. Многочлен $Q(x)$ степени не ниже первой с целыми коэффициентами — делитель $P(x) + 2021$. Докажите, что степень $Q(x)$ не меньше 13.
+
+\item Дан непостоянный многочлен $P(x)$ с натуральными коэффициентами. Докажите, что найдется целое число $k$ такое, что числа $P(k), P(k+1), \ldots, P(k+2021)$ — составные.
+
+\item Дано натуральное число $k$.
+
+(а) Докажите, что найдется такое $n$ и расстановка знаков, что $1^k \pm 2^k \pm \ldots \pm n^k = 0$.
+
+(б) Для каждого натурального $m$ обозначим через $f(m)$ наименьшее значение выражения $|1^k \pm 2^k \pm \ldots \pm m^k|$ по всем расстановкам знаков. Докажите, что функция $f(m)$ периодична, начиная с некоторого места.
+
+
+\end{enumerate}
+\end{document}

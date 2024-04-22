@@ -1,0 +1,78 @@
+\documentclass{article}
+
+\include{../commons/libraries}
+\include{../commons/aliases}
+
+\smallindent
+
+\header{Математика}{\textit{Алгебра}}{21 апреля 2024}
+
+%----------------------------------------------------------------------------------------
+
+%\begin{document}\normalsize
+\begin{document}
+    \large
+
+    \begin{center}
+        \textbf{Неравенство Йенсена}
+    \end{center}
+
+    \textbf{Определение:}
+    Функция $f : [a, b] \rightarrow \mathbb{R}$ называется \emph{выпуклой} на $[a, b]$, если для любых $x, y \in [a, b]$ и любых $\alpha, \beta > 0$ таких, что $\alpha + \beta = 1$, выполняется неравенство
+    \[
+        f(\alpha x + \beta y) \leq \alpha f(x) + \beta f(y).
+    \]
+    Функция $f$ называется \emph{вогнутой} на $[a, b]$, если при тех же условиях выполняется аналогичное неравенство с противоположным знаком $\geqslant$.
+
+    Геометрически, функция $f$ выпукла (вогнута), если любая точка любой хорды кривой $y = f(x)$ лежит над (под) этой кривой или на ней.
+
+    \textbf{Факт:} Если для всех $x \in (a, b)$ выполняется условие $f''(x) > 0$, то функция $f$ выпукла на отрезке $[a, b]$.
+    Если для всех $x \in (a, b)$ выполняется условие $f''(x) < 0$, то функция $f$ вогнута на отрезке $[a, b]$.
+    \begin{enumerate_boxed}
+
+        \item Функция $f$ выпукла на $[a, b]$.
+        Пусть числа $x_1, \ldots, x_n$ принадлежат отрезку $[a, b]$, а числа $\alpha_1, \ldots, \alpha_n$ неотрицательны и в сумме дают 1.
+        Докажите, что
+        \[
+            f(\alpha_1 x_1 + \cdots + \alpha_n x_n) \leqslant \alpha_1 f(x_1) + \cdots + \alpha_n f(x_n).
+        \]
+        Для вогнутой функции выполнено аналогичное неравенство со знаком $\geqslant$.
+
+        \item Пусть $x_1, \ldots, x_n \in [0, \pi]$.
+        Докажите, что
+        \[
+            \sin x_1 + \cdots + \sin x_n \leq n \cdot \sin \frac{x_1 + \cdots + x_n}{n}.
+        \]
+
+        \item Пусть $x_1, \ldots, x_n \geqslant 0$, $\alpha > 1$.
+        Докажите, что
+        \[
+            \left(\frac{x_1^\alpha + x_2^\alpha + \dotsc + x_n^\alpha}{n}\right)^{1/\alpha} \geqslant \frac{x_1 + x_2 + \dotsc + x_n}{n}.
+        \]
+
+        \item Пусть $x_1, \ldots, x_n > 0$.
+        Докажите, что
+        \[
+            \left(x_1 + x_2 + \dotsc + x_n\right)\left(\frac{1}{x_1} + \frac{1}{x_2} + \dotsc + \frac{1}{x_n}\right) \geqslant n^2.
+        \]
+
+        \item Числа $x_1, \ldots, x_n$ неотрицательны и в сумме дают 1.
+        Докажите, что
+        \[
+            \frac{x_1}{\sqrt{1 - x_1}} + \cdots + \frac{x_n}{\sqrt{1 - x_n}} > \sqrt{\frac{n}{{n - 1}}}.
+        \]
+
+        \item Докажите, что для положительных $x_i$ и $y_i$ верно
+        \[
+            \sqrt{\left(x_1 + x_2 + \dotsc + x_n\right)^2 + \left(y_1 + y_2 + \dotsc + y_n\right)^2} \leq \sqrt{x_1^2 + y_1^2} + \sqrt{x_2^2 + y_2^2} + \dotsc + \sqrt{x_n^2 + y_n^2}.
+        \]
+
+        \item \textbf{Неравенство Гёльдера.} Пусть $p, q > 0$ таковы, что $\frac{1}{p} + \frac{1}{q} = 1$.
+        Докажите, что для положительных $a_i$ и $b_i$ выполнено:
+
+        \[
+            (a_1 b_1 + a_2 b_2 + \dotsc + a_n b_n) \leqslant \left(a_1^p + a_2^p + \dotsc + a_n^p\right)^{1/p} \left(b_1^q + b_2^q+ \dotsc +b_n^q\right)^{1/q}.
+        \]
+
+    \end{enumerate_boxed}
+\end{document}

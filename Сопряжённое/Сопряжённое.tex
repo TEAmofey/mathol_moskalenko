@@ -1,0 +1,116 @@
+\documentclass{article}
+\usepackage[12pt]{extsizes}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{graphics}
+\usepackage{graphicx}
+
+\usepackage{lipsum}
+
+\newtheorem{theorem}{Теорема}
+\newtheorem{task}{Задача}
+\newtheorem{lemma}{Лемма}
+\newtheorem{definition}{Определение}
+\newtheorem{exercise}{Упражнение}
+\newtheorem{example}{Пример}
+\newtheorem{statement}{Утверждение}
+\newtheorem{corollary}{Следствие}
+
+
+\usepackage{geometry} % Меняем поля страницы
+\geometry{left=1cm}% левое поле
+\geometry{right=1cm}% правое поле
+\geometry{top=1.5cm}% верхнее поле
+\geometry{bottom=1cm}% нижнее поле
+
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[L]{ЦРОД $\bullet$ Математика}
+\fancyhead[C]{\textit{На первый взгляд дичь...}}
+\fancyhead[R]{ЦРОД 2022}% Custom header text
+
+
+%----------------------------------------------------------------------------------------
+
+%\begin{document}\normalsize
+\begin{document}\large
+	
+\begin{center}
+	\textbf{Сопряжённые числа в $\mathbb{Q}[\sqrt{m}]$ и $\mathbb{Z}[\sqrt{m}]$}
+\end{center}
+
+
+\begin{definition}
+Пусть $m$ --- натуральное число, не точный квадрат. 
+Обозначим через $\mathbb{Q}[\sqrt{m}]$ множество чисел вида 
+$a+b\sqrt{m}$, где $a$,~$b\in \mathbb{Q}$. Аналогично определим $\mathbb{Z}[\sqrt{m}]$.
+\end{definition}
+
+\begin{exercise}
+Пусть $a_i$, $b_i\in \mathbb{Q}$. 
+Докажите, что если $a_1+b_1\sqrt{m}=a_2+b_2\sqrt{m}$, то $a_1=a_2$ и $b_1=b_2$. 
+\end{exercise}
+
+\begin{definition}
+Пусть $x\in\mathbb{Q}[\sqrt{m}]$, $x=a+b\sqrt{m}$. Сопряженным к $x$
+называется число $\overline{x}=a-b\sqrt{m}$.
+\end{definition}
+
+\begin{exercise}
+Почему Упражнение 1. должно идти раньше определения сопряжения?
+\end{exercise}
+
+\begin{exercise}
+Пусть $x\in \mathbb{Q}[\sqrt{m}]$. 
+\begin{enumerate}[label*=\alph*)]
+\item Докажите, что $x+\overline{x}\in \mathbb{Q}$ и $x\cdot \overline{x}\in\mathbb{Q}$. 
+Выведите из этого, что $x$ --- корень квадратного трёхчлена с рациональными коэффициентами.
+\item Докажите, что если $x\notin \mathbb{Q}$, то существует единственное $y\in \mathbb{R}$, что $x+y\in \mathbb{Q}$, $x\cdot y\in \mathbb{Q}$.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+Пусть $x_1$, $x_2\in \mathbb{Q}[\sqrt{m}]$. Понятно, что $x_1+x_2$ и ${x_1\cdot x_2}$ также принадлежат
+$\mathbb{Q}[\sqrt{m}]$. Докажите, что если $x_2\neq 0$, то $x_1/x_2$ принадлежит $\mathbb{Q}[\sqrt{m}]$.
+\end{exercise}
+
+\begin{exercise}
+Пусть $x_0$, $x_1$, $x_2\in \mathbb{Q}[\sqrt{m}]$, $f(x)$ --- многочлен с рациональными 
+коэффициентами. Докажите, что 
+\begin{enumerate}[label*=\alph*)]
+	\item $\overline{x_1+x_2}=\overline{x_1}+\overline{x_2}$,
+	\item $\overline{x_1\cdot x_2}=\overline{x_1}\cdot \overline{x_2}$,
+	\item $\overline{x_1/x_2}=\overline{x_1}/\overline{x_2}$, 
+	\item $\overline{f(x_0)}=f(\overline{x_0})$.
+	\item Докажите, что если $x_0$ --- корень многочлена $f(x)$, то и $\overline{x_0}$ корень $f(x)$.
+\end{enumerate}
+\end{exercise}
+
+\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
+	
+	\item Найдите первые 100 цифр после запятой в числе $(2+\sqrt{3})^{1000}$. 
+	
+	\item Докажите, что для рациональных чисел $x$, $y$, $z$ и $t$ не может выполняться равенство
+	$$(x+y\sqrt{2})^4+(z+t\sqrt{2})^4=5+4\sqrt{2}.$$
+	
+	\item Докажите, что для натуральных $m$ и $n$ не может выполняться равенство
+	$(5+3\sqrt{2})^m=(3+5\sqrt{2})^n$.
+	
+	\item Докажите, что $(\sqrt{2}-1)^{2022}=\sqrt{k}-\sqrt{k-1}$ для некоторого $k\in \mathbb{N}$. 
+	
+	\item Докажите, что уравнение $n^2-2m^2 = 1$ имеет 
+	\begin{enumerate}
+		\item 4 решения в целых числах
+		\item бесконечно много решений в целых числах
+\end{enumerate}
+\end{enumerate}
+\end{document}

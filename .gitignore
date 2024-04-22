@@ -1,0 +1,9 @@
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.synctex
+*.bbl
+*.blg
+*.pre
+*.asy

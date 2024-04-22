@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage[12pt]{extsizes}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{graphics}
+\usepackage{graphicx}
+
+\usepackage{lipsum}
+
+\newtheorem{theorem}{Теорема}
+\newtheorem{task}{Задача}
+\newtheorem{lemma}{Лемма}
+\newtheorem{definition}{Определение}
+\newtheorem{example}{Пример}
+\newtheorem{statement}{Утверждение}
+\newtheorem{corollary}{Следствие}
+
+
+\usepackage{geometry} % Меняем поля страницы
+%\geometry{left=1cm}% левое поле
+%\geometry{right=1cm}% правое поле
+\geometry{top=3cm}% верхнее поле
+%\geometry{bottom=1cm}% нижнее поле
+
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[L]{\textit{\textbf{Олимпиада}}}
+\fancyhead[C]{}
+\fancyhead[R]{24 января}% Custom header text
+
+
+%----------------------------------------------------------------------------------------
+
+%\begin{document}\normalsize
+\begin{document}\large
+	
+\begin{center}
+	\LARGE\textbf{9-3}
+\end{center}
+\begin{center}
+	\large\textbf{Второй день}
+\end{center}
+
+
+\begin{enumerate}[label*=9.{\arabic{enumi}}]
+\setcounter{enumi}{4}
+\item Класс из 32 учеников на зимние каникулы поехал в лагерь в Комарово, где было 5 комнат. После смены выяснилось, что любые 2 ребёнка, жившие в одной комнате, стали ненавидеть друг друга. На весенние каникулы класс поехал в лагерь в Рощино, где было 6 комнат. Докажите, что ребят не удастся расселить так, чтобы дети, живущие в одной комнате пока что не испытывали ненависть друг к другу.
+
+\item Докажите неравенство: $$[x]\cdot\{x\} \leqslant \frac{x^2}{4}$$
+
+\item Дан приведённый квадратный трёхчлен $f(x)$. Оказалось, что трёхчлены $f(x) + 2022x - 2023$ и  $f(x) - 2023x + 2022$ не имеют корней. Докажите, что $2023\cdot f(x) - 2022$ тоже не имеет корней.
+
+\item Дан выпуклый четырёхугольник $ABCD$ такой, что его противоположные стороны равны. На стороне $BC$ выбраны точки $E$ и $F$ так, что $E$ лежит между $B$ и $F$. Диагонали четырёхугольника пересекаются в точке $O$. Прямые $AE$ и $DF$ касаются окружности, описанной около треугольника $AOD$. Докажите, что они касаются и окружности, описанной около треугольника $EOF$.
+
+\end{enumerate}
+\end{document}

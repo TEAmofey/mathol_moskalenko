@@ -1,0 +1,213 @@
+\documentclass[b5paper,usehyperref, twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{indentfirst}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage{eurosym}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{icomma}
+\usepackage{hhline}
+\newcommand{\sol}{\textbf{Решение.\ }}
+\newcommand{\dzz}{\medskip\textbf{Для самостоятельного решения\\ }}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\al}{\alpha}
+
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}%
+	{\hbox{$\mathsurround=0pt #1$}}{}}
+%\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}
+%\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\graphicspath{{Pics/}}
+
+\newcommand{\be}{\beta}
+\newcommand{\ga}{\gamma}
+
+\newcommand{\ra}{\rightarrow}
+\newcommand{\Ra}{\Rightarrow}
+\newcommand{\Lra}{\Leftrightarrow}
+\newcommand{\cd}{\cdot}
+\newcommand{\gs}{\geqslant}
+\newcommand{\ls}{\leqslant}
+\newcommand{\tx}{\text}
+\newcommand{\ti}{\times}
+\newcommand{\opr}{\textbf{Определение.\ }}
+\newcommand{\ov}{\overline}
+\newcommand{\df}{\ds\frac}
+\newcommand{\an}{\angle}
+\newcommand{\tr}{\triangle}
+\newcommand{\pa}{\parallel}
+\newcommand{\ig}{\includegraphics}
+\newcommand{\eq}{\equiv}
+\renewcommand{\mod}{\operatorname{mod}}
+\newcommand{\ba}{\begin{array}{c}}
+	\newcommand{\ea}{\end{array}}
+\renewcommand{\sb}{\left\{\ba}
+\newcommand{\se}{\ea\right.}
+\newcommand{\ovr}{\overrightarrow}
+\newcommand{\om}{\omega}
+\renewcommand{\tg}{\operatorname{tg}}
+\renewcommand{\ctg}{\operatorname{ctg}}
+\renewcommand{\phi}{\varphi}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\de}{\mathop{\raisebox{-2pt}{\vdots}}}
+\newcommand{\ub}{\underbrace}
+\newcommand{\arc}{\smile\!}
+
+\usepackage{multirow}
+\usepackage{epigraph}
+
+\tikzset{
+	treenode/.style = {shape=rectangle, rounded corners,
+		draw, align=center,
+		top color=white, bottom color=blue!20},
+	root/.style     = {treenode, font=\Large, bottom color=red!30},
+	env/.style      = {treenode, font=\ttfamily\normalsize},
+	dummy/.style    = {circle,draw}
+}
+
+
+\usepackage[paperheight=20.5cm,paperwidth=14cm, left=0.6cm,right=0.9cm,top=1.8cm,bottom=1.5cm]{geometry}
+
+\parindent=0pt
+\parskip=1pt
+\tolerance=1100
+
+\addto\captionsrussian{\renewcommand{\partname}{Раздел}}
+
+\def\thepart{\arabic{part}}
+
+\hypersetup{pdfstartview=FitH,  linkcolor=linkcolor,urlcolor=urlcolor, colorlinks=true}
+
+\definecolor{linkcolor}{HTML}{000000} % цвет ссылок
+\definecolor{urlcolor}{HTML}{000000} % цвет гиперссылок
+
+
+\newtheorem{Lemma}{Лемма}
+\theoremstyle{definition}
+\newtheorem{Remark}{Замечание}
+\newtheorem{Claim}{Утверждение}
+\newtheorem{Cor}{Следствие}
+\newtheorem{Theorem}{Теорема}
+\newtheorem*{known}{Теорема}
+\def\proofname{Доказательство}
+\theoremstyle{definition}
+\newtheorem{Def}{Определение}
+%\newcounter{partsec}[section]
+%\def\thepartsec{\arabic{part}.\arabic{section}}
+\newtheorem{Task}{}
+
+
+\newtheorem{Example}{}
+
+
+\usepackage{fancyhdr} %загрузим пакет
+\pagestyle{fancy} %применим колонтитул
+\fancyhead[LO]{Летняя математическая школа Стратегия, группа B} %очистим хидер на всякий случай
+\fancyhead[RO]{2023.07.09}
+%\fancyhead[LE,RO]{\thepage} %номер страницы слева сверху на четных и справа на нечетных
+%\fancyhead[CO]{текст-центр-нечетные}  %текст-центр-нечетные
+%\fancyhead[LO]{текст-слева-нечетные}  %текст-слева-нечетные
+%\fancyhead[CE]{текст-центр-четные}    %текст-центр-четные
+\fancyfoot{} %футер будет пустой
+
+\begin{document}
+	\newcounter{totalpics}
+	\newcounter{totaltables}
+	%\setcounter{tocdepth}{2}
+	
+	%
+	%\begin{document}
+	%\begin{center}
+	
+	
+	%\begin{figure}[bh]
+	%\noindent\centering{
+		%\includegraphics[width=70mm]{logo}
+		% }
+	%\label{figCurves}
+	%\end{figure}
+	%\end{center}
+	\centerline{\LARGE Раскраска}
+	
+	%\begin{center}
+	%Преподаватель Подаев М.
+	%\end{center}
+	
+	% \epigraph{Он стал поэтом - для математика у него не хватало фантазии. }{Давид Гильберт}
+	%	\centerline{\LARGE }
+	
+	%\textit{Инвариант} - параметр, который остается неизменным в ходе любой операции.
+	
+	
+\begin{Task}
+	Докажите, что клетчатую доску $10 \times 10$ нельзя разрезать по линиям сетки на прямоугольники $1\times 4$.
+\end{Task}
+
+\begin{Task}
+	На каждой из клеток доски размером $9 \times 9$ находится фишка. Петя хочет передвинуть каждую фишку на соседнюю по стороне клетку так, чтобы снова в каждой из клеток оказалось по одной фишке. Сможет ли Петя это сделать?
+\end{Task}
+
+\centerline{\LARGE Основные задачи}
+	
+\begin{Task}
+	Можно ли разбить квадрат $8 \times 8$ с отрезанным уголком на прямоугольники $1 \times 3$
+\end{Task}
+
+\begin{Task}
+	Можно ли шахматным конем обойти все клетки доски $5 \times 5$, побывав на каждой клетке по одному разу и вернуться последним ходом в исходное положение?
+\end{Task}
+
+\begin{Task}
+	Мышка грызет куб сыра с ребром 3, разбитый на 27 единичных кубиков. Когда мышка съедает какой-либо кубик, она переходит к другому кубику, имеющему общую грань с предыдущим. Может ли мышка съесть весь куб, кроме центрального кубика?
+\end{Task}
+
+\begin{Task}
+	На каждой клетке доски $9 \times 9$ сидело по жуку. По сигналу каждый жук переполз на одну из соседних клеток а) по стороне; б) по диагонали. При этом в каких-то клетках могло оказаться несколько жуков, а какие-то могли оказаться пустыми. Найдите наименьшее возможное количество пустых клеток.
+\end{Task}
+
+\begin{Task}
+	На каждой клетке-треугольничке треугольной доски со стороной 5 сидит жук. В некоторый момент все жуки взлетают и приземляются на соседние (по стороне) клетки этой доски. Докажите, что тогда найдутся по крайней мере 5 пустых клеток.
+\end{Task}
+
+
+\begin{Task}
+	На шахматной доске стоят несколько (не менее четырех) королей. Докажите, что их можно разбить на четыре группы так, чтобы короли каждой группы друг друга не били.
+\end{Task}
+
+\begin{Task}
+	Можно ли клетчатую доску $10 \times 10$ разрезать по линиям сетки на \texttt{T}-тетрамино.
+\end{Task}
+
+\centerline{\LARGE Посложнее}
+
+\begin{Task}
+	Из квадрата $7\times 7$ по линиям сетки вырезали 8 квадратов $2 \times 2$. Докажите, что можно вырезать еще один квадрат $2 \times 2$.
+\end{Task}
+
+\begin{Task}
+	Можно ли клетчатую доску $10 \times 10$ разрезать по линиям сетки на \texttt{L}-тетрамино.
+\end{Task}
+
+%\begin{Task}
+%	В левом нижнем углу доски $9 \times 9$ стоят 9 шашек, образуя квадрат $3 \times 3$. За один ход можно выбрать какие- то две шашки и переставить одну из них симметрично относительно другой (не выходя при этом за пределы доски). Можно ли за несколько ходов переместить эти шашки так, чтобы они образовали квадрат $3 \times 3$: а) в левом верхнем углу; б) в правом верхнем углу; в) в центральном квадрате $3 \times 3$?
+%\end{Task}
+%
+%\begin{Task}
+%	Можно ли три попарно соседние грани кубика $4\times 4\times 4$ оклеить 16 полосками $3\times 1$?
+%\end{Task}
+
+
+\begin{Task}
+	Можно ли шахматную доску разрезать на 15 вертикальных и 17 горизонтальных доминошек?
+\end{Task}
+
+\begin{Task}
+	Прямоугольное дно коробки было выложено квадратами $2 \times 2$ и прямоугольниками $1 \times 4$. Один квадрат потеряли и вместо него нашли прямоугольник. Можно ли теперь сложить дно прямоугольной коробки?
+\end{Task}
+	
+\end{document}

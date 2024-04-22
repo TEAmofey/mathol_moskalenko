@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage[12pt]{extsizes}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{graphics}
+\usepackage{graphicx}
+
+\usepackage{lipsum}
+
+\newtheorem{theorem}{Теорема}
+\newtheorem{task}{Задача}
+\newtheorem{lemma}{Лемма}
+\newtheorem{definition}{Определение}
+\newtheorem{example}{Пример}
+\newtheorem{statement}{Утверждение}
+\newtheorem{corollary}{Следствие}
+
+
+\usepackage{geometry} % Меняем поля страницы
+\geometry{left=1cm}% левое поле
+\geometry{right=1cm}% правое поле
+\geometry{top=1.5cm}% верхнее поле
+\geometry{bottom=1cm}% нижнее поле
+
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[L]{Математика}
+\fancyhead[C]{\textit{Комбинаторика}}
+\fancyhead[R]{2 февраля}% Custom header text
+
+
+%----------------------------------------------------------------------------------------
+
+%\begin{document}\normalsize
+\begin{document}\large
+	
+\begin{center}
+	\textbf{Лампочки}
+\end{center}
+
+
+\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
+	
+\item В ряд стоят 9 лампочек. Кнопки соединены с любыми 4 и любыми семью лампочками, стоящими подряд. Можно ли получить любой узор?
+\item Тот же вопрос для 10 лампочек.
+\item Лампочки образуют таблицу $8 \times 8$. Кнопка соединена с любым квадратом $3 \times 3$
+или $4 \times 4$. Любой ли узор можно получить?
+\item В таблице $100 \times 100$ для каждой лампочки есть кнопка, соединенная с ней и со всеми лампочками, находящимися на той же горизонтали или вертикали. Получите из узора со всеми не горящими лампочками узор со всеми горящими за наименьшее число нажатий.
+\item В каждой вершине графа находит лампочка: включенная либо выключенная. Разрешается одновременно переключать лампочку в любой вершине и всех, с ней смежных. Докажите, что можно состояние всех лампочек изменить на противоположное.
+\end{enumerate}
+\end{document}

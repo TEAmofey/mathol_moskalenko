@@ -1,0 +1,355 @@
+\documentclass{article}
+
+\include{../commons/libraries}
+\include{../commons/aliases}
+\include{../commons/theorems}
+
+\smallindent
+
+\header{Математика}{Группы}{}
+
+%----------------------------------------------------------------------------------------
+
+%\begin{document}\normalsize
+\begin{document}\large
+
+
+\setcounter{task_boxed}{0}
+
+\begin{definition_boxed}
+	\textit{\textbf{Операция}}~--- это функция $X_1 \times \dotsc \times X_n \rightarrow X.$\\
+	Чаще всего рассматривается ситуация, когда $X_1 = \dotsc = X_n = X$. В этом случае операция называется $n$\textit{-арной} операцией на множестве $X$. 
+\end{definition_boxed}
+
+\begin{example}
+0-арная операция это выбор фиксированного элемента
+\end{example}
+
+\begin{definition_boxed}
+	1-арная операция обычное называется \textit{\textbf{унарной}} операцией
+\end{definition_boxed}
+
+
+\begin{example}
+	$f : \Z \rightarrow \Z:$ $f(n) = -n$~--- \textit{унарная} операция
+\end{example}
+
+\begin{definition_boxed}
+2-арная операция обычное называется \textit{\textbf{бинарной}} операцией.\\
+\textit{Бинарные} операции обычно обозначаются не буквами, а значками, например $\star$, и вместо $\star(x, y)$ пишут $x \star y$.
+\end{definition_boxed}
+
+
+\begin{example}
+$+ : \Z \rightarrow \Z:$ $+(a, b) = a + b$~--- \textit{бинарная} операция
+\end{example}
+
+\begin{definition_boxed}
+	Пусть $X$ – множество, а $\star$ – бинарная операция на $X$. Определим следующие свойства.
+	\begin{enumerate}[label*=\textbf{(\arabic{enumi})}]
+		\item $\forall x,y,z \in X: (x \star y) \star z = x \star (y \star z)$ --- \textit{\textbf{ассоциативность}}.
+		\item $\exists e \in X \forall x \in X: e \star x = x \star e = x$ ($e$ называется \textit{\textbf{нейтральным элементом}}).
+		\item $\forall x \in X \exists x' \in X: x \star x' = x' \star x = e$ ($x'$ называется элементом \textit{\textbf{обратным}} к $x$). Если выполнено только одно из равенств $x' \star x = e$ или $x \star x' = e$, то $x'$ называют левым или, соответственно, правым обратным к $x$.
+		\item $\forall x,y \in X: x \star y = y \star x$ --- \textit{\textbf{коммутативность}}.
+	\end{enumerate}
+\end{definition_boxed}
+
+\begin{example}
+	 $\circ$ (композиция) на множестве параллельных переносов --- \textit{ассоциативна}
+ \end{example}
+\begin{example}
+	 $0$~--- \textit{нейтральный элемент} по сложению на множестве целых чисел
+\end{example}
+\begin{example}
+	$ 2 $ \textit{обратный} элемент к $ 3 $ на множестве остатков по модулю 5 с операцией умножения (с операцией сложения, кстати, тоже)
+\end{example}
+
+\begin{definition_boxed}
+Множество $X$ с операцией $\star$ называется\\
+\textit{\textbf{полугруппой}}, если операция ассоциативна;\\
+\textbf{\textit{моноидом}}, если операция ассоциативна и существует нейтральный элемент;\\
+\textbf{\textit{группой}}, если выполнены свойства \textbf{(1) -- (3)}\\
+\textit{Группа} называется \textbf{\textit{Абелева}}, если выполнено \textbf{(4)}.
+\end{definition_boxed}
+
+\begin{example}
+	\textit{Группой} является множество целых чисел с операцией сложения. Нейтральным элементом является 0, обратным элементом к $x$ является $-x$. Группа \textit{коммутативна (Абелева)}.
+\end{example}
+
+\begin{example}
+\textit{Моноидом} является множество целых чисел с операцией умножения. Нейтральным элементом является 1.
+\end{example}
+
+
+\begin{task_boxed}
+	Какие из множеств с бинарной операцией являются \textit{группами}?\\
+	\\
+	\begin{minipage}[c]{0.15\textwidth}
+		\begin{itemize}
+			\item $(\N, +)$
+			\item $(\Z, \cdot)$
+			\item $(\R, +)$
+		\end{itemize}
+	\end{minipage}
+	\begin{minipage}[c]{0.15\textwidth}
+		\begin{itemize}
+			\item $(\Q, +)$
+			\item $(\Q, \cdot)$
+			\item $(\R, \cdot)$
+		\end{itemize}
+	\end{minipage}
+	\begin{minipage}[c]{0.7\textwidth}
+		\begin{itemize}
+			\item Параллельные переносы на плоскости с композицией
+			\item Гомотетии на плоскости с композицией
+			\item Повороты квадрата с композицией
+		\end{itemize}
+	\end{minipage}
+\end{task_boxed}
+
+\begin{task_boxed}
+	\textit{Нейтральный элемент} единственен (это утверждение не зависит даже от ассоциативности).
+\end{task_boxed}
+
+\begin{task_boxed}
+	Если элемент моноида имеет левый и правый обратный, то они совпадают. В частности, обратный элемент единственен.
+\end{task_boxed}
+
+\begin{task_boxed}\label{mul-sub-gr}
+	Если в моноиде элементы $x$ и $y$ обратимы, то $x \star y$ обратим, причем $(x \star y)^{-1} = y^{-1} \star x^{-1}$. Множество обратимых элементов моноида является \textit{группой}.
+\end{task_boxed}
+
+\begin{task_boxed}
+	Пусть $G$ — группа относительно операции $\circ$. Операцию $*$ определим так: $a * b = b \circ a$. Доказать, что
+	относительно $*$ множество $G$ также является группой (противоположной группой).
+\end{task_boxed}
+
+\begin{task_boxed}
+	Пусть $G$ — конечное множество с ассоциативной бинарной операцией, причем из $ax_1 = ax_2$ следует $x_1 = x_2$,
+	а из $y_1a = y_2a$ следует $y_1 = y_2$ при любом $a \in G$. Доказать, что $G$ — группа.
+\end{task_boxed}
+
+\begin{task_boxed}
+	Доказать, что непрерывные строго возрастающие вещественные функции $f$, определенные на отрезке $[0,1]$
+	и имеющие значения $f(0) = 0$ и $f(1) = 1$, образуют группу относительно суперпозиции.
+\end{task_boxed}
+
+\begin{definition_boxed}
+
+	Определим \textbf{\textit{таблицу Кэли}}, как квадратную таблицу, описывающая структуру конечной алгебраической системы и состоящая из результатов применения бинарной операции к её элементам. 
+\end{definition_boxed}
+
+\begin{example}
+\begin{table}[h]\label{table-2} 
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		\textbf{+} & \textbf{0} & \textbf{1} & \textbf{2} \\\hline
+		\textbf{0} & $0$ & $1$ & $2$ \\\hline
+		\textbf{1} & $1$ & $2$ & $0$\\\hline
+		\textbf{2} & $2$ & $0$ & $1$ \\\hline
+	\end{tabular}
+	\caption{Таблица Кэли для остатков по модулю 3 с операцией сложения}
+\end{table}
+\end{example}
+
+\begin{task_boxed}
+Построить таблицу Кэли:
+(1) группы $S$ биекций множества из $n$ элементов относительно композиции (симметрической группы степени $n$) для $n = 3$,
+(2) группы $D$ самосовмещений правильного $n$-угольника относительно композиции для $n = 3$.
+\end{task_boxed}
+
+\begin{definition_boxed}
+	Пусть $G$ с операцией $\star$ и $H$ с операцией $\#$ – группы. Функция $f: G \to H$ называется \textbf{\textit{гомоморфизмом}}, если $f(a \star b) = f(a) \# f(b)$ для любых $a, b \in G$.\\
+	Если \textit{гомоморфизм} является биекцией, то его называют \textbf{\textit{изоморфизм}}.
+\end{definition_boxed}
+
+\begin{example}
+	Рассмотрим множество целых чисел $\Z$ c операцией сложения и множество всех степеней пятерок $A = \{\dotsc 5^{-1}, 1, 5, 5^{2}, 5^{3}, \dotsc\}$ с операцией умножения. Тогда есть гомоморфизм $f : \Z \rightarrow A$. $f(x) = 5^x$
+	Нетрудно проверить, что $f(a + b) = f(a) \cdot f(b)$
+\end{example}
+
+\begin{example}
+	Рассмотрим множество целых чисел $\Z$ c операцией сложения и множество состоящее из 0 и 1 с операцией сложения (будем обозначать его $\F_2$). Тогда есть гомоморфизм $f : \Z \rightarrow \F_2$. $f(x) = x \bmod 2$
+	Нетрудно проверить, что $f(a + b) = f(a) + f(b)$
+\end{example}
+
+\begin{task_boxed}
+	Опишите все возможные группы состоящие из 1, 2 и 3 элементов с точностью до изоморфизма
+\end{task_boxed}
+
+\begin{task_boxed}
+	\begin{itemize}
+		\item  Докажите, что множество остатков по модулю 6 с операцией сложения является группой.
+		\item  Докажите, что  множество остатков по модулю 7 за исключением 0 с операцией умножения является группой.
+	\end{itemize}
+\end{task_boxed}
+
+\begin{task_boxed}
+	Докажите, что две группы из прошлого задания изоморфны.
+\end{task_boxed}
+
+\begin{task_boxed}
+	Опишите все возможные группы состоящие из четырёх элементов с точностью до изоморфизма
+\end{task_boxed}
+
+\begin{task_boxed}[ *]
+	Опишите все возможные группы состоящие из пяти элементов с точностью до изоморфизма
+\end{task_boxed}
+
+\begin{definition_boxed}
+	Непустое подмножество $H$ группы $G$ называется \textbf{\textit{подгруппой}}, если $a, b \in H \Rightarrow ab, a^{-1} \in H$.
+\end{definition_boxed}
+
+\begin{example}
+	Если $a \in H$, то $a^{-1} \in H$, а, следовательно, и их произведение, равное нейтральному элементу, лежит в подгруппе $H$. Ясно, что подгруппа сама является группой относительно тех же операций, которые заданы в объемлющей группе. Если $H$ – подгруппа в $G$, то пишут $H \leq G$. 
+\end{example}
+
+\begin{example}
+	В любой группе есть две тривиальные подгруппы: сама группа и множество, состоящее из одного нейтрального элемента.
+\end{example}
+
+\begin{example}
+	Во множестве целых чисел с операцией сложения есть подгруппа чисел делящихся на 3. $3\Z \leq \Z$. 
+\end{example}
+
+
+\begin{definition_boxed}
+	Пусть $X$ — подмножество группы $G$. \textit{Подгруппой}, \textbf{\textit{порожденной}} множеством $X$, называется наименьшая подгруппа в $G$, содержащая $X$.\\
+	Подгруппа, \textit{порожденная} $X$, обозначается $\langle X \rangle$.\\
+	Подгруппа, \textit{порожденная} одним элементом (точнее, одноэлементным множеством) называется \textbf{\textit{циклической}}.
+\end{definition_boxed}
+
+\begin{theorem_boxed}
+	Любая циклическая группа изоморфна аддитивной группе $\mathbb{Z}$ или $\mathbb{Z}/n\Z$.
+\end{theorem_boxed}
+
+\begin{definition_boxed}
+	Пусть $G$ — группа. Количество элементов в этой группе называется \textbf{\textit{порядком группы}} $G$ и обозначается $|G|.$
+\end{definition_boxed}
+
+\begin{definition_boxed}
+	Пусть $g$ — элемент группы $G$. \textit{Порядок циклической подгруппы,} порожденной $g$, называется \textbf{\textit{порядком элемента}} $g$, т.е. $\text{ord}_g = |\langle g \rangle|$. 
+	\textit{Порядок элемента} $g$ — это наименьшее натуральное число $n$ такое, что $g^n = 1$.
+\end{definition_boxed}
+
+\begin{definition_boxed}
+Пусть $H \leq G$. Множества $gH$ и $Hg$ называются левыми (соотв. правыми) \textbf{\textit{смежными классами}} по подгруппе $H$.\\
+Множество левых смежных классов обозначается через $G/H$, а правых — $H \backslash G$.
+\end{definition_boxed}
+
+\begin{theorem_boxed}[ (Лагранж)]
+	Если $H$ — подгруппа конечной группы $G$, то $|G| = |H| \cdot |G/H|$.
+\end{theorem_boxed}
+
+
+\begin{example}
+	Если $H$ — подгруппа конечной группы $G$, то в частности $|G| \,\vdots\, |H|$.
+\end{example}
+
+
+\begin{task_boxed}
+	Докажите, что $\forall a \in G$ выполнено тождество $a^{|G|} = e.$
+\end{task_boxed}
+
+%\begin{task_boxed}
+%	Докажите \textbf{МТФ} с помощью \textit{теоремы Лагранжа}.
+%\end{task_boxed}
+
+\begin{task_boxed}
+	Докажите, что для каждого простого числа $p$ группа состоящая из $p$ элементов существует и единственна с точностью до изоморфизма.
+\end{task_boxed}
+
+\begin{task_boxed}
+	Доказать, что в группе чётного порядка найдётся ненейтральный элемент с единичным квадратом.
+\end{task_boxed}
+
+\begin{task_boxed}
+	Пусть G — группа относительно операции $\circ, a \in G$. Определим на $ G $ новую операцию: $ x \ast y = x \circ a \circ y $ . Доказать, что относительно операции $\ast$ множество $G$ также является группой, и что новая группа изоморфна старой.
+\end{task_boxed}
+\begin{task_boxed}[ *]
+	Доказать, что если в мультипликативно записанной группе квадрат любого элемента равен 1, то эта группа — \textit{абелева}.
+\end{task_boxed}
+
+
+\begin{definition_boxed}
+	Пусть теперь на множестве $R$ заданы операции <<сложения>> и <<умножения>>, причем $R$ является \textit{абелевой группой по сложению} и \textit{полугруппой по умножению}. Предположим, что выполнено следующее свойство:
+	\begin{enumerate}[label*=\textbf{(\arabic{enumi})}]
+		\setcounter{enumi}{4}
+		
+		\item $\forall x, y, z \in R : (x + y)z = xz + yz$ и $z(x + y) = zx + zy$ (правая и левая дистрибутивность).
+	\end{enumerate}
+	Тогда $R$ называется \textbf{\textit{(ассоциативным) кольцом}}.
+	Если существует нейтральный элемент по умножению, то кольцо называется \textbf{\textit{кольцом с единицей}}, если умножение коммутативно, то \textbf{\textit{коммутативным кольцом}}.
+\end{definition_boxed}
+
+\begin{example}
+	Множество целых чисел с операцией сложения и умножения. По сложению это \textit{Абелева группа}. По умножению есть 1. Так что это коммутативное кольцо с 1.
+\end{example}
+
+\begin{example}
+	Множество функций из $\Z$ в $\Z$ с операцией сложения и композиции. По сложению это \textit{Абелева группа}. По умножению есть 1 $(f(x) = x)$. Но композиции это некоммутативная операция. Так что это некоммутативное кольцо с 1.
+\end{example}
+
+\begin{definition_boxed}
+	Как следует из задания \ref{mul-sub-gr}4, множество обратимых (по умножению) элементов кольца $R$ является группой. Эта группа называется \textbf{\textit{мультипликативной подгруппой кольца}} и обозначается через $R^\times$.
+\end{definition_boxed}
+\begin{example}
+	Мультипликативная подгруппа кольца $\Z/12\Z$ это $\{1,5,7,11\}$ c операцией умножения по модулю 12.
+\end{example}
+	
+
+\begin{task_boxed}
+	Для любого элемента $r$ произвольного кольца $R$: $0 \cdot r = r \cdot 0 = 0$. Если $R$ – кольцо с единицей, то $(-1) \cdot r = -r$.
+\end{task_boxed}
+
+\begin{task_boxed}
+Сколько элементов в мультипликативной подгруппе кольца $\Z/n\Z$
+\end{task_boxed}
+
+
+\begin{task_boxed}
+	Докажите \textbf{теорему Эйлера} с помощью \textit{теоремы Лагранжа}.
+\end{task_boxed}
+
+
+\begin{definition_boxed}
+	\textbf{\textit{Поле}} – это\textit{ коммутативное кольцо с единицей}, в котором каждый ненулевой элемент обратим.
+\end{definition_boxed}
+
+\begin{example}
+	$ \Q, \R $ --- поля
+\end{example}
+
+
+\begin{example}
+	Через $\Z/n\Z$ будем обозначать кольцо остатков по модулю $n$ со стандартными операциями.
+\end{example}
+
+\begin{task_boxed}
+	Докажите, что $\Z/n\Z$ --- \textit{поле} $\Longleftrightarrow$ $n$ --- простое
+\end{task_boxed}
+
+\begin{definition_boxed}
+	Подгруппа $H$ группы $G$ называется \textbf{\textit{нормальной}}, если для любых $g \in G$ и $h \in H$ имеет место включение $g^{-1}h g \in H$.\\
+	В других обозначениях: $\forall g \in G : g^{-1}Hg \subseteq H$. Если $H$ — нормальная подгруппа в $G$, то пишут $H \trianglelefteq G$.
+\end{definition_boxed}
+
+\begin{example}
+	Заметим, что любая подгруппа абелевой группы является \textit{нормальной}.
+\end{example}
+
+\begin{task_boxed}
+	Докажите, что у \textit{нормальной подгруппы} левые и правые классы смежности равны и наоборот.\\
+	$\forall g \in G: gH = Hg \Longleftrightarrow$ $H$ --- \textit{нормальная подгруппа}.
+\end{task_boxed}
+
+\begin{task_boxed}
+	Приведите пример группы и её подргуппы, которая не является \textit{нормальной}.
+\end{task_boxed}
+
+\begin{task_boxed}[ *]
+	Найти все (с точностью до изоморфизма) группы порядка $2p$, где $p$ — простое число.
+\end{task_boxed}
+
+\end{document}

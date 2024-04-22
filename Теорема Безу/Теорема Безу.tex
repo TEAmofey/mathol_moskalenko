@@ -1,0 +1,101 @@
+\documentclass{article}
+\usepackage[12pt]{extsizes}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{graphics}
+\usepackage{graphicx}
+
+\usepackage{lipsum}
+
+\newtheorem{theorem}{Теорема}
+\newtheorem{task}{Задача}
+\newtheorem{lemma}{Лемма}
+\newtheorem{definition}{Определение}
+\newtheorem{example}{Пример}
+\newtheorem{statement}{Утверждение}
+\newtheorem{corollary}{Следствие}
+
+
+\usepackage{geometry} % Меняем поля страницы
+\geometry{left=1cm}% левое поле
+\geometry{right=1cm}% правое поле
+\geometry{top=1.5cm}% верхнее поле
+\geometry{bottom=1cm}% нижнее поле
+
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[L]{Математика}
+\fancyhead[C]{\textit{Алгебра}}
+\fancyhead[R]{13 октября 2022}% Custom header text
+
+
+%----------------------------------------------------------------------------------------
+
+%\begin{document}\normalsize
+\begin{document}\large
+	
+	
+	\begin{center}
+		\textbf{Теорема Безу}
+	\end{center}
+
+\begin{definition}
+	Многочлен $A$ {\it делится} на ненулевой многочлен $B$, если
+	существует многочлен $Q$, называемый {\it частным} такой, что $A=B\cdot Q$.
+\end{definition} 
+
+
+\begin{definition}
+	Разделить многочлен $A$ на ненулевой многочлен $B$ с 
+	остатком --- это найти многочлены $Q$, $R$ такие, что выполнено равенство 
+	$A=B\cdot Q+R$, причем $\deg R<\deg B$\footnote{ или $R=0$}. 
+	Многочлен $Q$ называется {\it неполным частным}, многочлен $R$ называется {\it остатком}.
+\end{definition} 
+
+\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
+
+\item Поделите многочлен $x^4-3x^3+3x^2+ax+b$ в столбик на $x^2-3x+2$. При каких $a$
+и $b$ остаток будет равен нулю? 
+
+\item При каких $n$ многочлен $x^n+x+1$ делится на многочлен $x^2+x+1$? {\it Указание: начните 
+делить в столбик.}
+
+\item Алгоритм деления <<в столбик>> даёт нам пример каких-то $Q$ и $R$, для которых
+$A=B\cdot Q+R$. Докажите, что других $Q$ и $R$ быть не может, т.е. докажите, что 
+неполное частное и остаток при делении $A$ на $B$ определяются однозначно. {\it Указание: 
+предположите противное.} 
+
+\item  a) Разделите многочлен $x^{100}$ на $x-1$ и $x+1$ с остатком. 
+
+b) Чему равны остатки при делении многочлена $P(x)=a_nx^n+\ldots+a_0$
+на многочлены $x-1$ и $x+1$? Сформулируйте и докажите признаки делимости на эти многочлены.
+Признаки делимости на какие числа они вам напоминают?
+
+\item \textbf {Теорема Безу.} Докажите, что остаток от деления многочлена $P(x)$ на $x-a$ равен $P(a)$,
+т.е. $P(x)=Q(x)(x-a)+P(a)$. Выведите из этого, что число $a$ является корнем многочлена $P(x)$
+тогда и только тогда, когда $P(x)$ делится на $x-a$.
+
+\item Докажите, что если $x_1$, $x_2$, \ldots, $x_n$ --- различные корни многочлена~$P$,
+то он делится на многочлен $(x-x_1)(x-x_2)\ldots (x-x_n)$. Верно ли обратное утверждение? 
+
+\item При каких $a$ и $b$ многочлен $x^4-3x^3+3x^2+ax+b$  делится на многочлен $(x-1)(x-2)$?
+
+\item Докажите, что многочлен степени $n$ имеет не более $n$ различных корней. 
+
+\item Докажите, что если значения двух многочленов степени не выше $n$ совпадают в $n+1$ точке, то и сами многочлены равны. 
+
+\item Пусть $a$, $b$, $c$ --- натуральные числа. Верно ли, что обязательно существует квадратный трёхчлен с целыми коэффициентами, который в некоторых целых точках принимает значения $a^3$, $b^3$, $c^3$?
+
+
+
+\end{enumerate}
+\end{document}
