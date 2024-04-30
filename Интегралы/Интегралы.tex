@@ -1,90 +1,60 @@
 \documentclass{article}
-\usepackage[12pt]{extsizes}
-\usepackage[T2A]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[english, russian]{babel}
 
-\usepackage{amssymb}
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage[inline]{enumitem}
-\usepackage{enumitem}
-\usepackage{graphics}
-\usepackage{graphicx}
-\usepackage{multicol}
+\include{../commons/libraries}
+\include{../commons/aliases}
 
-\usepackage{lipsum}
+\smallindent
 
-\newtheorem{theorem}{Теорема}
-\newtheorem{task}{Задача}
-\newtheorem{lemma}{Лемма}
-\newtheorem{definition}{Определение}
-\newtheorem{example}{Пример}
-\newtheorem{statement}{Утверждение}
-\newtheorem{corollary}{Следствие}
-
-
-\usepackage{geometry} % Меняем поля страницы
-\geometry{left=1cm}% левое поле
-\geometry{right=1cm}% правое поле
-\geometry{top=1.5cm}% верхнее поле
-\geometry{bottom=1cm}% нижнее поле
-
-
-\usepackage{fancyhdr} % Headers and footers
-\pagestyle{fancy} % All pages have headers and footers
-\fancyhead{} % Blank out the default header
-\fancyfoot{} % Blank out the default footer
-\fancyhead[L]{Математика}
-\fancyhead[C]{\textit{Математический анализ}}
-\fancyhead[R]{2024}% Custom header text
-
+\header{Математика}{\textit{Математический анализ}}{14 февряля 2024}
 
 %----------------------------------------------------------------------------------------
 
 %\begin{document}\normalsize
-\begin{document}\large
-	
-	
-	\begin{center}
-		\textbf{Интегралы}
-	\end{center}
-	
-	Свойства интегралов
-	\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
-		\item $$\int A\cdot f(x) + B\cdot g(x) \mathrm{d}x = A \cdot \int f(x) \mathrm{d}x + B\cdot \int g(x) \mathrm{d}x$$
-		\item $$\int f'(x) \mathrm{d}x = f(x) + C$$
-		\item 
-		$$F(x) := \int f(x) \mathrm{d}x$$
-		$$(F(x))' = f(x) $$
-		$$(F(ax + b))' = af(ax + b)$$
-		$$\int f(ax + b) \mathrm{d}x = \frac{F(ax + b)}{a}$$
-		\item $$\int f'(x)g(x) \mathrm{d}x = f(x)g(x) - \int f(x)g'(x) \mathrm{d}x$$
-	\end{enumerate}
-	
-	Найдите неопределённые интегралы
-\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
-	\setcounter{enumi}{4}
-	\begin{multicols}{3}
-	\item $\displaystyle{\int 1 \mathrm{d}x}$
-	\item $\displaystyle{\int x \mathrm{d}x}$
-	\item $\displaystyle{\int x^n \mathrm{d}x}$
-	\item $\displaystyle{\int \frac{1}{x} \mathrm{d}x}$
-	\item $\displaystyle{\int \sin{x} \mathrm{d}x}$
-	\item $\displaystyle{\int \cos{2x} \mathrm{d}x}$
-	\item $\displaystyle{\int \frac{x^2 - x + 1}{\sqrt{x}} \mathrm{d}x}$
-	\end{multicols}
-\end{enumerate}
+\begin{document}
+    \large
 
-С помощью интегрирования по частям найдите неопределенные интегралы
-\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
-	\setcounter{enumi}{11}
-\begin{multicols}{3}
-	\item $\displaystyle{\int x e^x \mathrm{d}x}$
-	\item $\displaystyle{\int \log(x) \mathrm{d}x}$
-	\item $\displaystyle{\int (x^2 + x)\sin(2x) \mathrm{d}x}$
-	\item $\displaystyle{\int x^2\arcsin(x) \mathrm{d}x}$
-	\item $\displaystyle{\int \sin(\log(x)) \mathrm{d}x}$
-\end{multicols}
-\end{enumerate}
-\end{document}\textsl{}
+
+    \begin{center}
+        \textbf{Интегралы}
+    \end{center}
+
+    Свойства интегралов
+    \begin{enumerate_boxed}
+        \item \[\int A\cdot f(x) + B\cdot g(x) \mathrm{d}x = A \cdot \int f(x) \mathrm{d}x + B\cdot \int g(x) \mathrm{d}x\]
+        \item \[\int f'(x) \mathrm{d}x = f(x) + C\]
+        \item
+        \begin{eqnarray*}
+            F(x) &\coloneqq& \int f(x) \mathrm{d}x\\
+            (F(x))' &=& f(x)\\
+            (F(ax + b))' &=& af(ax + b)\\
+            \int f(ax + b) \mathrm{d}x &=& \frac{F(ax + b)}{a}\\
+        \end{eqnarray*}
+        \item \[\int f'(x)g(x) \mathrm{d}x = f(x)g(x) - \int f(x)g'(x) \mathrm{d}x\]
+    \end{enumerate_boxed}
+
+    Найдите неопределённые интегралы
+    \begin{enumerate_boxed}
+        \setcounter{enumi}{4}
+        \begin{multicols}{3}
+            \item $\displaystyle{\int 1 \mathrm{d}x}$
+            \item $\displaystyle{\int x \mathrm{d}x}$
+            \item $\displaystyle{\int x^n \mathrm{d}x}$
+            \item $\displaystyle{\int \frac{1}{x} \mathrm{d}x}$
+            \item $\displaystyle{\int \sin{x} \mathrm{d}x}$
+            \item $\displaystyle{\int \cos{2x} \mathrm{d}x}$
+            \item $\displaystyle{\int \frac{x^2 - x + 1}{\sqrt{x}} \mathrm{d}x}$
+        \end{multicols}
+    \end{enumerate_boxed}
+
+    С помощью интегрирования по частям найдите неопределенные интегралы
+    \begin{enumerate_boxed}
+        \setcounter{enumi}{11}
+        \begin{multicols}{3}
+            \item $\displaystyle{\int x e^x \mathrm{d}x}$
+            \item $\displaystyle{\int \log(x) \mathrm{d}x}$
+            \item $\displaystyle{\int (x^2 + x)\sin(2x) \mathrm{d}x}$
+            \item $\displaystyle{\int x^2\arcsin(x) \mathrm{d}x}$
+            \item $\displaystyle{\int \sin(\log(x)) \mathrm{d}x}$
+        \end{multicols}
+    \end{enumerate_boxed}
+\end{document}
