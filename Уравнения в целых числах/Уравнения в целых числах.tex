@@ -1,113 +1,82 @@
 \documentclass{article}
-\usepackage[12pt]{extsizes}
-\usepackage[T2A]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[english, russian]{babel}
 
-\usepackage{amssymb}
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage{enumitem}
-\usepackage{graphics}
-\usepackage{graphicx}
+\include{../commons/libraries}
+\include{../commons/aliases}
 
-\usepackage{lipsum}
+\smallindent
 
-\newtheorem{theorem}{Теорема}
-\newtheorem{task}{Задача}
-\newtheorem{lemma}{Лемма}
-\newtheorem{definition}{Определение}
-\newtheorem{example}{Пример}
-\newtheorem{statement}{Утверждение}
-\newtheorem{corollary}{Следствие}
-
-
-\usepackage{geometry} % Меняем поля страницы
-\geometry{left=1cm}% левое поле
-\geometry{right=1cm}% правое поле
-\geometry{top=1.5cm}% верхнее поле
-\geometry{bottom=1cm}% нижнее поле
-
-
-\usepackage{fancyhdr} % Headers and footers
-\pagestyle{fancy} % All pages have headers and footers
-\fancyhead{} % Blank out the default header
-\fancyfoot{} % Blank out the default footer
-\fancyhead[L]{Математика}
-\fancyhead[C]{\textit{Теория чисел}}
-\fancyhead[R]{23 октября 2022}% Custom header text
-
+\header{Математика}{\textit{Теория чисел}}{23 октября 2022}
 
 %----------------------------------------------------------------------------------------
 
-%\begin{document}\normalsize
-\begin{document}\large
+\begin{document}
+    \large
 
-\begin{center}
-	\textbf{Уравнения в целых числах}
-\end{center}
+    \begin{center}
+        \textbf{Уравнения в целых числах}
+    \end{center}
 
-\textbf{Методы решения:}
+    \textbf{Методы решения:}
 
-\begin{itemize}
-	\item Разложить на \textbf{\textit{множители}};
-	\item Посмотреть \textbf{\textit{остатки по модулю}} (проверить \textbf{\textit{делимость}});
-	\item Посмотреть на \textbf{\textit{степени вхождения простых}} чисел;
-	\item \textbf{\textit{Неравенства}:}
-	\begin{itemize}
-		\item Неравенство о \textbf{\textit{средних}},
-		\item \textbf{\textit{Зажать}} между двумя квадратами (кубами),
-		\item \textbf{\textit{Здравый смысл}};
-	\end{itemize}
-	\item[\textbf{\textasteriskcentered}] Линейное Диофантово уравнение;
-	\item[\textbf{\textasteriskcentered\textasteriskcentered}] Уравнение Пелля.
-\end{itemize}
+    \begin{itemize}
+        \item Разложить на \textbf{\textit{множители}};
+        \item Посмотреть \textbf{\textit{остатки по модулю}} (проверить \textbf{\textit{делимость}});
+        \item Посмотреть на \textbf{\textit{степени вхождения простых}} чисел;
+        \item \textbf{\textit{Неравенства}:}
+        \begin{itemize}
+            \item Неравенство о \textbf{\textit{средних}},
+            \item \textbf{\textit{Зажать}} между двумя квадратами (кубами),
+            \item \textbf{\textit{Здравый смысл}};
+        \end{itemize}
+        \item[\textbf{\textasteriskcentered}] Линейное Диофантово уравнение;
+        \item[\textbf{\textasteriskcentered\textasteriskcentered}] Уравнение Пелля.
+    \end{itemize}
 
-\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
+    \begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
 
-\item Решите уравнение $3x^2 + 2 = y^2$ в целых числах.
+        \item Решите уравнение $3x^2 + 2 = y^2$ в целых числах.
 
-\item Найдите все натуральные $n, k$, для которых $n^3 + 13 = 2^k$.
+        \item Найдите все натуральные $n, k$, для которых $n^3 + 13 = 2^k$.
 
-\item Решите уравнение $\dfrac{x}{y} + \dfrac{y}{z} + \dfrac{z}{x} = 3$ в натуральных числах.
+        \item Решите уравнение $\dfrac{x}{y} + \dfrac{y}{z} + \dfrac{z}{x} = 3$ в натуральных числах.
 
-\item Найти все целые решения уравнения  $y^k = x^2 + x $ ($k > 1, k \in \mathbb{N}$).
+        \item Найти все целые решения уравнения  $y^k = x^2 + x $ ($k > 1, k \in \mathbb{N}$).
 
-\item Найдите все целые решения уравнения $3x - 12y = 7.$
+        \item Найдите все целые решения уравнения $3x - 12y = 7.$
 
-\item Найдите все простые числа $p$ и $q$, для которых выполняется равенство  $p^2 - 2q^2 = 1.$
+        \item Найдите все простые числа $p$ и $q$, для которых выполняется равенство  $p^2 - 2q^2 = 1.$
 
-\item Решить в простых числах уравнение  $pqr = 7(p + q + r).$
+        \item Решить в простых числах уравнение  $pqr = 7(p + q + r).$
 
-\item Решить в целых числах уравнение  $xy = x + y.$
+        \item Решить в целых числах уравнение  $xy = x + y.$
 
-\item Решите уравнение в целых числах  $x(x+1)(x+7)(x+8) = y^2.$
+        \item Решите уравнение в целых числах  $x(x+1)(x+7)(x+8) = y^2.$
 
-\item Решите уравнение в целых числах  $x^2 + xy + y^2 = x^2y^2.$
+        \item Решите уравнение в целых числах  $x^2 + xy + y^2 = x^{2}y^2.$
 
-\item Решите в натуральных числах уравнение   $1! + 2! + ... + n! = m^2$.
+        \item Решите в натуральных числах уравнение   $1! + 2! + \dotsc + n! = m^2$.
 
-\item Найдите все целые решения уравнения $3x + 11y = 7.$
+        \item Найдите все целые решения уравнения $3x + 11y = 7.$
 
-\item Найдите все натуральные $m$ и $n$, для которых $m! + 12 = n^2$.
+        \item Найдите все натуральные $m$ и $n$, для которых $m! + 12 = n^2$.
 
-\item Существует ли решение уравнения в натуральных числах $28x + 30y+ 31z = 365$?
+        \item Существует ли решение уравнения в натуральных числах $28x + 30y+ 31z = 365$?
 
-\item Найдите все простые $p, q, r$, для которых $p^q + q^p = r$.
+        \item Найдите все простые $p, q, r$, для которых $p^q + q^p = r$.
 
-\item Найдите все натуральные $a, b, c, d$, для которых $a!+b!+c! = d!$.
+        \item Найдите все натуральные $a, b, c, d$, для которых $a!+b!+c! = d!$.
 
-\item Найдите все целые $m, n, k$, для которых $3^m + 4^n = 5^k$.
+        \item Найдите все целые $m, n, k$, для которых $3^m + 4^n = 5^k$.
 
-\item Решите в натуральных числах уравнение:  $x^3 + y^3 + 1 = 3xy$.
+        \item Решите в натуральных числах уравнение:  $x^3 + y^3 + 1 = 3xy$.
 
-\item Найдите все целые $a, b, c, d$, для которых $a^2 +b^2 +c^2 +d^2 = 2abcd$.
+        \item Найдите все целые $a, b, c, d$, для которых $a^2 +b^2 +c^2 +d^2 = 2abcd$.
 
-\item Найдите все простые $p$ и натуральные $n$, удовлетворяющие равенству $$p^2 +n^2 =3pn+1.$$
+        \item Найдите все простые $p$ и натуральные $n$, удовлетворяющие равенству \[p^2 +n^2 =3pn+1.\]
 %3,1 ; 3,8
 
-\item Найдите все натуральные $x, y$ и простые $p$ такие что:
-\[x^5 + y^4 = pxy.\]
+        \item Найдите все натуральные $x, y$ и простые $p$ такие что:
+        \[x^5 + y^4 = pxy.\]
 
-\end{enumerate}
+    \end{enumerate}
 \end{document}

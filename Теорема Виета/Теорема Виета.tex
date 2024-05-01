@@ -1,86 +1,62 @@
 \documentclass{article}
-\usepackage[12pt]{extsizes}
-\usepackage[T2A]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[english, russian]{babel}
 
-\usepackage{amssymb}
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage{enumitem}
-\usepackage{graphics}
-\usepackage{graphicx}
+\include{../commons/libraries}
+\include{../commons/aliases}
 
-\usepackage{lipsum}
+\smallindent
 
-\newtheorem{theorem}{Теорема}
-\newtheorem{task}{Задача}
-\newtheorem{lemma}{Лемма}
-\newtheorem{definition}{Определение}
-\newtheorem{example}{Пример}
-\newtheorem{statement}{Утверждение}
-\newtheorem{corollary}{Следствие}
-
-
-\usepackage{geometry} % Меняем поля страницы
-\geometry{left=1cm}% левое поле
-\geometry{right=1cm}% правое поле
-\geometry{top=1.5cm}% верхнее поле
-\geometry{bottom=1cm}% нижнее поле
-
-
-\usepackage{fancyhdr} % Headers and footers
-\pagestyle{fancy} % All pages have headers and footers
-\fancyhead{} % Blank out the default header
-\fancyfoot{} % Blank out the default footer
-\fancyhead[L]{ЦРОД \textbullet Математика}
-\fancyhead[C]{\textit{Алгебра}}
-\fancyhead[R]{ЛФМШ 2022}% Custom header text
-
+\header{ЦРОД $\bullet$ Математика}{\textit{Алгебра}}{ЛФМШ 2022}
 
 %----------------------------------------------------------------------------------------
 
-%\begin{document}\normalsize
-\begin{document}\large
-	
-	
-	\begin{center}
-		\textbf{Теорема Виета}
-	\end{center}
+\begin{document}
+    \large
 
-\textbf {Теорема Виета.} Если числа $x_1$ и $x_2$ --- корни квадратного уравнения $x^2 + px + q = 0$, то
-$$\boxed{~x_1 + x_2=-p, \quad x_1x_2=q.\strut~}$$
+    \begin{center}
+        \textbf{Теорема Виета}
+    \end{center}
 
-\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
-	
-\item Пусть $x_1$, $x_2$ --- корни уравнения $2x^2-9x+1=0$. Найдите значение выражения $\dfrac1{x_1}+\dfrac1{x_2}$.
+    \textbf {Теорема Виета.} Если числа $x_1$ и $x_2$ --- корни квадратного уравнения $x^2 + px + q = 0$, то
+    \[\boxed{~x_1 + x_2=-p, \quad x_{1}x_2=q.\strut~}\]
 
-\item  Пусть $x_1$ и $x_2$ --- корни квадратного уравнения $x^2+px+q=0$. Выразите через $p$ и $q$ величины:  
+    \begin{enumerate_boxed}
 
-а) $x_1^2+x_2^2$;  
+        \item Пусть $x_1$, $x_2$ --- корни уравнения $2x^2-9x+1=0$.
+        Найдите значение выражения $\dfrac1{x_1}+\dfrac1{x_2}$.
 
-б)~$x_1^3+x_2^3$.
+        \item Пусть $x_1$ и $x_2$ --- корни квадратного уравнения $x^2+px+q=0$.
+        Выразите через $p$ и $q$ величины:
+        \begin{enumerate}
+            \item $x_1^2+x_2^2$;
+            \item $x_1^3+x_2^3.$
+        \end{enumerate}
 
-\item Уравнение $x^2+8x-3=0$ имеет корни $x_1$ и $x_2$. Составьте уравнение, корнями которого являются числа $2x_1+3$ и $2x_2+3$.
+        \item Уравнение $x^2+8x-3=0$ имеет корни $x_1$ и $x_2$.
+        Составьте уравнение, корнями которого являются числа $2x_1+3$ и $2x_2+3$.
 
-\item Пусть $x_1$ и $x_2$ --- корни квадратного уравнения $x^2+px+q=0$. Напишите уравнения, корнями которых являются следующие пары чисел:
+        \item Пусть $x_1$ и $x_2$ --- корни квадратного уравнения $x^2+px+q=0$.
+        Напишите уравнения, корнями которых являются следующие пары чисел:
+        \begin{enumerate}
+            \item $x_1^2, x_2^2$;
+            \item  $\dfrac1{x_1}, \dfrac1{x_2}$;
+            \item  $\dfrac{x_2}{x_1}, \dfrac{x_1}{x_2}$.
+        \end{enumerate}
 
-а) $x_1^2$, $x_2^2$; б) $\dfrac1{x_1}$, $\dfrac1{x_2}$;  в) $\dfrac{x_2}{x_1}$, $\dfrac{x_1}{x_2}$.
+        \item Докажите, что если для коэффициентов уравнения $ax^2+bx+c=0$ выполняется равенство $a+b+c=0$, то $x_1=1$, а $x_2=\dfrac{c}{a}$.
 
-\item Докажите, что если для коэффициентов уравнения $ax^2+bx+c=0$ выполняется равенство $a+b+c=0$, то $x_1=1$, а $x_2=\dfrac{c}{a}$.
+        \item При каких $p$, $q$ уравнению $x^2 + px + q = 0$ удовлетворяют два различных числа $2p$ и $p + q$?
 
-\item При каких $p$, $q$ уравнению $x^2 + px + q = 0$ удовлетворяют два различных числа $2p$ и $p + q$?
+        \item Решить систему уравнений $a^2+b^2=5$, $\dfrac1a+\dfrac1b=\dfrac12$.
 
-\item Решить систему уравнений $a^2+b^2=5$, $\dfrac1a+\dfrac1b=\dfrac12$.
+        \item Известно, что корни уравнения  $x^2 + px + q = 0$~--- целые числа, а $p$ и $q$~--- простые числа.
+        Найдите $p$ и $q$.
 
-\item Известно, что корни уравнения  $x^2 + px + q = 0$  --- целые числа, а $p$ и $q$ --- простые числа. Найдите $p$ и $q$.
+        \item  Корни уравнения $x^2 + ax + 1 = b$ --- целые, отличные от нуля, числа.
+        Докажите, что число
+        $a^2 + b^2$ является составным.
 
-\item  Корни уравнения $x^2 + ax + 1 = b$ --- целые, отличные от нуля, числа. Докажите, что число
-$a^2 + b^2$ является составным.
+        \item Про различные числа $x$, $y$, $z$ известно, что выполняются равенства $x^3 - 3x = y^3 - 3y = z^3 - 3z$.
+        Чему может равняться значение выражения $xy + yz + zx$?
 
-\item Про различные числа $x$, $y$, $z$ известно, что выполняются равенства $x^3 - 3x = y^3 - 3y = z^3 - 3z$. Чему может равняться значение выражения $xy + yz + zx$?
-
-
-
-\end{enumerate}
+    \end{enumerate_boxed}
 \end{document}

@@ -1,641 +1,587 @@
 \documentclass{article}
-\usepackage[12pt]{extsizes}
-\usepackage[T2A]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[english, russian]{babel}
 
-\usepackage{amssymb}
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage{enumitem}
-\usepackage{graphics}
-\usepackage{amsthm}
-\usepackage{mathrsfs}
-\usepackage[dvipsnames]{xcolor}
+\include{../commons/libraries}
+\include{../commons/theorems}
+\include{../commons/aliases}
 
-\usepackage{lipsum}
+\smallindent
 
-\usepackage[framemethod=TikZ]{mdframed}
-
-\newcommand{\definebox}[3]{%
-	\newcounter{#1}
-	\newenvironment{#1}[1][]{%
-		\stepcounter{#1}%
-		\mdfsetup{%
-			frametitle={%
-				\tikz[baseline=(current bounding box.east),outer sep=0pt]
-				\node[anchor=east,rectangle,fill=white]
-				{\strut #2~\csname the#1\endcsname\ifstrempty{##1}{}{##1}};}}%
-		\mdfsetup{innertopmargin=1pt,linecolor=#3,%
-			linewidth=3pt,topline=true,
-			frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}%
-		\begin{mdframed}[]\relax%
-		}{\end{mdframed}}%
-}
-
-\newtheorem{lemma}{Лемма}
-\newtheorem{statement}{Утверждение}
-\newtheorem{corollary}{Следствие}
-%\newtheorem{definition}{Определение}
-%\newtheorem{task}{Задача}
-%\newtheorem{paradox}{Парадокс}
-
-
-\newcommand{\range}{\mathrm{range}}
-\newcommand{\dom}{\mathrm{dom}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Prime}{\mathbb{P}}
-\newcommand{\A}{\mathbb{A}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\Z}{\mathbb{Z}}
-
-\theoremstyle{remark}
-\newtheorem{example}{Пример}
-
-\definebox{theorem}{Теорема}{ForestGreen!24}
-\definebox{definition}{Определение}{blue!24}
-\definebox{task}{Задача}{orange!24}
-\definebox{paradox}{Парадокс}{red!24}
-
-\renewcommand{\labelenumi}{(\alph{enumi})}
-
-\usepackage{geometry} % Меняем поля страницы
-\geometry{left=1cm}% левое поле
-\geometry{right=1cm}% правое поле
-\geometry{top=1.5cm}% верхнее поле
-\geometry{bottom=1cm}% нижнее поле
-
-
-\usepackage{fancyhdr} % Headers and footers
-\pagestyle{fancy} % All pages have headers and footers
-\fancyhead{} % Blank out the default header
-\fancyfoot{} % Blank out the default footer
-\fancyhead[L]{Математика}
-\fancyhead[C]{Теория множеств}
-\fancyhead[R]{}% Custom header text
-
+\header{Математика}{\textit{Теория множеств}}{}
 
 %----------------------------------------------------------------------------------------
 
-%\begin{document}\normalsize
-\begin{document}\large
-
-
-\setcounter{task}{0}
-
-\begin{task}
-	Обязательно ли старейший математик среди шахматистов и старейший шахматист среди математиков один и тот же человек?
-\end{task}
-
-\begin{task}
-	Обязательно ли лучший математик среди шахматистов и лучший шахматист среди математиков один и тот же человек?
-\end{task}
-
-\begin{definition}
-	\textit{Множество} - неупорядоченная совокупность элементов.
-\end{definition}
-
-\begin{example}
-$\{1,2,3\} = \{3,2,1\} = \{1,1,3,2,3,3\}$
-\end{example}
-
-\begin{example}
-	 $\{\} =\varnothing$
- \end{example}
-
-\begin{example}
-	$\{a,\{b,c\},\{\{d\},e\},\varnothing\}$
-\end{example}
-
-\begin{definition}
-	$a \in A$ - означает, что во множестве $A$ есть элемент $a$
-\end{definition}
-
-\begin{definition}
-	$B \subseteq A$ - означает, что если $b \in B$, то $b \in A$.
-\end{definition}
-
-\begin{example}
-	$1\in\{1,2,3\}; \;\;\;\;\; \{1,2\}\subseteq\{1,2,3\}$.
-\end{example}
-
-\begin{example}
-	$1\notin\varnothing$.
-\end{example}
-
-\begin{example}
-	$\{b,c\}\in \{a,\{b,c\},\{\{d\},e\},\varnothing\}$.
-\end{example}
-
-\begin{task}
-	Какие из выражений верны для произвольного $x$?\\
-	\\
-	\begin{minipage}[c]{0.3\textwidth}
-		\begin{itemize}
-			\item $x \in \{x\}$
-			\item $\{x\} \subseteq \{x\}$
-			\item $\{x\} \in \{x\}$
-		\end{itemize}
-	\end{minipage}
-	\begin{minipage}[c]{0.3\textwidth}
-		\begin{itemize}
-			\item $\{x,x\} \subseteq \{x\}$
-			\item $\{x\} \in \{\{x\}\}$
-			\item $\varnothing \in \varnothing$
-		\end{itemize}
-	\end{minipage}
-	\begin{minipage}[c]{0.3\textwidth}
-		\begin{itemize}
-			\item $\varnothing \in \{x\}$
-			\item $\varnothing \subseteq \{x\}$
-			\item $\varnothing \subseteq \varnothing$
-		\end{itemize}
-	\end{minipage}
-\end{task}
-
-\begin{definition}
-	Предикат от $x$ --- это такая функция $\varphi(x)$, которая принимает два возможных значения: либо истина, либо ложь (0 или 1)
-\end{definition}
-
-\begin{example}
-	$\varphi(x) = (x = 239)$~--- принимает истинное значение только, если $x = 239$
-\end{example}
-
-
-\begin{definition}
-	Чтобы работать с предикатами, нужно познакомиться с \textit{логическими связками}:
-	\begin{itemize}
-		\item $\neg$~--- \textbf{\textit{отрицание}} \texttt{"не ..."},
-	
-		\item $\wedge$~--- \textbf{\textit{конъюнкция}}  \texttt{"... и ..."},
-	
-		\item $\vee$~--- \textbf{\textit{дизъюнкция}}  \texttt{"... или ..."},
-	
-		\item $\rightarrow$~--- \textbf{\textit{импликация}}  \texttt{"если ..., то ..."},
-	
-		\item $\leftrightarrow$~--- \textbf{\textit{эквивалентность}}  \texttt{"... тогда и только тогда, когда ..."};
-	\end{itemize}
-	и {\textit{кванторами}}:
-	\begin{itemize}
-		\item $\forall x$~--- \textbf{\textit{квантор всеобщности}}  \texttt{"для любого х верно ..."}
-	
-		\item $\exists x$~--- \textbf{\textit{квантор существования}}  \texttt{"существует х, такой что верно ..."}
-	\end{itemize}
-\end{definition}
-
-\begin{example}
-	$\varphi(x) = (\forall z \exists y: z + y = x)$~--- \texttt{"для любого z найдется y, такие что они в сумме дают x"}. Это утверждение всегда верно, если мы рассматриваем предикат на множестве вещественных чисел.
-\end{example}
-
-\begin{example}
-	А вот записано утверждение \texttt{"множества равны тогда и только тогда, когда у них совпадает набор элементов"}
-	$\forall X\forall Y(\forall u(u \in X \leftrightarrow u \in Y) \rightarrow X = Y)$
-\end{example}
-
-\begin{definition}
-	$A = \underbrace{\{}_{\text{множество}}\underbrace{x}_{\text{всех иксов}} \underbrace{\mid}_{\text{таких, что}} \underbrace{\varphi(x)}_{\text{выполнено условие} \ \varphi(x)}\}$, где $\varphi(x)$ предикат от $x$.
-
-\end{definition}
-
-
-\begin{paradox}[ (Рассел)]
-	Рассмотрим множество $A = \{x\mid x \notin x\}$. То есть множество всех множеств, которые не содержат себя в качестве своего собственного элемента. Что тогда можно сказать про утверждение $A \in A$?
-\end{paradox}
-
-\begin{definition}
-	Пусть даны множества $A$ и $B$. Тогда их \textit{\textbf{пересечением}} называется множество: $$A \cap B = \{x \mid x\in A \wedge x \in B\}.$$
-	Пусть дано семейство множеств $\{M_{\alpha}\}_{\alpha \in A}.$ Тогда его пересечением называется \textbf{\textit{множество}}, состоящее из элементов, которые входят во все множества семейства: $$\bigcap\limits_{\alpha \in A} M_{\alpha} = \{x \mid \forall \alpha \in A,\; x \in M_{\alpha}\}.$$
-\end{definition}
-
-\begin{example}
-	$\{1,2,3\}\cap \{3,4,5\} = \{3\}$
-\end{example}
-
-\begin{example}
-	$x \cap \varnothing = \varnothing$
-\end{example}
-
-\begin{example}
-	$\bigcap \{\{1,2,3,4,5\}, \{2,3,4,9\}, \{0,2,3\}\} = \{2,3\}$
-\end{example}
-
-\begin{definition}
-	Пусть даны два множества $A$ и $B$. Тогда их \textbf{\textit{объединением}} называется множество	
-	$$A \cup B = \{ x \mid x\in A \vee x\in B\}.$$
-	Пусть дано семейство множеств $\{M_{\alpha}\}_{\alpha \in A}.$ Тогда его объединением называется множество, состоящее из всех элементов всех множеств семейства: $$\bigcup\limits_{\alpha \in A} M_{\alpha} = \{x \mid \exists \alpha \in A,\; x \in M_{\alpha}\}.$$
-\end{definition}
-
-\begin{example}
-	$\{1,2,3\}\cup \{3,4,5\} = \{1,2,3,4,5\}$
-\end{example}
-
-\begin{example}
-	$x \cup \varnothing = x$
-\end{example}
-
-\begin{example}
-	$\bigcup \{\{1,2,3,4,5\}, \{2,3,4,9\}, \{0,2,3\}\} = \{0,1,2,3,4,5,9\}$
-\end{example}
-
-\begin{definition}
-	Пусть даны два множества $A$ и $B$. Тогда их \textbf{\textit{разностью}} называется множество	
-	$$A \setminus B =\{x\in A\mid x\not\in B\}.$$
-\end{definition}
-
-\begin{example}
-	$\{1,2,3\} \setminus \{3,4,5\} = \{1,2\}$
-\end{example}
-\begin{example}
-	$\{3,4,5\} \setminus \{1,2,3\} = \{4,5\}$
-\end{example}
-
-\begin{definition}
-Пусть даны два множества $A$ и $B$. Тогда их \textbf{\textit{симметрической разностью}} называется множество
-$$A \bigtriangleup B =\left( A \setminus B \right) \cup \left ( B \setminus A \right) = \left(A \cup B\right) \setminus \left(A \cap B\right).$$
-
-\end{definition}
-
-\begin{example}
-$\{1,2,3\} \bigtriangleup \{3,4,5\} = \{1,2,4,5\}$
-\end{example}
-
-\begin{definition}
-	Равенство называется \textit{\textbf{тождественно верным}}, или \textit{\textbf{тождеством}}, если оно истинно для любых значений входящих в него переменных.
-\end{definition}
-
-\begin{task} 
-	Какие из равенств тождественно верны для множеств $X,Y,Z$? Приведите контрпримеры к неверным тождествам.
-	\newline
-	
-	\begin{minipage}[c]{0.5\textwidth}
-		\begin{itemize}
-			\item $(X \cup Y) \cup Z = X \cup (Y \cup Z)$
-			\item $X \cup Y = Y \cup X$
-			\item $X \cup (Y \cap Z) = (X \cup Y) \cap (X \cup Z)$
-			\item $X \setminus (Y \cap Z) = (X \setminus Y) \cup (X \setminus Z)$
-			\item $(X \cup Y) \setminus Z = (X \setminus Z) \cup Y$
-			\item $X \setminus (X \setminus Y) = X \cap Y$
-		\end{itemize}
-	\end{minipage}
-	\begin{minipage}[c]{0.5\textwidth}
-		\begin{itemize}
-			\item $(X \cap Y) \cap Z = X \cap (Y \cap Z)$
-			\item $X \cap Y = Y \cap X$
-			\item $X \cup (Y \cap Z) = (X \cup Y) \cap (X \cup Z)$
-			\item $X \setminus (Y \cup Z) = (X \setminus Y) \cap (X \setminus Z)$
-			\item $(X \cap Y) \setminus Z = (X \setminus Z) \cap Y$
-			\item $(X \bigtriangleup Y) \bigtriangleup Z = X \bigtriangleup (Y \bigtriangleup Z)$
-		\end{itemize}
-	\end{minipage}
-\end{task}
-	
-\begin{task}
-	Докажите, что если какое-то равенство, содержащее переменные для множеств и операции $\cap, \cup, \setminus,$ не является тождеством, то можно найти контрпример к нему, в котором множества пусты или состоят из одного элемента.
-\end{task}
-
-\begin{task}[*]
-Сколько различных выражений для множеств можно составить из переменных $A$  и $B$ с помощью операций пересечения, объединения и разности? Из $n$ переменных? (Два выражения считаются одинаковыми, если они тождественно равны.)
-\end{task}
-
-
-\begin{definition}
-	Определим \textit{\textbf{упорядоченную}} пару $X_1$ и $X_2$ как $(X_1, X_2) := \{\{X_1\} , \{X_1, X_2\}\}$
-\end{definition}
-
-\begin{example}
-	$(1,1) = \{\{1\}, \{1,1\}\} = \{\{1\}\}.$
-\end{example}
-
-\begin{definition}
-	Пусть даны два множества $X$ и $Y$. Тогда их \textbf{\textit{декартовым произведением}} называется множество упорядоченных пар
-	$$X\times Y := \{(x,y) \mid x\in X \wedge y\in Y\}$$
-	
-	Будем обозначать $A^n := \underbrace{A\times A \times \dotsc \times A}_{n \text{ раз}}.$
-\end{definition}
-
-\begin{example}
-$\{a,b\}\times \{0,1,2\} = \{(a,0),(a,1),(a,2),(b,0),(b,1),(b,2)\}.$
-\end{example}
-
-\begin{example}
-$\{a,b\}^2 = \{(a,a),(a,b),(b,a),(b,b)\}.$
-\end{example}
-
-\begin{example}
-$\{1\}^6 = \{(1,1,1,1,1,1)\}.$
-\end{example}
-
-\begin{definition}
-Под \textit{\textbf{бинарными отношениями}} между $X$ и $Y$ мы будем понимать произвольные подможества $X \times Y$ . В частности, при $X = Y$ мы будем называть их еще \textit{бинарными отношениями на $X$}.
-Для удобства будем писать $xRy$ вместо $(x, y) \in R$.
-\end{definition}
-
-\begin{example}
-\textbf{\textit{Тождественное}} отношение на $X$ $$id_x:= \{(x,x) \mid x\in X\}= \{(x,y)\in  X^2 \mid x=y\}.$$
-\end{example}
-
-\begin{definition}
-Бинарное отношение $R \subseteq X \times X$ на $X$ будем называть: 
-\begin{itemize}
-
-	\item \textbf{\textit{рефлексивным}}, если $\forall x(x \in X \rightarrow xRx)$;
-	\item \textbf{\textit{иррефлексивным}}, если $\neg\exists x(x \in X \wedge xRx)$;
-	\item \textbf{\textit{транзитивным}}, если $\forall x\forall y\forall z((xRy \wedge yRz) \rightarrow xRz)$; 
-	\item \textbf{\textit{симметричным}}, если $\forall x\forall y(xRy \rightarrow yRx)$;
-	\item \textbf{\textit{антисимметричным}}, если $\forall x\forall y((xRy \wedge yRx) \rightarrow x = y)$.
-\end{itemize}
-\end{definition}
-
-\begin{example}
-	Отношение \texttt{"$=$"} на вещественных числах является \textit{рефлексивным}.
-\end{example}
-
-\begin{example}
-	Отношение \texttt{"$>$"} на вещественных числах является \textit{иррефлексивным}.
-\end{example}
-
-\begin{example}
-Отношение параллельности на множестве прямых на плоскости является \textit{транзитивным} и симметричным.
-\end{example}
-
-\begin{example}
-Отношение \texttt{"$\leqslant$"} на вещественных числах является \textit{антисимметричным}.
-\end{example}
-
-\begin{definition}
-Будем говорить, что отношение $R$ является:
-\begin{itemize}
-\item \textbf{\textit{предпорядком}} на $X$, если $R$ \textit{рефлексивно} и \textit{транзитивно};
-\item \textbf{\textit{строгим частичным порядком}} на $X$, если $R$ \textit{иррефлексивно} и \textit{транзитивно};
-\item \textbf{\textit{частичным порядком}} на $X$, если $R$ \textit{рефлексивно}, \textit{антисимметрично} и \textit{транзитивно}; 
-\item \textbf{\textit{эквивалентностью}} на $X$, если $R$ \textit{рефлексивно}, \textit{симметрично} и \textit{транзитивно}.
-\end{itemize}
-
-\end{definition}
-
-\begin{example}
-	Отношение делимости на натуральных числах является \textit{предпорядком}.
-\end{example}
-
-\begin{example}
-	Отношение \texttt{"$>$"} (строго больше) на вещественных числах является \textit{строгим частичным порядком}.
-\end{example}
-
-\begin{example}
-	Отношение \texttt{"$\geqslant$"} (нестрого больше) на вещественных числах является 	\textit{частичным порядком}.
-\end{example}
-
-
-\begin{example}
-	Отношение параллельности на множестве прямых на плоскости является \textit{эквивалентностью}.
-\end{example}
-
-\begin{definition}
-	Пусть $\approx$~--- \textit{эквивалентность} на $X$. Для каждого $x \in X$ под \textit{\textbf{классом эквивалентности}} $x$ по $\approx$ понимается множество
-	$[x]_\approx :=\{u\in X \mid x\approx u\}$
-\end{definition}
-
-\begin{definition}
-	Будем называть $Y$ (взаимно, или попарно) \textit{\textbf{дизъюнктным}}, если оно удовлетворяет условию $\forall u\forall v((u\in Y \wedge v\in Y \wedge u\neq v)\rightarrow u \cap v=\varnothing)$\\
-%\end{definition}
+\begin{document}
+    \large
+
+    \setcounter{task_boxed}{0}
+
+    \begin{task_boxed}
+        Обязательно ли старейший математик среди шахматистов и старейший шахматист среди математиков один и тот же человек?
+    \end{task_boxed}
+
+    \begin{task_boxed}
+        Обязательно ли лучший математик среди шахматистов и лучший шахматист среди математиков один и тот же человек?
+    \end{task_boxed}
+
+    \begin{definition_boxed}
+        \textit{Множество} - неупорядоченная совокупность элементов.
+    \end{definition_boxed}
+
+    \begin{example}
+        $\{1,2,3\} = \{3,2,1\} = \{1,1,3,2,3,3\}$
+    \end{example}
+
+    \begin{example}
+        $\{\} =\varnothing$
+    \end{example}
+
+    \begin{example}
+        $\{a,\{b,c\},\{\{d\},e\},\varnothing\}$
+    \end{example}
+
+    \begin{definition_boxed}
+        $a \in A$ - означает, что во множестве $A$ есть элемент $a$
+    \end{definition_boxed}
+
+    \begin{definition_boxed}
+        $B \subseteq A$ - означает, что если $b \in B$, то $b \in A$.
+    \end{definition_boxed}
+
+    \begin{example}
+        $1\in\{1,2,3\}; \;\;\;\;\; \{1,2\}\subseteq\{1,2,3\}$.
+    \end{example}
+
+    \begin{example}
+        $1\notin\varnothing$.
+    \end{example}
+
+    \begin{example}
+        $\{b,c\}\in \{a,\{b,c\},\{\{d\},e\},\varnothing\}$.
+    \end{example}
+
+    \begin{task_boxed}
+        Какие из выражений верны для произвольного $x$?\\
+        \\
+        \begin{minipage}[c]{0.3\textwidth}
+            \begin{itemize}
+                \item $x \in \{x\}$
+                \item $\{x\} \subseteq \{x\}$
+                \item $\{x\} \in \{x\}$
+            \end{itemize}
+        \end{minipage}
+        \begin{minipage}[c]{0.3\textwidth}
+            \begin{itemize}
+                \item $\{x,x\} \subseteq \{x\}$
+                \item $\{x\} \in \{\{x\}\}$
+                \item $\varnothing \in \varnothing$
+            \end{itemize}
+        \end{minipage}
+        \begin{minipage}[c]{0.3\textwidth}
+            \begin{itemize}
+                \item $\varnothing \in \{x\}$
+                \item $\varnothing \subseteq \{x\}$
+                \item $\varnothing \subseteq \varnothing$
+            \end{itemize}
+        \end{minipage}
+    \end{task_boxed}
+
+    \begin{definition_boxed}
+        Предикат от $x$ --- это такая функция $\varphi(x)$, которая принимает два возможных значения: либо истина, либо ложь (0 или 1)
+    \end{definition_boxed}
+
+    \begin{example}
+        $\varphi(x) = (x = 239)$~--- принимает истинное значение только, если $x = 239$
+    \end{example}
+
+
+    \begin{definition_boxed}
+        Чтобы работать с предикатами, нужно познакомиться с \textit{логическими связками}:
+        \begin{itemize}
+            \item $\neg$~--- \textbf{\textit{отрицание}} \texttt{"не ..."},
+
+            \item $\wedge$~--- \textbf{\textit{конъюнкция}}  \texttt{"... и ..."},
+
+            \item $\vee$~--- \textbf{\textit{дизъюнкция}}  \texttt{"... или ..."},
+
+            \item $\rightarrow$~--- \textbf{\textit{импликация}}  \texttt{"если ..., то ..."},
+
+            \item $\leftrightarrow$~--- \textbf{\textit{эквивалентность}}  \texttt{"... тогда и только тогда, когда ..."};
+        \end{itemize}
+        и {\textit{кванторами}}:
+        \begin{itemize}
+            \item $\forall x$~--- \textbf{\textit{квантор всеобщности}}  \texttt{"для любого х верно ..."}
+
+            \item $\exists x$~--- \textbf{\textit{квантор существования}}  \texttt{"существует х, такой что верно ..."}
+        \end{itemize}
+    \end{definition_boxed}
+
+    \begin{example}
+        $\varphi(x) = (\forall z \exists y: z + y = x)$~--- \texttt{"для любого z найдется y, такие что они в сумме дают x"}.
+        Это утверждение всегда верно, если мы рассматриваем предикат на множестве вещественных чисел.
+    \end{example}
+
+    \begin{example}
+        А вот записано утверждение \texttt{"множества равны тогда и только тогда, когда у них совпадает набор элементов"}
+        $\forall X\forall Y(\forall u(u \in X \leftrightarrow u \in Y) \rightarrow X = Y)$
+    \end{example}
+
+    \begin{definition_boxed}
+        $A = \underbrace{\{}_{\text{множество}}\underbrace{x}_{\text{всех иксов}} \underbrace{\mid}_{\text{таких, что}} \underbrace{\varphi(x)}_{\text{выполнено условие} \ \varphi(x)}\}$, где $\varphi(x)$ предикат от $x$.
+
+    \end{definition_boxed}
+
+
+    \begin{paradox_boxed}[ (Рассел)]
+        Рассмотрим множество $A = \{x\mid x \notin x\}$.
+        То есть множество всех множеств, которые не содержат себя в качестве своего собственного элемента.
+        Что тогда можно сказать про утверждение $A \in A$?
+    \end{paradox_boxed}
+
+    \begin{definition_boxed}
+        Пусть даны множества $A$ и $B$.
+        Тогда их \textit{\textbf{пересечением}} называется множество: \[A \cap B = \{x \mid x\in A \wedge x \in B\}.\]
+        Пусть дано семейство множеств $\{M_{\alpha}\}_{\alpha \in A}.$ Тогда его пересечением называется \textbf{\textit{множество}}, состоящее из элементов, которые входят во все множества семейства: \[\bigcap\limits_{\alpha \in A} M_{\alpha} = \{x \mid \forall \alpha \in A,\; x \in M_{\alpha}\}.\]
+    \end{definition_boxed}
+
+    \begin{example}
+        $\{1,2,3\}\cap \{3,4,5\} = \{3\}$
+    \end{example}
+
+    \begin{example}
+        $x \cap \varnothing = \varnothing$
+    \end{example}
+
+    \begin{example}
+        $\bigcap \{\{1,2,3,4,5\}, \{2,3,4,9\}, \{0,2,3\}\} = \{2,3\}$
+    \end{example}
+
+    \begin{definition_boxed}
+        Пусть даны два множества $A$ и $B$.
+        Тогда их \textbf{\textit{объединением}} называется множество
+        \[A \cup B = \{ x \mid x\in A \vee x\in B\}.\]
+        Пусть дано семейство множеств $\{M_{\alpha}\}_{\alpha \in A}.$ Тогда его объединением называется множество, состоящее из всех элементов всех множеств семейства: \[\bigcup\limits_{\alpha \in A} M_{\alpha} = \{x \mid \exists \alpha \in A,\; x \in M_{\alpha}\}.\]
+    \end{definition_boxed}
+
+    \begin{example}
+        $\{1,2,3\}\cup \{3,4,5\} = \{1,2,3,4,5\}$
+    \end{example}
+
+    \begin{example}
+        $x \cup \varnothing = x$
+    \end{example}
+
+    \begin{example}
+        $\bigcup \{\{1,2,3,4,5\}, \{2,3,4,9\}, \{0,2,3\}\} = \{0,1,2,3,4,5,9\}$
+    \end{example}
+
+    \begin{definition_boxed}
+        Пусть даны два множества $A$ и $B$.
+        Тогда их \textbf{\textit{разностью}} называется множество
+        \[A \setminus B =\{x\in A\mid x\not\in B\}.\]
+    \end{definition_boxed}
+
+    \begin{example}
+        $\{1,2,3\} \setminus \{3,4,5\} = \{1,2\}$
+    \end{example}
+    \begin{example}
+        $\{3,4,5\} \setminus \{1,2,3\} = \{4,5\}$
+    \end{example}
+
+    \begin{definition_boxed}
+        Пусть даны два множества $A$ и $B$.
+        Тогда их \textbf{\textit{симметрической разностью}} называется множество
+        \[A \bigtriangleup B =\left( A \setminus B \right) \cup \left ( B \setminus A \right) = \left(A \cup B\right) \setminus \left(A \cap B\right).\]
+
+    \end{definition_boxed}
+
+    \begin{example}
+        $\{1,2,3\} \bigtriangleup \{3,4,5\} = \{1,2,4,5\}$
+    \end{example}
+
+    \begin{definition_boxed}
+        Равенство называется \textit{\textbf{тождественно верным}}, или \textit{\textbf{тождеством}}, если оно истинно для любых значений входящих в него переменных.
+    \end{definition_boxed}
+
+    \begin{task_boxed}
+        Какие из равенств тождественно верны для множеств $X,Y,Z$? Приведите контрпримеры к неверным тождествам.
+        \newline
+
+        \begin{minipage}[c]{0.5\textwidth}
+            \begin{itemize}
+                \item $(X \cup Y) \cup Z = X \cup (Y \cup Z)$
+                \item $X \cup Y = Y \cup X$
+                \item $X \cup (Y \cap Z) = (X \cup Y) \cap (X \cup Z)$
+                \item $X \setminus (Y \cap Z) = (X \setminus Y) \cup (X \setminus Z)$
+                \item $(X \cup Y) \setminus Z = (X \setminus Z) \cup Y$
+                \item $X \setminus (X \setminus Y) = X \cap Y$
+            \end{itemize}
+        \end{minipage}
+        \begin{minipage}[c]{0.5\textwidth}
+            \begin{itemize}
+                \item $(X \cap Y) \cap Z = X \cap (Y \cap Z)$
+                \item $X \cap Y = Y \cap X$
+                \item $X \cup (Y \cap Z) = (X \cup Y) \cap (X \cup Z)$
+                \item $X \setminus (Y \cup Z) = (X \setminus Y) \cap (X \setminus Z)$
+                \item $(X \cap Y) \setminus Z = (X \setminus Z) \cap Y$
+                \item $(X \bigtriangleup Y) \bigtriangleup Z = X \bigtriangleup (Y \bigtriangleup Z)$
+            \end{itemize}
+        \end{minipage}
+    \end{task_boxed}
+
+    \begin{task_boxed}
+        Докажите, что если какое-то равенство, содержащее переменные для множеств и операции $\cap, \cup, \setminus,$ не является тождеством, то можно найти контрпример к нему, в котором множества пусты или состоят из одного элемента.
+    \end{task_boxed}
+
+    \begin{task_boxed}[*]
+        Сколько различных выражений для множеств можно составить из переменных $A$  и $B$ с помощью операций пересечения, объединения и разности?
+        Из $n$ переменных?
+        (Два выражения считаются одинаковыми, если они тождественно равны.)
+    \end{task_boxed}
+
+
+    \begin{definition_boxed}
+        Определим \textit{\textbf{упорядоченную}} пару $X_1$ и $X_2$ как $(X_1, X_2) \coloneqq \{\{X_1\} , \{X_1, X_2\}\}$
+    \end{definition_boxed}
+
+    \begin{example}
+        $(1,1) = \{\{1\}, \{1,1\}\} = \{\{1\}\}.$
+    \end{example}
+
+    \begin{definition_boxed}
+        Пусть даны два множества $X$ и $Y$.
+        Тогда их \textbf{\textit{декартовым произведением}} называется множество упорядоченных пар
+        \[X\times Y \coloneqq \{(x,y) \mid x\in X \wedge y\in Y\}\]
+
+        Будем обозначать $A^n \coloneqq \underbrace{A\times A \times \dotsc \times A}_{n \text{ раз}}.$
+    \end{definition_boxed}
+
+    \begin{example}
+        $\{a,b\}\times \{0,1,2\} = \{(a,0),(a,1),(a,2),(b,0),(b,1),(b,2)\}.$
+    \end{example}
+
+    \begin{example}
+        $\{a,b\}^2 = \{(a,a),(a,b),(b,a),(b,b)\}.$
+    \end{example}
+
+    \begin{example}
+        $\{1\}^6 = \{(1,1,1,1,1,1)\}.$
+    \end{example}
+
+    \begin{definition_boxed}
+        Под \textit{\textbf{бинарными отношениями}} между $X$ и $Y$ мы будем понимать произвольные подможества $X \times Y$ .
+        В частности, при $X = Y$ мы будем называть их еще \textit{бинарными отношениями на $X$}.
+        Для удобства будем писать $xRy$ вместо $(x, y) \in R$.
+    \end{definition_boxed}
+
+    \begin{example}
+        \textbf{\textit{Тождественное}} отношение на $X$ \[id_x \coloneqq \{(x,x) \mid x\in X\}= \{(x,y)\in  X^2 \mid x=y\}.\]
+    \end{example}
+
+    \begin{definition_boxed}
+        Бинарное отношение $R \subseteq X \times X$ на $X$ будем называть:
+        \begin{itemize}
+
+            \item \textbf{\textit{рефлексивным}}, если $\forall x(x \in X \rightarrow xRx)$;
+            \item \textbf{\textit{иррефлексивным}}, если $\neg\exists x(x \in X \wedge xRx)$;
+            \item \textbf{\textit{транзитивным}}, если $\forall x\forall y\forall z((xRy \wedge yRz) \rightarrow xRz)$;
+            \item \textbf{\textit{симметричным}}, если $\forall x\forall y(xRy \rightarrow yRx)$;
+            \item \textbf{\textit{антисимметричным}}, если $\forall x\forall y((xRy \wedge yRx) \rightarrow x = y)$.
+        \end{itemize}
+    \end{definition_boxed}
+
+    \begin{example}
+        Отношение \texttt{"$=$"} на вещественных числах является \textit{рефлексивным}.
+    \end{example}
+
+    \begin{example}
+        Отношение \texttt{"$>$"} на вещественных числах является \textit{иррефлексивным}.
+    \end{example}
+
+    \begin{example}
+        Отношение параллельности на множестве прямых на плоскости является \textit{транзитивным} и симметричным.
+    \end{example}
+
+    \begin{example}
+        Отношение \texttt{"$\leqslant$"} на вещественных числах является \textit{антисимметричным}.
+    \end{example}
+
+    \begin{definition_boxed}
+        Будем говорить, что отношение $R$ является:
+        \begin{itemize}
+            \item \textbf{\textit{предпорядком}} на $X$, если $R$ \textit{рефлексивно} и \textit{транзитивно};
+            \item \textbf{\textit{строгим частичным порядком}} на $X$, если $R$ \textit{иррефлексивно} и \textit{транзитивно};
+            \item \textbf{\textit{частичным порядком}} на $X$, если $R$ \textit{рефлексивно}, \textit{антисимметрично} и \textit{транзитивно};
+            \item \textbf{\textit{эквивалентностью}} на $X$, если $R$ \textit{рефлексивно}, \textit{симметрично} и \textit{транзитивно}.
+        \end{itemize}
+
+    \end{definition_boxed}
+
+    \begin{example}
+        Отношение делимости на натуральных числах является \textit{предпорядком}.
+    \end{example}
+
+    \begin{example}
+        Отношение \texttt{"$>$"} (строго больше) на вещественных числах является \textit{строгим частичным порядком}.
+    \end{example}
+
+    \begin{example}
+        Отношение \texttt{"$\geqslant$"} (нестрого больше) на вещественных числах является    \textit{частичным порядком}.
+    \end{example}
+
+
+    \begin{example}
+        Отношение параллельности на множестве прямых на плоскости является \textit{эквивалентностью}.
+    \end{example}
+
+    \begin{definition_boxed}
+        Пусть $\approx$~--- \textit{эквивалентность} на $X$.
+        Для каждого $x \in X$ под \textit{\textbf{классом эквивалентности}} $x$ по $\approx$ понимается множество
+        $[x]_\approx \coloneqq \{u\in X \mid x\approx u\}$
+    \end{definition_boxed}
+
+    \begin{definition_boxed}
+        Будем называть $Y$ (взаимно, или попарно) \textit{\textbf{дизъюнктным}}, если оно удовлетворяет условию $\forall u\forall v((u\in Y \wedge v\in Y \wedge u\neq v)\rightarrow u \cap v=\varnothing)$\\
+%\end{definition_boxed}
 %
-%\begin{definition}
-	Будем говорить, что $Y$ является \textit{\textbf{разбиением}} $X$ , если $Y$ \textit{дизъюнктно}, $\varnothing \notin Y$ и $\bigcup Y = X$.
-\end{definition}
+%\begin{definition_boxed}
+        Будем говорить, что $Y$ является \textit{\textbf{разбиением}} $X$ , если $Y$ \textit{дизъюнктно}, $\varnothing \notin Y$ и $\bigcup Y = X$.
+    \end{definition_boxed}
 
 
-\begin{task}
-	Показать:\\
-	(a) Если $Y$~--- \textit{разбиение} $X$, то
-	$\mathscr{E}_Y :=\{(u,v)\in X^2 \mid \exists y(y\in Y \wedge u\in y\wedge v\in y)\}$~--- \textit{эквивалентность} на $X$, причём $X_{/\mathscr{E}_Y}$ равно $Y$.\\
-	(b) Если $\approx$~--- \textit{эквивалентность} на $X$, то $X_{/\approx}$~--- \textit{разбиение} $X$, причём $\mathscr{E}_{X_{/\approx}}$ равно $\approx$.
-	
-\end{task}
-	
-\begin{task}
-Пусть $R$~--- \textit{предпорядок} на $X$. Тогда\\
-(a) $\mathscr{S}_R := \{(u, v) \in X^2 \mid  uRv \wedge vRu\}$~--- \textit{эквивалентность} на $X$;\\
-(b) $R^\# :=\{([u]_{/\mathscr{S}_R},[v]_{/\mathscr{S}_R})\mid u\in X\wedge v\in X\wedge uRv\}$~--- \textit{частичный порядок }на $X_{/\mathscr{S}_R}.$ 
-\end{task} 
+    \begin{task_boxed}
+        Показать:\\
+        (a) Если $Y$~--- \textit{разбиение} $X$, то
+        $\mathscr{E}_Y \coloneqq \{(u,v)\in X^2 \mid \exists y(y\in Y \wedge u\in y\wedge v\in y)\}$~--- \textit{эквивалентность} на $X$, причём $X_{/\mathscr{E}_Y}$ равно $Y$.\\
+        (b) Если $\approx$~--- \textit{эквивалентность} на $X$, то $X_{/\approx}$~--- \textit{разбиение} $X$, причём $\mathscr{E}_{X_{/\approx}}$ равно $\approx$.
 
-\begin{task}
-Доказать:\\
-(a) Если $R$~--- \textit{строгий частичный порядок} на $X$ , то $R \cup id_X$~--- \textit{частичный порядок} на $X$; \\
-(b) Если $R$~--- \textit{частичный порядок} на $X$, то $R \setminus id_X$~--- \textit{строгий частичный порядок} на $X$.
-\end{task}
+    \end{task_boxed}
 
-\begin{definition}
-	Множество
-	$\mathrm{dom}(R):=\{u\in X\mid\exists v: uRv\}$,
-	называют \textit{\textbf{областью определения}} $R$.
-\end{definition}
+    \begin{task_boxed}
+        Пусть $R$~--- \textit{предпорядок} на $X$.
+        Тогда\\
+        (a) $\mathscr{S}_R \coloneqq \{(u, v) \in X^2 \mid  uRv \wedge vRu\}$~--- \textit{эквивалентность} на $X$;\\
+        (b) $R^\# \coloneqq\{([u]_{/\mathscr{S}_R},[v]_{/\mathscr{S}_R})\mid u\in X\wedge v\in X\wedge uRv\}$~--- \textit{частичный порядок }на $X_{/\mathscr{S}_R}.$
+    \end{task_boxed}
 
-\begin{definition}
-	Множество
-	$\mathrm{range}(R) := \{v\in Y\mid\exists u: uRv\}$,
-	называют и \textit{\textbf{областью значений}} $R$.
-\end{definition}
+    \begin{task_boxed}
+        Доказать:\\
+        (a) Если $R$~--- \textit{строгий частичный порядок} на $X$ , то $R \cup id_X$~--- \textit{частичный порядок} на $X$; \\
+        (b) Если $R$~--- \textit{частичный порядок} на $X$, то $R \setminus id_X$~--- \textit{строгий частичный порядок} на $X$.
+    \end{task_boxed}
 
-\begin{definition}
-	Для каждого $U \subseteq X$ множество
-	$$R[U] := \mathrm{range}(R\cap U\times Y) = \{v \in Y  \mid \exists u(u\in U\wedge uRv)\}$$ называется \textit{\textbf{образом}} $U$ относительно $R$.
-\end{definition}
+    \begin{definition_boxed}
+        Множество
+        $\mathrm{dom}(R)\coloneqq\{u\in X\mid\exists v: uRv\}$,
+        называют \textit{\textbf{областью определения}} $R$.
+    \end{definition_boxed}
 
-\begin{example}
-	Рассмотрим \textit{строгий частичный порядок} \texttt{"$<$"} на $\{0,1,2,3,4,5,6,7,8,9\}.$\\
-	Тогда $<[\{4,5,8\}] = \{5,6,7,8,9\}.$
-\end{example}
+    \begin{definition_boxed}
+        Множество
+        $\mathrm{range}(R) \coloneqq \{v\in Y\mid\exists u: uRv\}$,
+        называют и \textit{\textbf{областью значений}} $R$.
+    \end{definition_boxed}
 
-\begin{definition}
-	\textit{\textbf{Обратное отношение}} к $R$ определяется как
-	$R^{-1} := \{(y,x) \mid (x,y) \in R\}$
-\end{definition}
+    \begin{definition_boxed}
+        Для каждого $U \subseteq X$ множество
+        \[R[U] \coloneqq \mathrm{range}(R\cap U\times Y) = \{v \in Y  \mid \exists u(u\in U\wedge uRv)\}\] называется \textit{\textbf{образом}} $U$ относительно $R$.
+    \end{definition_boxed}
 
-\begin{example}
-Рассмотрим \textit{частичный порядок} \texttt{"$\geqslant$"} на $\{0,1,2,3,4,5,6,7,8,9\}.$\\
-Тогда $\geqslant^{-1}$ равно $\leqslant.$
-\end{example}
+    \begin{example}
+        Рассмотрим \textit{строгий частичный порядок} \texttt{"$<$"} на $\{0,1,2,3,4,5,6,7,8,9\}.$\\
+        Тогда $<[\{4,5,8\}] = \{5,6,7,8,9\}.$
+    \end{example}
 
-\begin{definition}
-	Для каждого $V \subseteq Y$ \textit{образ} $V$ под действием $R^{-1}$ называется \textbf{\textit{прообразом}} $V$ относительно $R$.
-\end{definition}
+    \begin{definition_boxed}
+        \textit{\textbf{Обратное отношение}} к $R$ определяется как
+        $R^{-1} \coloneqq \{(y,x) \mid (x,y) \in R\}$
+    \end{definition_boxed}
 
-\begin{example}
-	$\range(R) = \dom(R^{-1}) = R [X].$
-\end{example}
-\begin{example}
-	$\range(R^{-1}) =\dom(R) = R^{-1}[Y].$
-\end{example}
+    \begin{example}
+        Рассмотрим \textit{частичный порядок} \texttt{"$\geqslant$"} на $\{0,1,2,3,4,5,6,7,8,9\}.$\\
+        Тогда $\geqslant^{-1}$ равно $\leqslant.$
+    \end{example}
 
-\begin{definition}
-	Бинарные отношения можно естественным образом комбинировать: \\
-	для любых $R \subseteq X \times Y$ и $Q \subseteq Y \times Z$ множество
-	$$R\circ Q := \{(x,z) \in X\times Z\mid \exists y(xRy \wedge yQz)\}$$
-	называется \textbf{\textit{композицией}} $R$ и $Q$.
-\end{definition}
+    \begin{definition_boxed}
+        Для каждого $V \subseteq Y$ \textit{образ} $V$ под действием $R^{-1}$ называется \textbf{\textit{прообразом}} $V$ относительно $R$.
+    \end{definition_boxed}
 
-\begin{definition}
-	Говорят, что $R \subseteq X \times Y$ \textbf{\textit{функционально}}, если
-	$$\forall x \forall y_1 \forall y_2 ((xRy_1 \wedge xRy_2) \rightarrow y_1 = y_2).$$
-	Далее, $R$ называют \textbf{\textit{функцией}} из $X$ в $Y$ , и пишут $R : X \rightarrow Y$, если $\dom(R) = X$ и $R$ \textit{функционально}.
-\end{definition}
+    \begin{example}
+        $\range(R) = \dom(R^{-1}) = R [X].$
+    \end{example}
+    \begin{example}
+        $\range(R^{-1}) =\dom(R) = R^{-1}[Y].$
+    \end{example}
 
-\begin{definition}
-	Пусть $f : X \rightarrow Y$. Значит, для любого $x \in X$ имеется единственное $y \in Y$ такое, что $(x , y) \in f$, которое называется \textbf{\textit{значением}} $f$ в $ x $ и обозначается через $ f (x) $. 
-\end{definition}
+    \begin{definition_boxed}
+        Бинарные отношения можно естественным образом комбинировать: \\
+        для любых $R \subseteq X \times Y$ и $Q \subseteq Y \times Z$ множество
+        \[R\circ Q \coloneqq \{(x,z) \in X\times Z\mid \exists y(xRy \wedge yQz)\}\]
+        называется \textbf{\textit{композицией}} $R$ и $Q$.
+    \end{definition_boxed}
 
-\begin{example}
-	$\range(f) = \{f(x)\mid x\in X\}.$
-\end{example}
+    \begin{definition_boxed}
+        Говорят, что $R \subseteq X \times Y$ \textbf{\textit{функционально}}, если
+        \[\forall x \forall y_1 \forall y_2 ((xRy_1 \wedge xRy_2) \rightarrow y_1 = y_2).\]
+        Далее, $R$ называют \textbf{\textit{функцией}} из $X$ в $Y$ , и пишут $R : X \rightarrow Y$, если $\dom(R) = X$ и $R$ \textit{функционально}.
+    \end{definition_boxed}
 
+    \begin{definition_boxed}
+        Пусть $f : X \rightarrow Y$.
+        Значит, для любого $x \in X$ имеется единственное $y \in Y$ такое, что $(x , y) \in f$, которое называется \textbf{\textit{значением}} $f$ в $ x $ и обозначается через $ f (x) $.
+    \end{definition_boxed}
 
-\begin{definition}
-	Для каждого $U \subseteq X$ \textbf{\textit{ограничение}} (или \textit{\textbf{сужение}}) $f$ на $U$ определяется как
-	$$f|_U := f \cap U \times Y.$$
-	$f|_U$ будет функцией из $U$ в $Y$. Вообще, если $ f : X \rightarrow Y$ и $g : U \rightarrow Y $ таковы, что $ U \subseteq X  $ и $ f|_U= g $, то $g$ называют \textit{\textbf{ограничением}} $ f $, a $ f $ \textit{\textbf{расширением}} $ g $. 
-\end{definition}
-
-\begin{definition}
-	Обозначим $Y^X :=\{f\mid f:X\rightarrow Y\}.$
-Под \textit{двухместными}, \textit{трехместными} и так далее функциями из $X$ в $Y$ понимают элементы $Y^{X^2}$, $Y^{X^3}$ и так далее.
-\end{definition}
-
-\begin{definition}
-	Функцию $f$ из $X$ в $Y$ называют:
-	
-	\textbf{\textit{сюрьективной}}, если $\range (f) = Y$;
-	
-	\textbf{\textit{инъективной}}, если $f^{-1}$ функционально. 
-	
-	\textbf{\textit{биективной}}, если $ f $ \textit{сюрьективна} и \textit{инъективна}.\\
-	\textit{Сюрьективные} функции также называют \textbf{\textit{сюрьекциями}}, \textit{инъективные} \textbf{\textit{инъекциями}}, а \textit{биективные} \textbf{\textit{биекциями}}.
-\end{definition}
-
-\begin{definition}
-	Введём особые символы для часто использующихся множеств. 
-	
-	$\mathbb{N} = \{1,2,3,4,\dotsc \}$ - множество \textit{натуральных} чисел.
-	
-	$\mathbb{N}_0 = \{0,1,2,3,4,\dotsc \}$ - множество натуральных чисел и ноль.
-	
-	$\mathbb{Z} = \{\dotsc, -3, -2, -1, 0,1,2,3,\dotsc \}$ - множество \textit{целых} чисел.
-	
-	$\mathbb{Q}$ - множество \textit{рациональных} чисел.
-	
-	$\mathbb{R}$ - множество \textit{вещественных} чисел.
-	
-	$\mathbb{R\backslash Q}$ - множество \textit{иррациональных} чисел.
-	
-	$\mathbb{A}$ - множество \textit{алгебраических} чисел (вещественные числа, которые могут быть корнями многочленов с целыми коэффициентами).
-\end{definition}
-
-\begin{example}
-	$\N \subset \N_0 \subset \Z \subset \Q \subset \A \subset \R.$
-\end{example}
-
-\begin{example}
-	$f: \N \rightarrow \N, f(x) = 2x$ является \textit{инъективной}.
-\end{example}
-\begin{example}
-	$f: \R \rightarrow \R, f(x) = x^3 - 3x$ является \textit{сюрьективной}.
-\end{example}
-\begin{example}
-	$f: \R_{>0} \rightarrow \R_{>0}, f(x) = \dfrac{1}{x}$ является \textit{биективной}.
-\end{example}
-
-\begin{definition}
-	$|A| = |B|$~--- множества $A$ и $B$ \textit{\textbf{равномощны}}~--- между ними есть \textit{биекция}.
-\end{definition}
-
-\begin{task} 
-	Покажите, что для любых $X, Y, Z$ верно: \\
-	\newline
-	\begin{minipage}[c]{0.5\textwidth}
-		\begin{itemize}
-			\item $|X\times Y|=|Y \times X|$
-			\item $|(X\times Y)\times Z|=|X\times (Y \times Z)|$
-		\end{itemize}
-	\end{minipage}
-	\begin{minipage}[c]{0.5\textwidth}
-		\begin{itemize}
-			\item если $|X|=|Y|$, то $|X\times Z|=|Y \times Z|$
-			\item $|Z^{X\times Y}|=|(Z^Y)^X|$
-		\end{itemize}
-	\end{minipage}
-\end{task}
-
-\begin{example}
-	Если $|A| = |\mathbb{N}|$, то $A$ называется \textbf{\textit{счётным}} множеством (его элементы можно пересчитать).
-\end{example}
-
-\begin{definition}
-	Для конечных множеств $A$ определим $|A|$~--- \textit{\textbf{мощность}} множества~--- количество элементов в нем.
-\end{definition}
-
-\begin{example}
-	$|\{a,\{b,c\},\{\{d\},e\},\varnothing\}| = |\{0,1,2,3\}| = 4.$
-\end{example}
-
-\begin{definition}
-	Говорят, что $X$ по мощности меньше или равно $Y$, и пишут $X \preccurlyeq Y$ или $|X| \leqslant |Y|$, если существует инъекция из $X$ в $ Y $. 
-\end{definition}
-
-\begin{theorem}[ (Кантора--Шрёдера--Бернштейна)]
-	Если $X \preccurlyeq Y$ и $Y \preccurlyeq X$ , то $|X| = |Y|$.
-\end{theorem}
-
-\begin{definition}
-	$A^* = \{\varnothing\} \cup A \cup A^2 \cup A^3 \dotsc$~--- множество всех конечных последовательностей.
-\end{definition}
-
-\begin{example}
-	$\{a,b\}^* = \{\varnothing, a,b,aa,ab,ba,bb,aaa,aab,\dotsc\}.$
-\end{example}
-
-\begin{definition}
-	$\mathcal{P}(A) = 2^A$ - множество всех подмножеств множества $A$.
-\end{definition}
-
-\begin{example}
-	$2^{\{1,2,3\}} = \{\{\}, \{1\},\{2\},\{3\},\{1,2\},\{1,3\},\{2,3\},\{1,2,3\}\}.$
-\end{example}
+    \begin{example}
+        $\range(f) = \{f(x)\mid x\in X\}.$
+    \end{example}
 
 
-	
-\begin{task} 
-	
-	\begin{minipage}[c]{0.7\textwidth}
-		\begin{itemize}
-			\item Докажите, что $|$Чётных положительных$| = |\mathbb{N}|.$
-			\item Докажите, что $|$Нечётных положительных$| = |\mathbb{N}|.$
-			\item Докажите, что если $|A| = |B| = |\mathbb{N}|$, то $A\cup B = |\mathbb{N}|.$
-			\item Докажите, что $|(0,1)| = |\mathbb{R}|.$
-			\item Докажите, что $|(0,1)| = |2^{\mathbb{N}}|.$
-			\item Докажите, что $|\mathbb{R}| \neq |\mathbb{N}|.$
-			\item Докажите, что $|\mathbb{R}^2| = |\mathbb{R}|.$
-		\end{itemize}
-	\end{minipage}
-	\begin{minipage}[c]{0.3\textwidth}
-		\begin{itemize}
-			\item $|\mathbb{Z}| \stackrel{?}{=} |\mathbb{N}|.$
-			\item $|\mathbb{Q}| \stackrel{?}{=} |\mathbb{N}|.$
-			\item $|\mathbb{N}^2| \stackrel{?}{=} |\mathbb{N}|.$
-			\item $|\mathbb{N}^*| \stackrel{?}{=} |\mathbb{N}|.$
-			\item $|\mathbb{A}| \stackrel{?}{=} |\mathbb{N}|.$
-			\item $|\mathbb{R}| \stackrel{?}{=} |\mathbb{N}|.$
-			\item $|\mathbb{R}^*| \stackrel{?}{=} |\mathbb{R}|.$
-		\end{itemize}
-	\end{minipage}
-\end{task}
+    \begin{definition_boxed}
+        Для каждого $U \subseteq X$ \textbf{\textit{ограничение}} (или \textit{\textbf{сужение}}) $f$ на $U$ определяется как
+        \[f|_U \coloneqq f \cap U \times Y.\]
+        $f|_U$ будет функцией из $U$ в $Y$.
+        Вообще, если $ f : X \rightarrow Y$ и $g : U \rightarrow Y $ таковы, что $ U \subseteq X  $ и $ f|_U= g $, то $g$ называют \textit{\textbf{ограничением}} $ f $, a $ f $ \textit{\textbf{расширением}} $ g $.
+    \end{definition_boxed}
 
-\begin{theorem}[ (Кантора)]
-	Для любого $A$ верно $|2^A| \neq |A|.$
-\end{theorem}
+    \begin{definition_boxed}
+        Обозначим $Y^X \coloneqq \{f\mid f:X\rightarrow Y\}.$
+        Под \textit{двухместными}, \textit{трехместными} и так далее функциями из $X$ в $Y$ понимают элементы $Y^{X^2}$, $Y^{X^3}$ и так далее.
+    \end{definition_boxed}
 
-\begin{theorem}[ (Континуум-гипотеза)]
-Для любого $A$ если $\N \preccurlyeq A \preccurlyeq \R$, то либо $|A| = |\N|,$ либо $|A| = |\R|.$ 
-\end{theorem}
+    \begin{definition_boxed}
+        Функцию $f$ из $X$ в $Y$ называют:
+
+        \textbf{\textit{сюрьективной}}, если $\range (f) = Y$;
+
+        \textbf{\textit{инъективной}}, если $f^{-1}$ функционально.
+
+        \textbf{\textit{биективной}}, если $ f $ \textit{сюрьективна} и \textit{инъективна}.\\
+        \textit{Сюрьективные} функции также называют \textbf{\textit{сюрьекциями}}, \textit{инъективные} \textbf{\textit{инъекциями}}, а \textit{биективные} \textbf{\textit{биекциями}}.
+    \end{definition_boxed}
+
+    \begin{definition_boxed}
+        Введём особые символы для часто использующихся множеств.
+
+        $\mathbb{N} = \{1,2,3,4,\dotsc \}$ - множество \textit{натуральных} чисел.
+
+        $\mathbb{N}_0 = \{0,1,2,3,4,\dotsc \}$ - множество натуральных чисел и ноль.
+
+        $\mathbb{Z} = \{\dotsc, -3, -2, -1, 0,1,2,3,\dotsc \}$ - множество \textit{целых} чисел.
+
+        $\mathbb{Q}$ - множество \textit{рациональных} чисел.
+
+        $\mathbb{R}$ - множество \textit{вещественных} чисел.
+
+        $\mathbb{R\backslash Q}$ - множество \textit{иррациональных} чисел.
+
+        $\mathbb{A}$ - множество \textit{алгебраических} чисел (вещественные числа, которые могут быть корнями многочленов с целыми коэффициентами).
+    \end{definition_boxed}
+
+    \begin{example}
+        $\N \subset \N_0 \subset \Z \subset \Q \subset \A \subset \R.$
+    \end{example}
+
+    \begin{example}
+        $f: \N \rightarrow \N, f(x) = 2x$ является \textit{инъективной}.
+    \end{example}
+    \begin{example}
+        $f: \R \rightarrow \R, f(x) = x^3 - 3x$ является \textit{сюрьективной}.
+    \end{example}
+    \begin{example}
+        $f: \R_{>0} \rightarrow \R_{>0}, f(x) = \dfrac{1}{x}$ является \textit{биективной}.
+    \end{example}
+
+    \begin{definition_boxed}
+        $|A| = |B|$~--- множества $A$ и $B$ \textit{\textbf{равномощны}}~--- между ними есть \textit{биекция}.
+    \end{definition_boxed}
+
+    \begin{task_boxed}
+        Покажите, что для любых $X, Y, Z$ верно: \\
+        \newline
+        \begin{minipage}[c]{0.5\textwidth}
+            \begin{itemize}
+                \item $|X\times Y|=|Y \times X|$
+                \item $|(X\times Y)\times Z|=|X\times (Y \times Z)|$
+            \end{itemize}
+        \end{minipage}
+        \begin{minipage}[c]{0.5\textwidth}
+            \begin{itemize}
+                \item если $|X|=|Y|$, то $|X\times Z|=|Y \times Z|$
+                \item $|Z^{X\times Y}|=|(Z^Y)^X|$
+            \end{itemize}
+        \end{minipage}
+    \end{task_boxed}
+
+    \begin{example}
+        Если $|A| = |\mathbb{N}|$, то $A$ называется \textbf{\textit{счётным}} множеством (его элементы можно пересчитать).
+    \end{example}
+
+    \begin{definition_boxed}
+        Для конечных множеств $A$ определим $|A|$~--- \textit{\textbf{мощность}} множества~--- количество элементов в нем.
+    \end{definition_boxed}
+
+    \begin{example}
+        $|\{a,\{b,c\},\{\{d\},e\},\varnothing\}| = |\{0,1,2,3\}| = 4.$
+    \end{example}
+
+    \begin{definition_boxed}
+        Говорят, что $X$ по мощности меньше или равно $Y$, и пишут $X \preccurlyeq Y$ или $|X| \leqslant |Y|$, если существует инъекция из $X$ в $ Y $.
+    \end{definition_boxed}
+
+    \begin{theorem_boxed}[ (Кантора--Шрёдера--Бернштейна)]
+        Если $X \preccurlyeq Y$ и $Y \preccurlyeq X$ , то $|X| = |Y|$.
+    \end{theorem_boxed}
+
+    \begin{definition_boxed}
+        $A^* = \{\varnothing\} \cup A \cup A^2 \cup A^3 \dotsc$~--- множество всех конечных последовательностей.
+    \end{definition_boxed}
+
+    \begin{example}
+        $\{a,b\}^* = \{\varnothing, a,b,aa,ab,ba,bb,aaa,aab,\dotsc\}.$
+    \end{example}
+
+    \begin{definition_boxed}
+        $\mathcal{P}(A) = 2^A$ - множество всех подмножеств множества $A$.
+    \end{definition_boxed}
+
+    \begin{example}
+        $2^{\{1,2,3\}} = \{\{\}, \{1\},\{2\},\{3\},\{1,2\},\{1,3\},\{2,3\},\{1,2,3\}\}.$
+    \end{example}
+
+
+
+    \begin{task_boxed}
+
+        \begin{minipage}[c]{0.7\textwidth}
+            \begin{itemize}
+                \item Докажите, что $|$Чётных положительных$| = |\mathbb{N}|.$
+                \item Докажите, что $|$Нечётных положительных$| = |\mathbb{N}|.$
+                \item Докажите, что если $|A| = |B| = |\mathbb{N}|$, то $A\cup B = |\mathbb{N}|.$
+                \item Докажите, что $|(0,1)| = |\mathbb{R}|.$
+                \item Докажите, что $|(0,1)| = |2^{\mathbb{N}}|.$
+                \item Докажите, что $|\mathbb{R}| \neq |\mathbb{N}|.$
+                \item Докажите, что $|\mathbb{R}^2| = |\mathbb{R}|.$
+            \end{itemize}
+        \end{minipage}
+        \begin{minipage}[c]{0.3\textwidth}
+            \begin{itemize}
+                \item $|\mathbb{Z}| \stackrel{?}{=} |\mathbb{N}|.$
+                \item $|\mathbb{Q}| \stackrel{?}{=} |\mathbb{N}|.$
+                \item $|\mathbb{N}^2| \stackrel{?}{=} |\mathbb{N}|.$
+                \item $|\mathbb{N}^*| \stackrel{?}{=} |\mathbb{N}|.$
+                \item $|\mathbb{A}| \stackrel{?}{=} |\mathbb{N}|.$
+                \item $|\mathbb{R}| \stackrel{?}{=} |\mathbb{N}|.$
+                \item $|\mathbb{R}^*| \stackrel{?}{=} |\mathbb{R}|.$
+            \end{itemize}
+        \end{minipage}
+    \end{task_boxed}
+
+    \begin{theorem_boxed}[ (Кантора)]
+        Для любого $A$ верно $|2^A| \neq |A|.$
+    \end{theorem_boxed}
+
+    \begin{theorem_boxed}[ (Континуум-гипотеза)]
+        Для любого $A$ если $\N \preccurlyeq A \preccurlyeq \R$, то либо $|A| = |\N|,$ либо $|A| = |\R|.$
+    \end{theorem_boxed}
 
 
 \end{document}

@@ -1,88 +1,65 @@
 \documentclass{article}
-\usepackage[12pt]{extsizes}
-\usepackage[T2A]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[english, russian]{babel}
 
-\usepackage{amssymb}
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage{enumitem}
-\usepackage{graphics}
-\usepackage{graphicx}
+\include{../commons/libraries}
+\include{../commons/theorems}
+\include{../commons/aliases}
 
-\usepackage{lipsum}
+\smallindent
 
-\newtheorem{theorem}{Теорема}
-\newtheorem{task}{Задача}
-\newtheorem{lemma}{Лемма}
-\newtheorem{definition}{Определение}
-\newtheorem{example}{Пример}
-\newtheorem{statement}{Утверждение}
-\newtheorem{corollary}{Следствие}
-
-
-\usepackage{geometry} % Меняем поля страницы
-\geometry{left=1cm}% левое поле
-\geometry{right=1cm}% правое поле
-\geometry{top=1.5cm}% верхнее поле
-\geometry{bottom=1cm}% нижнее поле
-
-
-\usepackage{fancyhdr} % Headers and footers
-\pagestyle{fancy} % All pages have headers and footers
-\fancyhead{} % Blank out the default header
-\fancyfoot{} % Blank out the default footer
-\fancyhead[L]{Математика}
-\fancyhead[C]{\textit{Алгебра}}
-\fancyhead[R]{Август 2022}% Custom header text
-
+\header{Математика}{\textit{Алгебра}}{21 августа 2022}
 
 %----------------------------------------------------------------------------------------
 
-%\begin{document}\normalsize
-\begin{document}\large
-	
-	
-	\begin{center}
-		\textbf{Тождественные преобразования}
-	\end{center}
+\begin{document}
+    \large
 
-\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
+    \begin{center}
+        \textbf{Тождественные преобразования}
+    \end{center}
 
-\item Раскройте скобки в выражении $(a + b)^4$.
+    \begin{enumerate_boxed}
 
-\item Раскройте скобки в выражении $(a - b)^5$.
+        \item Раскройте скобки в выражении $(a + b)^4$.
 
-\item Раскройте скобки в выражении $(a - b)^n$.
+        \item Раскройте скобки в выражении $(a - b)^5$.
 
-\item Разложите на скобки выражение $a^4- b^4$.
+        \item Раскройте скобки в выражении $(a - b)^n$.
 
-\item Разложите на скобки выражение $a^n- b^n$.
+        \item Разложите на скобки выражение $a^4- b^4$.
 
-\item Раскройте скобки в выражении $(a + b + c)^3$.
+        \item Разложите на скобки выражение $a^n- b^n$.
 
-\item Раскройте скобки в выражении $(x-y)(y-z)(z-x)$.
+        \item Раскройте скобки в выражении $(a + b + c)^3$.
 
-\item Докажите, что если $a^2 + b^2 + c^2 = ab + bc + ca$, то $a = b = c$.
+        \item Раскройте скобки в выражении $(x-y)(y-z)(z-x)$.
 
-\item Числа $a, b, c, d$ таковы, что $a + b = c + d$ и $a^2 + b^2 = c^2 + d^2$. Докажите, что $a^3 + b^3 = c^3 + d^3$.
+        \item Докажите, что если $a^2 + b^2 + c^2 = ab + bc + ca$, то $a = b = c$.
 
-\item Действительные числа $x$ и $y$ таковы, что $x^3 + y^3 + 3xy = 1$. Докажите, что или $x + y = 1$, или $x = y = -1$.
+        \item Числа $a, b, c, d$ таковы, что $a + b = c + d$ и $a^2 + b^2 = c^2 + d^2$.
+        Докажите, что $a^3 + b^3 = c^3 + d^3$.
 
-\item Целые числа $x$, $y$, $z$ таковы, что $$(x-y)^2 + (y-z)^2 + (z-x)^2 = xyz$$
-Докажите, что $x^3 + y^3 + z^3$ делится на $x + y + z + 6$.
+        \item Действительные числа $x$ и $y$ таковы, что $x^3 + y^3 + 3xy = 1$.
+        Докажите, что или $x + y = 1$, или $x = y = -1$.
 
-\item Пусть $a, b, c$ - целые числа. Докажите, что если $a + b \sqrt[3]{2} + c \sqrt[3]{4} = 0$, то $a = b = c = 0$.
+        \item Целые числа $x$, $y$, $z$ таковы, что \[(x-y)^2 + (y-z)^2 + (z-x)^2 = xyz\]
+        Докажите, что $x^3 + y^3 + z^3$ делится на $x + y + z + 6$.
 
-\item Для каждого натурального $n \ge 2$ вычислите сумму $$ \dfrac{1}{1 \cdot 2} + \dfrac{1}{2 \cdot 3} + \dotso +  \dfrac{1}{(n-1) \cdot n}$$.
+        \item Пусть $a, b, c$ - целые числа.
+        Докажите, что если $a + b \sqrt[3]{2} + c \sqrt[3]{4} = 0$, то $a = b = c = 0$.
 
-\item Докажите, что если действительные числа $a$, $b$, $c$ удовлетворяют условию $$\dfrac{1}{a} + \dfrac{1}{b} + \dfrac{1}{c} = \dfrac{1}{a + b + c},$$ то сумма каких-то двух из них равна 0.
+        \item Для каждого натурального $n \ge 2$ вычислите сумму
+        \[\dfrac{1}{1 \cdot 2} + \dfrac{1}{2 \cdot 3} + \dotso +  \dfrac{1}{(n-1) \cdot n}\].
 
-\item Для каждого натурального $n \ge 2$ вычислите сумму $$\dfrac{1}{1} + \dfrac{1}{2} + \dotso +  \dfrac{1}{n} + \dfrac{1}{1 \cdot 2} + \dfrac{1}{1 \cdot 3} + \dotso +  \dfrac{1}{(n-1) \cdot n} + \dotso + \dfrac{1}{1 \cdot 2 \cdot \dotso \cdot n}$$.
+        \item Докажите, что если действительные числа $a$, $b$, $c$ удовлетворяют условию
+        \[\dfrac{1}{a} + \dfrac{1}{b} + \dfrac{1}{c} = \dfrac{1}{a + b + c},\] то сумма каких-то двух из них равна 0.
 
-\item Пусть $a$, $b$, $c$ — попарно различные числа. Докажите, что выражение $$a^2 (c-b)+b^2 (a-c)+c^2 (b-a)$$
-не равно нулю.
+        \item Для каждого натурального $n \ge 2$ вычислите сумму
+        \[\dfrac{1}{1} + \dfrac{1}{2} + \dotso +  \dfrac{1}{n} + \dfrac{1}{1 \cdot 2} + \dfrac{1}{1 \cdot 3} + \dotso +  \dfrac{1}{(n-1) \cdot n} + \dotso + \dfrac{1}{1 \cdot 2 \cdot \dotso \cdot n}\].
 
-\end{enumerate}
+        \item Пусть $a$, $b$, $c$ — попарно различные числа.
+        Докажите, что выражение
+        \[a^2 (c-b)+b^2 (a-c)+c^2 (b-a)\]
+        не равно нулю.
+
+    \end{enumerate_boxed}
 \end{document}

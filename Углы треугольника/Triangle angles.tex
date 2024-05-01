@@ -1,0 +1,141 @@
+\documentclass{article}
+
+\include{../commons/libraries}
+\include{../commons/aliases}
+
+\smallindent
+
+\header{Математический фестиваль Простые Числа}{\textit{Геометрия}}{ЦРОД $\bullet$ 15 марта 2023}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+    \large
+
+    \begin{center}
+        \textbf{Группа 7--1, Москаленко Тимофей Дмитриевич}
+    \end{center}
+    \begin{center}
+        \textbf{Считаем уголочки}
+    \end{center}
+
+
+    \begin{enumerate_boxed}
+        \item Один из углов равнобедренного треугольника в два раза больше другого.
+        Найдите этот угол.
+        \item Биссектриса прямого угла треугольника образует с его противоположной стороной угол $65^\circ$.
+        Найдите меньший угол этого треугольника.
+        \item Найдите сумму углов выпуклого пятиугольника.
+        \item Два угла пятиугольника прямые, а остальные равны между собой.
+        Чему равны эти углы?
+        \item Биссектриса угла при основании равнобедренного треугольника образует с его боковой стороной угол $75^\circ$.
+        Найдите угол при основании этого треугольника.
+        Может ли у задачи быть второе решение?
+        \item На стороне квадрата во внешнюю от него область построили равносторонний треугольник.
+        Найдите угол, под которым из вершины этого треугольника видна противоположная сторона квадрата.
+        \item На двух сторонах квадрата построили равносторонние треугольники так, как это показано на рисунке.
+        Лежат ли отмеченные на нём точки $A, B$ и $C$ на одной прямой?
+    \end{enumerate_boxed}
+
+    \begin{figure}[h]
+        \centering
+        \begin{minipage}{0.45\textwidth}
+            \centering
+            \begin{asy}
+                size(8cm);
+                include geometry;
+
+                point pF = (0,0), pE = (2, 0);
+                point pA = (0,2), pD = (2, 2);
+                triangle tB =triangleabc(2,2,2);
+                point pB = tB.C;
+                triangle tC =triangleabc(2,2,2, angle=-90,(2,2));
+                point pC = tC.C;
+
+                fill(tB, rgb(244,216,179));
+                draw(tB, rgb(218,129,71));
+                fill(tC, rgb(244,216,179));
+
+                draw(tC, rgb(218,129,71));
+                dot("$A$", pA, NW);
+                dot("$B$", pB, N);
+                dot("$C$", pC, E);
+                dot(" ", pD, N);
+                dot(" ", pE, N);
+                dot(" ", pF, N);
+
+                draw(pA -- pD);
+                draw(pA -- pF);
+                draw(pE -- pF);
+                draw(pD -- pE);
+            \end{asy}
+            \caption{Задача 7}
+        \end{minipage}
+        \begin{minipage}{0.45\textwidth}
+            \centering
+            \begin{asy}
+                size(8cm);
+                include geometry;
+
+                point pF = (0,0), pE = (2, 0);
+                point pK = (0,2), pD = (2, 2);
+                triangle tA =triangleabc(2,2,2, (0,2));
+                point pA = tA.C;
+                triangle tB =triangleabc(2,2,2);
+                point pB = tB.C;
+                triangle tC =triangleabc(2,2,2, angle=-90,(2,2));
+                point pC = tC.C;
+
+                fill(tB, rgb(244,216,179));
+                draw(tB, rgb(218,129,71));
+                fill(tC, rgb(244,216,179));
+                draw(tC, rgb(218,129,71));
+                fill(tA, rgb(244,216,179));
+                draw(tA, rgb(218,129,71));
+                draw(pA -- pB);
+                draw(pB -- pC);
+                markangleradiusfactor *= -2.0;
+                markangle(" ", 1, pC, pB, pA, red + linetype(new real[] {4,4}));
+                dot("$A$", pA, N);
+                dot("$B$", pB, NW);
+                dot("$C$", pC, E);
+                dot(" ", pD, N);
+                dot(" ", pE, N);
+                dot(" ", pF, N);
+                dot(" ", pK, N);
+
+                draw(pK -- pD);
+                draw(pK -- pF);
+                draw(pE -- pF);
+                draw(pD -- pE);
+
+            \end{asy}
+            \caption{Задача 8}
+        \end{minipage}\label{fig:figure}
+    \end{figure}
+
+    \begin{enumerate_boxed}
+
+        \setcounter{enumi}{7}
+
+        \item На трёх сторонах квадрата построили равносторонние треугольники так, как это показано на рисунке.
+        Найдите на нём величину угла $ABC$.
+
+        \item Угол треугольника равен $\alpha$.
+        Найдите угол между биссектрисами двух других его углов.
+
+        \item В четырёхугольнике $ABCD$ биссектрисы углов $A$ и $C$ параллельны.
+        Докажите, что углы $B$ и $D$ четырёхугольника равны.
+
+        \item На продолжении стороны $AC$ треугольника $ABC$ отметили точки $M$ и $K$ так, что $AM = AB, CK = BC$.
+        Найдите угол $MBK$, если угол $ABC$ равен $\beta$.
+
+        \item Найдите сумму углов произвольного $n$-угольника.
+
+        \item Найдите сумму углов произвольной пятиконечной звезды.
+
+        \item Выпуклый шестиугольник таков, что его противоположные углы попарно равны.
+        Докажите, что противоположные стороны такого шестиугольника параллельны.
+
+    \end{enumerate_boxed}
+\end{document}

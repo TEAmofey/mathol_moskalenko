@@ -1,106 +1,82 @@
 \documentclass{article}
-\usepackage[12pt]{extsizes}
-\usepackage[T2A]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[english, russian]{babel}
 
-\usepackage{amssymb}
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage{enumitem}
-\usepackage{graphics}
+\include{../commons/libraries}
+\include{../commons/aliases}
 
-\usepackage{lipsum}
+\smallindent
 
-
-
-\usepackage{geometry} % Меняем поля страницы
-\geometry{left=1cm}% левое поле
-\geometry{right=1cm}% правое поле
-\geometry{top=1.5cm}% верхнее поле
-\geometry{bottom=1cm}% нижнее поле
-
-
-\newtheorem{definition}{Опредление}
-\usepackage{fancyhdr} % Headers and footers
-\pagestyle{fancy} % All pages have headers and footers
-\fancyhead{} % Blank out the default header
-\fancyfoot{} % Blank out the default footer
-\fancyhead[L]{Математика}
-\fancyhead[C]{\textit{Геометрия}}
-\fancyhead[R]{}% Custom header text
-
+\header{Математика}{\textit{Геометрия}}{}
 
 %----------------------------------------------------------------------------------------
 
-%\begin{document}\normalsize
-\begin{document}\large
+\begin{document}
+    \large
+
+    \begin{center}
+        \textbf{Треугольник}
+    \end{center}
+
+    \begin{enumerate_boxed}
+
+        \item Формулы площади треугольника
+        \begin{enumerate}
+            \item $S = \dfrac{1}{2}ah_a$
+            \item $S = \dfrac{1}{2}ab \sin(\gamma)$
+            \item $S = pr$
+            \item $S = \dfrac{abc}{4R}$
+            \item \textbf{Формула Герона} $S = \sqrt{p(p-a)(p-b)(p-c)}$
+            \item \textbf{Прямоугольный треугольник} $S = \dfrac{1}{2}ab$
+            \item \textbf{Равносторонний треугольник} $S = \dfrac{a^2\sqrt{3}}{4}$
+        \end{enumerate}
+
+        \item \textbf{Теорема косинусов}
+        \[c^2 = a^2 + b^2 - 2ab\cos(\gamma)\]
+
+        \item \textbf{Теорема синусов}
+        \[\frac{a}{\sin(\alpha)} = \frac{b}{\sin(\beta)} = \frac{c}{\sin(\gamma)} = 2R\]
+
+        \item \textbf{Формула медианы}
+        \[m_c = \frac{\sqrt{2a^2 + 2b^2 - c^2}}{2}\]
+
+        \item \textbf{Формула биссектрисы}
+        \[\ell_c = \frac{2ab\cos{\frac{\gamma}{2}}}{a + b} = \sqrt{ab - xy}\]
+
+        \item \textbf{Формула высоты}
+        \[h_c = \frac{2S}{c} = a\cdot\sin(\beta) = b\cdot\sin(\alpha)\]
+
+        \textbf{Формула высоты в прямоугольном треугольнике}
+        \[h_c = \frac{ab}{c}\]
+
+        \item \textbf{Обобщённая формула чевианы (Теорема Стюарта)}
+        \[s_c = \sqrt{a^2 \cdot \frac{x}{x + y} + b^2 \cdot \frac{y}{x + y} - xy}\]
+
+        \item \textbf{Формула Эйлера}
+        \[OI^2 = R^2 - 2rR\]
 
 
+    \end{enumerate_boxed}
 
-\begin{center}
-\textbf{Треугольник}
-\end{center}
+    \begin{center}
+        \textbf{Четырёхугольник}
+    \end{center}
 
-\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
+    \begin{enumerate_boxed}
 
-\item Формулы площади треугольника
-\begin{enumerate} 
-	\item $S = \dfrac{1}{2}ah_a$
-	\item $S = \dfrac{1}{2}ab \sin(\gamma)$
-	\item $S = pr$
-	\item $S = \dfrac{abc}{4R}$
-	\item \textbf{Формула Герона} $S = \sqrt{p(p-a)(p-b)(p-c)}$
-	\item \textbf{Прямоугольный треугольник} $S = \dfrac{1}{2}aи$
-	\item \textbf{Равносторонний треугольник} $S = \dfrac{a^2\sqrt{3}}{4}$
-\end{enumerate}
+        \item Формулы площади четырёхугольника
+        \begin{enumerate}
+            \item $S = \frac{1}{2}ef\sin(\alpha)$
+            \item \textbf{Параллелограмм} $S = ah_a$
+            \item \textbf{Параллелограмм} $S = ab\sin(\alpha)$
+            \item \textbf{Описанный} $S = pr$
+            \item \textbf{Вписанный (Формула Брахмагупты)} \[S = \sqrt{(p-a)(p-b)(p-c)(p-d)}\]
+            \item \textbf{Обобщённая Формула Брахмагупты} \[S = \sqrt{(p-a)(p-b)(p-c)(p-d) - abcd\cos^2(\theta)}\]
+        \end{enumerate}
 
-\item \textbf{Теорема косинусов}  $$c^2 = a^2 + b^2 - 2ab\cos(\gamma)$$
+        \item \textbf{Формула Бретшнайдера}  \[e^{2}f^2 = a^{2}c^2 + b^{2}d^2 - 2abcd\cos(\alpha + \gamma)\]
 
-\item \textbf{Теорема синусов}  $$\frac{a}{\sin(\alpha)} = \frac{b}{\sin(\beta)} = \frac{c}{\sin(\gamma)} = 2R$$
-
-\item \textbf{Формула медианы} $$m_c = \frac{\sqrt{2a^2 + 2b^2 - c^2}}{2}$$
-
-\item \textbf{Формула биссектрисы} 
-$$\ell_c = \frac{2ab\cos{\frac{\gamma}{2}}}{a + b} = \sqrt{ab - xy}$$ 
-
-\item \textbf{Формула высоты} 
-$$h_c = \frac{2S}{c} = a\cdot\sin(\beta) = b\cdot\sin(\alpha)$$ 
-
-	\textbf{Формула высоты в прямоугольном треугольнике}
-$$h_c = \frac{ab}{c}$$ 
-
-\item \textbf{Обобщённая формула чевианы (Теорема Стюарта)}
-$$s_c = \sqrt{a^2 \cdot \frac{x}{x + y} + b^2 \cdot \frac{y}{x + y} - xy}$$
-
-\item \textbf{Формула Эйлера}
-$$OI^2 = R^2 - 2rR$$
+        \item \textbf{Теорема Птолемея для вписанного четырёхугольника}   \[ef = ac + bd\]
 
 
-\end{enumerate}
-
-\begin{center}
-\textbf{Четырёхугольник}
-\end{center}
-
-\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
-
-\item Формулы площади четырёхугольника
-\begin{enumerate} 
-	\item $S = \frac{1}{2}ef\sin(\alpha)$
-	\item \textbf{Параллелограмм} $S = ah_a$
-	\item \textbf{Параллелограмм} $S = ab\sin(\alpha)$
-	\item \textbf{Описанный} $S = pr$
-	\item \textbf{Вписанный (Формула Брахмагупты)} $$S = \sqrt{(p-a)(p-b)(p-c)(p-d)}$$
-	\item \textbf{Обобщённая Формула Брахмагупты} $$S = \sqrt{(p-a)(p-b)(p-c)(p-d) - abcd\cos^2(\theta)}$$
-\end{enumerate}
-
-\item \textbf{Формула Бретшнайдера}  $$e^2f^2 = a^2c^2 + b^2d^2 - 2abcd\cos(\alpha + \gamma)$$
-
-\item \textbf{Теорема Птолемея для вписанного четырёхугольника}   $$ef = ac + bd$$
-
-
-
-\end{enumerate}
+    \end{enumerate_boxed}
 
 \end{document}

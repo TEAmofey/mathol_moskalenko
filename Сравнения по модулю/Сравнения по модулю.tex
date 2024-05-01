@@ -1,0 +1,130 @@
+\documentclass{article}
+
+\include{../commons/libraries}
+\include{../commons/theorems}
+\include{../commons/aliases}
+
+\smallindent
+
+\header{ЦРОД $\bullet$ Математика}{\textit{Теория чисел}}{25 марта 2024}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+    \large
+
+    \begin{center}
+        \textbf{Сравнения по модулю}
+    \end{center}
+
+
+    \textbf{Определение 1}
+    Число $a$ делится на натуральное $b$ с остатком $r$, если $a = bk + r$, причем $0 \le r < b$.
+
+    \textbf{Определение 2}
+    Целые числа, разность которых делится на $m$, называются сравнимыми по модулю $m$.
+    Запись: $a \equiv b \pmod{m}$.
+
+    \textbf{Свойства сравнений}
+
+    \begin{itemize}
+        \item $a \equiv b \pmod{m} \Leftrightarrow$ числа $a$ и $b$ дают одинаковые остатки по модулю $m$.
+
+        \item $a \equiv b \pmod{m} \Rightarrow$ $ka \equiv kb \pmod{m}$.
+
+        \item $a \equiv b \pmod{m},\; c \equiv d \pmod{m} \Rightarrow a\pm c \equiv b\pm d \pmod{m}$.
+
+        \item $a \equiv b \pmod{m},\; c \equiv d \pmod{m} \Rightarrow ac \equiv bd \pmod{m}$.
+
+        \item $a \equiv b \pmod{m} \Rightarrow a^k \equiv b^k \pmod{m}$.
+    \end{itemize}
+
+
+    \begin{enumerate_boxed}
+
+        \item Докажите, что число $1000 \cdot 1001 \cdot 1002 \cdot 1003 - 24$
+        \begin{enumerate}
+            \item делится на 999;
+
+            \item на 1004.
+        \end{enumerate}
+
+        \item Известно, что $a - 2b$ делится на $m$ и $c - 3d$ делится на $m$.
+        Докажите, что $ac - 6bd$
+        делится на $m$.
+
+        \textbf{Идея:} Давайте посмотрим на остатки $1, a, a^2, a^3, \dotsc$ при делении на $p$.
+        Они в какой-то момент зациклятся (докажите это)
+
+        \item Найдите остаток от деления:
+        \begin{enumerate}
+            \item $4^{2020}$ на $3$;
+
+            \item $7^{2021}$ на $8$;
+
+            \item $13^{555}$ на $9$.
+        \end{enumerate}
+
+        \item Докажите, что $30^{99} + 61^{100}$ делится на $31$.
+
+        \item Решите сравнения
+
+        \begin{enumerate}
+            \item $5x \equiv 2$ (mod $3$);
+
+            \item $3x \equiv 2$ (mod $11$);
+
+            \item $6x \equiv 1$ (mod $13$).
+        \end{enumerate}
+
+        \item Докажите, что число $5^{2021} + 28$ — составное.
+
+        \item Докажите, что число $9^{2021} + 7^{2020}$ делится на $10$.
+
+        \item Пусть $s(x)$~--- сумма цифр в десятичной записи числа $x$.
+        Докажите, что
+        \begin{enumerate}
+            \item $x \equiv s(x)$ (mod $3$);
+
+            \item $x \equiv s(x)$ (mod $9$).
+        \end{enumerate}
+
+        \item Какой остаток дает $x + y$ при делении на $17$, если
+        \begin{enumerate}
+            \item $x-16y\equiv 2$ (mod $17$);
+
+            \item $3x \equiv 5+14y$ (mod $17$);
+
+            \item $-10x \equiv 100+27y$ (mod $17$);
+
+            \item $28x + 10\equiv -11y$ (mod $17$);
+
+            \item $34x - 8\equiv 14(y + x)$ (mod $17$);
+
+            \item $1000x \equiv -1085y - 90$ (mod $17$)?
+        \end{enumerate}
+
+
+
+        \item Найдите наименьшее число, дающее следующие остатки: 1 – при делении на 2, 2 – при делении на 3, 3 – при делении на 4, 4 – при делении на 5, 5 – при делении на 6.
+
+        \item Целые числа $x, y$ и $z$ таковы, что $(x - y)(y - z)(z - x) = x + y + z$.
+        Докажите, что число $x + y + z \dividedinto 27$.
+
+        \item Про натуральные числа $a, b, c$ известно, что $a^2 + b^2 = c^2$.
+        Докажите, что $abc$
+        делится на $60$.
+
+        \item Докажите, что если $2^k - 1$ делится на $11$, то оно делится и на $31$.
+
+        \item Докажите, что для любого натурального $n$, $4^n + 15n - 1 \dividedinto 9$.
+
+        \item Докажите, что если $a, b, c$ – нечётные числа, то хотя бы одно из чисел $ab - 1,  bc - 1,  ca - 1 \dividedinto 4$.
+
+        \item Докажите, что если при некоторых натуральных числах $a$ и $b$ сумма $a^2 + b^2\; \vdots \; 7$,
+        то она делится и на $49$.
+
+        \item Найдите остатки от деления числа $2^{2021}$ на $3, 5, 7, 9, 11, 13, 15, 17$.
+
+    \end{enumerate_boxed}
+\end{document}
