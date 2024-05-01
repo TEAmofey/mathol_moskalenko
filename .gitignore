@@ -6,6 +6,9 @@
 *.bbl
 *.blg
 *.pre
-*.asy
 *.600gf
 *.tfm
+*.fdb_latexmk
+*.fls
+
+*.asy

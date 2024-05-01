@@ -1,83 +1,57 @@
 \documentclass{article}
-\usepackage[12pt]{extsizes}
-\usepackage[T2A]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[english, russian]{babel}
 
-\usepackage{amssymb}
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage{enumitem}
-\usepackage{graphics}
-\usepackage{graphicx}
-\usepackage{epigraph}
+\include{../commons/libraries}
+\include{../commons/aliases}
 
-\usepackage{lipsum}
-\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\smallindent
 
-
-
-\usepackage{geometry} % Меняем поля страницы
-\geometry{left=1cm}% левое поле
-\geometry{right=1cm}% правое поле
-\geometry{top=1.5cm}% верхнее поле
-\geometry{bottom=1cm}% нижнее поле
-
-
-
-\usepackage{fancyhdr} % Headers and footers
-\pagestyle{fancy} % All pages have headers and footers
-\fancyhead{} % Blank out the default header
-\fancyfoot{} % Blank out the default footer
-\fancyhead[L]{ЦРОД $\bullet$ Математика}
-\fancyhead[C]{\textit{Алгебра}}
-\fancyhead[R]{25 марта 2024}% Custom header text
+\header{ЦРОД $\bullet$ Математика}{\textit{Алгебра}}{25 марта 2024}
 
 %----------------------------------------------------------------------------------------
 
-%\begin{document}\normalsize
-\begin{document}\large
-	
-
-\begin{center}
-\textbf{Производящие функции}
-\end{center}
-
-%\epigraph{\textit{Повторение --- мать учения}}{}
-
-Производящей функцией последовательности $\{g_n\}_{n = 0}^{\infty}$ называется формальный степенной ряд.
-
-$$\sum_{n = 0}^{\infty}g_nx^n = g_0 + g_1x + g_2x^2 + \dotsc$$
-\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
-
-\item Дан многочлен $f(x)$ степени не выше $n$. Докажите, что для любого вещественного $x_0$ существуют и единственные $A_1, \dotsc , A_n$ такие, что
-
-$$\frac{f(x)}{(x - x_0)^n} = \frac{A_1}{x-x_0} + \frac{A_2}{(x-x_0)^2} + \dotsc \frac{A_n}{(x-x_0)^n}.$$
-
-\item Дан многочлен $f(x)$ степени не выше $n$. Докажите, что для любых различных вещественных чисел $x_0, x_1, . . . , x_n$ существуют и единственные $A_0, A_1, \dotsc , A_n$ такие, что
-
-$$\frac{f(x)}{(x - x_0)(x-x_1)\dotsc(x-x_n)} = \frac{A_0}{x-x_0} + \frac{A_1}{x-x_1} + \dotsc \frac{A_n}{x-x_n}.$$
-
-\item Посчитайте производящую функцию последовательности $\{1\}_{n = 0}^{\infty}$.
-
-\item Посчитайте производящую функцию последовательности $\{F_n\}_{n = 0}^{\infty}$ и выведите из неё формулу $n$-того числа Фибоначчи.
-
-Производной степенного ряда
-$$G(x) = \sum_{n = 0}^{\infty}g_nx^n = g_0 + g_1x + g_2x^2 + \dotsc$$
-называется
-$$G'(x) = \sum_{n = 0}^{\infty}ng_nx^{n-1} = g_1 + 2g_2x + 3g_3x^2 + \dotsc$$
-
-Тогда заметим, что $g_n = n! \cdot G^{(n)}(0)$
-
-\item Найдите степенной ряд функции $(1 - 4x)^{1/2}$.
-
-\item Докажите, что $$4^n = \sum_{i = 0}^n \binom{2i}{i} \binom{2(n-i)}{n-i}$$
-
-\item Найдите производящую функцию чисел Каталана.
-
-\item Посчитайте количество подмножеств множества из 1000 элементов, количество элементов в которых делится на 5
+\begin{document}
+    \large
 
 
-\end{enumerate}
+    \begin{center}
+        \textbf{Производящие функции}
+    \end{center}
+
+    Производящей функцией последовательности $\{g_n\}_{n = 0}^{\infty}$ называется формальный степенной ряд.
+
+    \[\sum_{n = 0}^{\infty}g_{n}x^n = g_0 + g_{1}x + g_{2}x^2 + \dotsc\]
+    \begin{enumerate_boxed}
+
+        \item Дан многочлен $f(x)$ степени не выше $n$.
+        Докажите, что для любого вещественного $x_0$ существуют и единственные $A_1, \dotsc , A_n$ такие, что
+
+        \[\frac{f(x)}{(x - x_0)^n} = \frac{A_1}{x-x_0} + \frac{A_2}{(x-x_0)^2} + \dotsc \frac{A_n}{(x-x_0)^n}.\]
+
+        \item Дан многочлен $f(x)$ степени не выше $n$.
+        Докажите, что для любых различных вещественных чисел $x_0, x_1, \dotsc, x_n$ существуют и единственные $A_0, A_1, \dotsc , A_n$ такие, что
+
+        \[\frac{f(x)}{(x - x_0)(x-x_1)\dotsc(x-x_n)} = \frac{A_0}{x-x_0} + \frac{A_1}{x-x_1} + \dotsc \frac{A_n}{x-x_n}.\]
+
+        \item Посчитайте производящую функцию последовательности $\{1\}_{n = 0}^{\infty}$.
+
+        \item Посчитайте производящую функцию последовательности $\{F_n\}_{n = 0}^{\infty}$ и выведите из неё формулу $n$-того числа Фибоначчи.
+
+        Производной степенного ряда
+        \[G(x) = \sum_{n = 0}^{\infty}g_{n}x^n = g_0 + g_{1}x + g_{2}x^2 + \dotsc\]
+        называется
+        \[G'(x) = \sum_{n = 0}^{\infty}ng_{n}x^{n-1} = g_1 + 2g_{2}x + 3g_{3}x^2 + \dotsc\]
+
+        Тогда заметим, что $g_n = n! \cdot G^{(n)}(0)$
+
+        \item Найдите степенной ряд функции $(1 - 4x)^{1/2}$.
+
+        \item Докажите, что \[4^n = \sum_{i = 0}^n \binom{2i}{i} \binom{2(n-i)}{n-i}\]
+
+        \item Найдите производящую функцию чисел Каталана.
+
+        \item Посчитайте количество подмножеств множества из 1000 элементов, количество элементов в которых делится на 5
+
+
+    \end{enumerate_boxed}
 
 \end{document}

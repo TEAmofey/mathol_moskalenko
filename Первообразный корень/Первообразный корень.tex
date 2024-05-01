@@ -1,90 +1,65 @@
 \documentclass{article}
-\usepackage[12pt]{extsizes}
-\usepackage[T2A]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[english, russian]{babel}
 
-\usepackage{amssymb}
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage{enumitem}
-\usepackage{graphics}
-\usepackage{graphicx}
+\include{../commons/libraries}
+\include{../commons/aliases}
 
-\usepackage{lipsum}
+\smallindent
 
-\newtheorem{theorem}{Теорема}
-\newtheorem{task}{Задача}
-\newtheorem{lemma}{Лемма}
-\newtheorem{definition}{Определение}
-\newtheorem{example}{Пример}
-\newtheorem{statement}{Утверждение}
-\newtheorem{corollary}{Следствие}
-
-
-\usepackage{geometry} % Меняем поля страницы
-\geometry{left=1cm}% левое поле
-\geometry{right=1cm}% правое поле
-\geometry{top=1.5cm}% верхнее поле
-\geometry{bottom=1cm}% нижнее поле
-
-
-\usepackage{fancyhdr} % Headers and footers
-\pagestyle{fancy} % All pages have headers and footers
-\fancyhead{} % Blank out the default header
-\fancyfoot{} % Blank out the default footer
-\fancyhead[L]{Математика}
-\fancyhead[C]{\textit{Теория чисел}}
-\fancyhead[R]{17 декабря 2023}% Custom header text
-
+\header{Математика}{\textit{Теория чисел}}{17 декабря 2023}
 
 %----------------------------------------------------------------------------------------
 
-%\begin{document}\normalsize
-\begin{document}\large
-	
-\begin{center}
-	\textbf{Первообразный корень}
-\end{center}
+\begin{document}
+    \large
 
-\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
-	
-	\item \textbf{Повторение.} Пусть $1 = d_1 < d_2 < \ldots < d_k = n$ — все делители числа $n$. Докажите, что $\varphi(d_1) + \ldots + \varphi(d_k) = n$.
-	
-	Обозначим через $\psi(t)$ количество остатков от деления на $p$, чей показатель равен $t$.
-	
-	\item Пусть $p$ — простое число. $1 = d_1 < d_2 < \ldots < d_k = p - 1$ — все делители числа $p - 1$. Докажите, что $\psi(d_1) + \ldots + \psi(d_k) = p - 1$.
-	
-	\item Пусть показатель остатка $a$ по модулю $p$ равен $d$.
-	
-	\begin{enumerate}
-		\item Докажите, что $1, a, \ldots, a^{d-1}$ — это все корни многочлена $x^d - 1$.
-		\item Пусть показатель остатка $b$ по модулю $p$ также равен $d$. Докажите, что $b \equiv a^s \pmod{p}$.
-		\item В условиях предыдущего пункта докажите, что $\text{НОД}(d, s) = 1$.
-	\end{enumerate}
-	
-	\item Выведите из предыдущей задачи, что $\psi(d) \leq \varphi(d)$ для любого делителя $d \mid (p - 1)$.
-	
-	\item Докажите, что $\psi(d) = \varphi(d)$ для любого делителя $d \mid (p - 1)$.
-	
-	Из задачи 5 следует, что $\psi(p - 1) = \varphi(p - 1) > 0$. Значит, существует остаток $g$ (и не один, а целых $\varphi(p - 1)$ штук) такой, что показатель $g$ равен $p - 1$. Такой остаток называется первообразным корнем по модулю $p$.
-	
-	\item Для каких простых $p$ первообразный корень может быть квадратичным вычетом?
-	
-	\item Докажите, что любой ненулевой остаток $a$ от деления на $p$ представим в виде $a \equiv g^t \pmod{p}$ для некоторой степени $t$.
-	
-	\item Сколько решений имеет уравнение
-	\begin{enumerate}
-		\item $x^5 \equiv 1 \pmod{101}$?
-		\item $x^{70} \equiv 1 \pmod{101}$?
-		\item $x^4 + x^3 + x^2 + x + 1 \equiv 0 \pmod{101}$?
-	\end{enumerate}
-	
-	\item Найдите остаток $1^{10} + 2^{10} + \ldots + 100^{10}$ от деления на $101$.
-	
-	\item Пусть $p$ — простое. Можно ли расставить по кругу числа $1, 2, \ldots, p - 1$ так, чтобы для любых трех подряд идущих чисел $a, b, c$ (именно в таком порядке) число $b^2 - ac$ делилось бы на $p$?
-	
-	\item Можно ли разбить числа от $1$ до $2016$ на группы по $7$ так, чтобы сумма чисел в каждой семёрке делилась на $2017$?
-	
-\end{enumerate}
+    \begin{center}
+        \textbf{Первообразный корень}
+    \end{center}
+
+    \begin{enumerate_boxed}
+
+        \item \textbf{Повторение.} Пусть $1 = d_1 < d_2 < \ldots < d_k = n$ — все делители числа $n$.
+        Докажите, что $\varphi(d_1) + \ldots + \varphi(d_k) = n$.
+
+        Обозначим через $\psi(t)$ количество остатков от деления на $p$, чей показатель равен $t$.
+
+        \item Пусть $p$ — простое число. $1 = d_1 < d_2 < \ldots < d_k = p - 1$ — все делители числа $p - 1$.
+        Докажите, что $\psi(d_1) + \ldots + \psi(d_k) = p - 1$.
+
+        \item Пусть показатель остатка $a$ по модулю $p$ равен $d$.
+
+        \begin{enumerate}
+            \item Докажите, что $1, a, \ldots, a^{d-1}$ — это все корни многочлена $x^d - 1$.
+            \item Пусть показатель остатка $b$ по модулю $p$ также равен $d$.
+            Докажите, что $b \equiv a^s \pmod{p}$.
+            \item В условиях предыдущего пункта докажите, что $\text{НОД}(d, s) = 1$.
+        \end{enumerate}
+
+        \item Выведите из предыдущей задачи, что $\psi(d) \leqslant \varphi(d)$ для любого делителя $d \mid (p - 1)$.
+
+        \item Докажите, что $\psi(d) = \varphi(d)$ для любого делителя $d \mid (p - 1)$.
+
+        Из задачи 5 следует, что $\psi(p - 1) = \varphi(p - 1) > 0$.
+        Значит, существует остаток $g$ (и не один, а целых $\varphi(p - 1)$ штук) такой, что показатель $g$ равен $p - 1$.
+        Такой остаток называется первообразным корнем по модулю $p$.
+
+        \item Для каких простых $p$ первообразный корень может быть квадратичным вычетом?
+
+        \item Докажите, что любой ненулевой остаток $a$ от деления на $p$ представим в виде $a \equiv g^t \pmod{p}$ для некоторой степени $t$.
+
+        \item Сколько решений имеет уравнение
+        \begin{enumerate}
+            \item $x^5 \equiv 1 \pmod{101}$?
+            \item $x^{70} \equiv 1 \pmod{101}$?
+            \item $x^4 + x^3 + x^2 + x + 1 \equiv 0 \pmod{101}$?
+        \end{enumerate}
+
+        \item Найдите остаток $1^{10} + 2^{10} + \ldots + 100^{10}$ от деления на $101$.
+
+        \item Пусть $p$ — простое.
+        Можно ли расставить по кругу числа $1, 2, \ldots, p - 1$ так, чтобы для любых трех подряд идущих чисел $a, b, c$ (именно в таком порядке) число $b^2 - ac$ делилось бы на $p$?
+
+        \item Можно ли разбить числа от $1$ до $2016$ на группы по $7$ так, чтобы сумма чисел в каждой семёрке делилась на $2017$?
+
+    \end{enumerate_boxed}
 \end{document}

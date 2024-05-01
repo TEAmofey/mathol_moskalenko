@@ -1,93 +1,72 @@
 \documentclass{article}
-\usepackage[12pt]{extsizes}
-\usepackage[T2A]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[english, russian]{babel}
 
-\usepackage{amssymb}
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage{enumitem}
-\usepackage{graphics}
+\include{../commons/libraries}
+\include{../commons/aliases}
 
-\usepackage{lipsum}
+\smallindent
 
-
-
-\usepackage{geometry} % Меняем поля страницы
-\geometry{left=1cm}% левое поле
-\geometry{right=1cm}% правое поле
-\geometry{top=1.5cm}% верхнее поле
-\geometry{bottom=1cm}% нижнее поле
-
-
-\usepackage{fancyhdr} % Headers and footers
-\pagestyle{fancy} % All pages have headers and footers
-\fancyhead{} % Blank out the default header
-\fancyfoot{} % Blank out the default footer
-\fancyhead[L]{Математика}
-\fancyhead[C]{\textit{Алгебра}}
-\fancyhead[R]{7 апреля 2023}% Custom header text
-
+\header{Математика}{\textit{Алгебра}}{7 апреля 2023}
 
 %----------------------------------------------------------------------------------------
 
-%\begin{document}\normalsize
-\begin{document}\large
-	
-	
-	\begin{center}
-		\textbf{Неравенство КБШ}
-	\end{center}
-	
-	Теперь докажем \textbf{неравенство Коши-Буняковского-Шварца (КБШ)}: для двух произвольных наборов вещественных чисел $a_1, a_2, \ldots, a_n$ и $b_1, b_2, \ldots, b_n$ выполнено неравенство
-	$$
-	(a_1^2+a_2^2+\ldots+a_n^2)(b_1^2+b_2^2+\ldots+b_n^2) \geqslant (a_1b_1+a_2b_2+\ldots+a_nb_n)^2.
-	$$
-	
-	Для этого рассмотрим следующий вспомогательный квадратный трехчлен: $(a_1^2+a_2^2+\ldots+a_n^2)x^2+2\cdot(a_1b_1+\ldots+a_nb_n)x+(b_1^2+b_2^2+\ldots+b_n^2)$.
-	\textbf{Контрольный вопрос.} Когда в неравенстве КБШ достигается равенство?
-	
-	\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
-		
-		\item Пусть $a_1$, $a_2$, \dots, $a_n$ и $b_1$, $b_2$, \dots, $b_n$ ---
-		положительные числа. Докажите неравенство
-		$$ \left(a_1 b_1 +\ldots + a_n b_n \right) \left( \frac{a_1}{b_1} + \ldots + \frac{a_n}{b_n} \right) \geqslant
-		\left( a_1+\ldots+a_n \right)^2 .$$
-		
-		\item \textbf{Важнейшая форма КБШ.} Докажите через КБШ, выбрав два нужных набора, КБШ для дробей: при \textit{положительных} $a_1, a_2, \ldots, a_n$ и $b_1, b_2, \ldots, b_n$ выполнено неравенство
-		$$
-		\frac{a_1^2}{b_1}+\frac{a_2^2}{b_2}+\ldots+\frac{a_n^2}{b_n} \geqslant \frac{(a_1+a_2+\ldots+a_n)^2}{b_1+b_2+\ldots+b_n}.
-		$$
-		
-		\item Суммы двух наборов положительных чисел $a_1, a_2, \ldots, a_n$ и $b_1, b_2, \ldots, b_n$ равны. Докажите неравенство
-		$$
-		\frac{a_1^2}{a_1+b_1}+\frac{a_2^2}{a_2+b_2}+\ldots+\frac{a_n^2}{a_n+b_n} \geqslant \frac{a_1+a_2+\ldots+a_n}{2}.
-		$$
-		
-		\item Для положительных $a$, $b$, $c$, $d$ докажите неравенство
-		$$
-		\frac{a^2}{b(a+c)} + \frac{b^2}{c(b+d)} + 
-		\frac{c^2}{d(a+c)} + \frac{d^2}{a(d+b)} \geqslant 2.
-		$$
-		
-		\item Докажите, что при всех положительных $a$, $b$, $c$, $d$ выполнено
-		$$
-		\frac{a}{b+2c+3d} + \frac{b}{c+2d+3a} + \frac{c}{d+2a+3b} +
-		\frac{d}{a+2b+3c} \geqslant \frac{2}{3}.
-		$$
-		
-		%\textit{Указание.} КБШ для дробей хорошо применять, когда в числителях дробей стоят квадраты. А как же их там получить?
-		
-		\item Для положительных $a$, $b$, $c$, удовлетворяющих условию $abc=1$, докажите неравенство
-		$$
-		\frac{1}{a^3(b+c)}+\frac{1}{b^3(c+a)}+\frac{1}{c^3(a+b)} \geqslant \frac32.
-		$$
-		%вроде не делается срарзу, но надо разделить первую дробь на $a^2$ и т.д.
-		
-		\item Даны положительные числа  $a,b,c$, сумма которых не меньше двух.
-		Докажите неравенство
-		$$\frac{a}{b\sqrt [3] {c}+a}+\frac{b}{c\sqrt [3] {a}+b}+\frac{c}{a\sqrt [3] {b}+c}\leqslant 2.$$
-		
-	\end{enumerate}
+\begin{document}
+    \large
+
+
+    \begin{center}
+        \textbf{Неравенство КБШ}
+    \end{center}
+
+    Теперь докажем \textbf{неравенство Коши-Буняковского-Шварца (КБШ)}: для двух произвольных наборов вещественных чисел $a_1, a_2, \ldots, a_n$ и $b_1, b_2, \ldots, b_n$ выполнено неравенство
+    \[
+        (a_1^2+a_2^2+\ldots+a_n^2)(b_1^2+b_2^2+\ldots+b_n^2) \geqslant (a_{1}b_1+a_{2}b_2+\ldots+a_{n}b_n)^2.
+    \]
+
+    Для этого рассмотрим следующий вспомогательный квадратный трехчлен: $(a_1^2+a_2^2+\ldots+a_n^2)x^2+2\cdot(a_{1}b_1+\ldots+a_{n}b_n)x+(b_1^2+b_2^2+\ldots+b_n^2)$.
+    \textbf{Контрольный вопрос.} Когда в неравенстве КБШ достигается равенство?
+
+    \begin{enumerate_boxed}
+
+        \item Пусть $a_1$, $a_2$, \dots, $a_n$ и $b_1$, $b_2$, \dots, $b_n$ ---
+        положительные числа.
+        Докажите неравенство
+        \[ \left(a_1 b_1 +\ldots + a_n b_n \right) \left( \frac{a_1}{b_1} + \ldots + \frac{a_n}{b_n} \right) \geqslant
+        \left( a_1+\ldots+a_n \right)^2 .\]
+
+        \item \textbf{Важнейшая форма КБШ.} Докажите через КБШ, выбрав два нужных набора, КБШ для дробей: при \textit{положительных} $a_1, a_2, \ldots, a_n$ и $b_1, b_2, \ldots, b_n$ выполнено неравенство
+        \[
+            \frac{a_1^2}{b_1}+\frac{a_2^2}{b_2}+\ldots+\frac{a_n^2}{b_n} \geqslant \frac{(a_1+a_2+\ldots+a_n)^2}{b_1+b_2+\ldots+b_n}.
+        \]
+
+        \item Суммы двух наборов положительных чисел $a_1, a_2, \ldots, a_n$ и $b_1, b_2, \ldots, b_n$ равны.
+        Докажите неравенство
+        \[
+            \frac{a_1^2}{a_1+b_1}+\frac{a_2^2}{a_2+b_2}+\ldots+\frac{a_n^2}{a_n+b_n} \geqslant \frac{a_1+a_2+\ldots+a_n}{2}.
+        \]
+
+        \item Для положительных $a$, $b$, $c$, $d$ докажите неравенство
+        \[
+            \frac{a^2}{b(a+c)} + \frac{b^2}{c(b+d)} +
+            \frac{c^2}{d(a+c)} + \frac{d^2}{a(d+b)} \geqslant 2.
+        \]
+
+        \item Докажите, что при всех положительных $a$, $b$, $c$, $d$ выполнено
+        \[
+            \frac{a}{b+2c+3d} + \frac{b}{c+2d+3a} + \frac{c}{d+2a+3b} +
+            \frac{d}{a+2b+3c} \geqslant \frac{2}{3}.
+        \]
+
+        %\textit{Указание.} КБШ для дробей хорошо применять, когда в числителях дробей стоят квадраты. А как же их там получить?
+
+        \item Для положительных $a$, $b$, $c$, удовлетворяющих условию $abc=1$, докажите неравенство
+        \[
+            \frac{1}{a^3(b+c)}+\frac{1}{b^3(c+a)}+\frac{1}{c^3(a+b)} \geqslant \frac{3}{2}.
+        \]
+        %вроде не делается срарзу, но надо разделить первую дробь на $a^2$ и т.д.
+
+        \item Даны положительные числа  $a,b,c$, сумма которых не меньше двух.
+        Докажите неравенство
+        \[\frac{a}{b\sqrt [3] {c}+a}+\frac{b}{c\sqrt [3] {a}+b}+\frac{c}{a\sqrt [3] {b}+c}\leqslant 2.\]
+
+    \end{enumerate_boxed}
 \end{document}

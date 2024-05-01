@@ -1,142 +1,116 @@
 \documentclass{article}
-\usepackage[12pt]{extsizes}
-\usepackage[T2A]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[english, russian]{babel}
 
-\usepackage{amssymb}
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage{enumitem}
-\usepackage{graphics}
-\usepackage{graphicx}
+\include{../commons/libraries}
+\include{../commons/aliases}
 
-\usepackage{lipsum}
+\smallindent
 
-\newtheorem{theorem}{Теорема}
-\newtheorem{task}{Задача}
-\newtheorem{lemma}{Лемма}
-\newtheorem{definition}{Определение}
-\newtheorem{example}{Пример}
-\newtheorem{statement}{Утверждение}
-\newtheorem{corollary}{Следствие}
-
-
-\usepackage{geometry} % Меняем поля страницы
-\geometry{left=1cm}% левое поле
-\geometry{right=1cm}% правое поле
-\geometry{top=1.5cm}% верхнее поле
-\geometry{bottom=1cm}% нижнее поле
-
-
-\usepackage{fancyhdr} % Headers and footers
-\pagestyle{fancy} % All pages have headers and footers
-\fancyhead{} % Blank out the default header
-\fancyfoot{} % Blank out the default footer
-\fancyhead[L]{Математика}
-\fancyhead[C]{\textit{Теория чисел}}
-\fancyhead[R]{27 сентября 2023}% Custom header text
-
+\header{Математика}{\textit{Теория чисел}}{27 сентября 2023}
 
 %----------------------------------------------------------------------------------------
 
-%\begin{document}\normalsize
-\begin{document}\large
-	
-\begin{center}
-	\textbf{Показатели}
-\end{center}
+\begin{document}
+    \large
 
-\textbf{Определение:} \textit{Показателем} остатка $a$ по модулю $m$ является наименьшее такое число $t$, что $$a^t \equiv 1 \pmod m.$$ Обычно обозначается $ord_m(a)$
+    \begin{center}
+        \textbf{Показатели}
+    \end{center}
 
+    \textbf{Определение:} \textit{Показателем} остатка $a$ по модулю $m$ является наименьшее такое число $t$, что \[a^t \equiv 1 \pmod m.\] Обычно обозначается $ord_m(a)$
 
+    \textbf{Свойства:}
 
-\textbf{Свойства:}  
+    \begin{enumerate_boxed}
 
-\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
-	
-\item Покажите, что если $(a,m) = 1,$ то показатель существует
+        \item Покажите, что если $(a,m) = 1,$ то показатель существует
 
-\item Покажите, что если $(a,m) \neq 1,$ то показателя не существует.
+        \item Покажите, что если $(a,m) \neq 1,$ то показателя не существует.
 
-\item Пусть $t$~--- показатель $a$ по модулю $m$. 
-\begin{enumerate}
+        \item Пусть $t$~--- показатель $a$ по модулю $m$.
+        \begin{enumerate}
 
-\item Докажите, что если $a^{k} \equiv 1 \pmod m$, то $k \,\vdots\, t$.
+            \item Докажите, что если $a^{k} \equiv 1 \pmod m$, то $k \dividedinto t$.
 
-\item Докажите, что если $a^{t_1} \equiv a^{t_2}  \pmod m$, то $t_1 \equiv t_2  \pmod t$.
+            \item Докажите, что если $a^{t_1} \equiv a^{t_2}  \pmod m$, то $t_1 \equiv t_2  \pmod t$.
 
-\item Докажите, что числа $a^0, a^1, a^2, \dotsc , a^{t-1}$ попарно различны по модулю $m$.
+            \item Докажите, что числа $a^0, a^1, a^2, \dotsc , a^{t-1}$ попарно различны по модулю $m$.
 
-\end{enumerate}
+        \end{enumerate}
 
-\item Докажите, что показатели взаимно обратных чисел совпадают.
+        \item Докажите, что показатели взаимно обратных чисел совпадают.
 
-\item Пусть $ord_m(a) = t,  ord_m(b) = d$. 
-\begin{enumerate}
-	
-	\item Докажите, что если $t \,\vdots\, h$, то $ord_m (a^h) = \dfrac{t}{h}$.
-	
-	\item Докажите, что $ord_m (a^h) = \dfrac{t}{(t,h)}$.
-	
-	\item Докажите, что если $(t, d) = 1$, то $ord_m (a\cdot b) = t \cdot d$.
-	
-\end{enumerate}
+        \item Пусть $ord_m(a) = t,  ord_m(b) = d$.
+        \begin{enumerate}
 
-\end{enumerate}
+            \item Докажите, что если $t \dividedinto h$, то $ord_m (a^h) = \dfrac{t}{h}$.
 
-\textbf{Задачи:}  
+            \item Докажите, что $ord_m (a^h) = \dfrac{t}{(t,h)}$.
 
-\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
-	
-	\item Найдите $ord_{a^n-1}(a).$
+            \item Докажите, что если $(t, d) = 1$, то $ord_m (a\cdot b) = t \cdot d$.
+
+        \end{enumerate}
+
+    \end{enumerate_boxed}
+
+    \textbf{Задачи:}
+
+    \begin{enumerate_boxed}
+
+        \item Найдите $ord_{a^n-1}(a).$
 %	n
-	
-	\item Докажите, что $ \varphi(a^n - 1) $ делится на $ n $ для натуральных $ a $ и $ n $.
-	
-	\item Рассмотрим все числа вида $10^i - 10^j$ при $0 \leqslant i < j \leqslant 99$. Сколько из них делятся
-	на 1001?
-%	2C_16^2 + 4*C_33^2 = 16*49 = 784
-	
-	\item Дано нечётное простое число $p$, а также простые числа $q$ и $r$. Известно, что
-	$q^r +1 \,\vdots\, p$. Докажите, что либо $p - 1 \,\vdots\, 2r$, либо $q^2- 1 \,\vdots\, p$.
-%	показатель либо 2r либо 2.
-	
-	\item Сколько делителей от 1 до 200 имеет число $2^{239} - 1$?
-%	только 1
-	
-	\item 
-	\begin{enumerate}
-		
-		\item Докажите, что в разложении на простые сомножители числа $2^q -1$, где $ q $ простое, любое число будет давать остаток 1 по модулю $ q $.
-%		по МТФ
-		
-		\item Выведите из этого, что простых чисел бесконечно много.
-%		Надо взять произведение всех простых. Тогда 2^prod - 1 --- простое
-		
-	\end{enumerate}
 
-	\item Пусть $a > 1, p > 2$ и $ p $ простое. Докажите, что простые нечетные делители $ a^p - 1 $ или делят $ a - 1 $ или сравнимы с 1 по модулю $ 2p $.
+        \item Докажите, что $ \varphi(a^n - 1) $ делится на $ n $ для натуральных $ a $ и $ n $.
+
+        \item Рассмотрим все числа вида $10^i - 10^j$ при $0 \leqslant i < j \leqslant 99$.
+        Сколько из них делятся
+        на 1001?
+%	2C_16^2 + 4*C_33^2 = 16*49 = 784
+
+        \item Дано нечётное простое число $p$, а также простые числа $q$ и $r$.
+        Известно, что
+        $q^r +1 \dividedinto p$.
+        Докажите, что: либо $p - 1 \dividedinto 2r$, либо $q^2- 1 \dividedinto p$.
+%	показатель либо 2r либо 2.
+
+        \item Сколько делителей от 1 до 200 имеет число $2^{239} - 1$?
+%	только 1
+
+        \item
+        \begin{enumerate}
+
+            \item Докажите, что в разложении на простые сомножители числа $2^q -1$, где $ q $ простое, любое число будет давать остаток 1 по модулю $ q $.
+%		по МТФ
+
+            \item Выведите из этого, что простых чисел бесконечно много.
+%		Надо взять произведение всех простых. Тогда 2^prod - 1 --- простое
+
+        \end{enumerate}
+
+        \item Пусть $a > 1, p > 2$ и $ p $ простое.
+        Докажите, что простые нечетные делители $ a^p - 1 $ или делят $ a - 1 $ или сравнимы с 1 по модулю $ 2p $.
 %	либо показатель p либо 1 если 1, то первый случай, если p, то по модулю p это простое число равно 
-	
-	\item Докажите, что любой простой делитель числа $ 2^{2^k} + 1 $ сравним с 1 по модулю $ 2^{k + 1} $.
+
+        \item Докажите, что любой простой делитель числа $ 2^{2^k} + 1 $ сравним с 1 по модулю $ 2^{k + 1} $.
 %	показатель оказывается ровно 2^{k + 1} 
 
-	\item Даны натуральные числа $a, n > 1$. Докажите, что для каждого нечетного простого делителя $ p $ числа $ a^{2^n} + 1 $ число $ p - 1 $ делится на $ 2^{n+1} $.
+        \item Даны натуральные числа $a, n > 1$.
+        Докажите, что для каждого нечетного простого делителя $ p $ числа $ a^{2^n} + 1 $ число $ p - 1 $ делится на $ 2^{n+1} $.
 %	same shit
-	
-	\item Дано простое число $ p $. Докажите, что $2^{2^p} - 4$ делится на $2^p - 1$.
+
+        \item Дано простое число $ p $.
+        Докажите, что $2^{2^p} - 4$ делится на $2^p - 1$.
 %	так как 2^p - 2 делится на p по МТФ, а занчит 2^{2^p - 2} - 1 делится на 2^p - 1
 
-	\item Пусть $ p $ и $ q $ простые, $ q > 5 $. Известно, что $ 2^p +3^p $ делится на $ q $.
-	Докажите, что $ q > 2p $.
+        \item Пусть $ p $ и $ q $ простые, $ q > 5 $.
+        Известно, что $ 2^p +3^p $ делится на $ q $.
+        Докажите, что $ q > 2p $.
 %	если q <= 2p, то q - 1 < 2p, но у q-1 и 2p есть НОД не равный 1. Он либо p либо 2. То есть q = p + 1 или 3, что невзможно
-	
-	\item Докажите, что при натуральном $ n > 1 $ число $ 2^n - 1 $ не делится на $ n $.
+
+        \item Докажите, что при натуральном $ n > 1 $ число $ 2^n - 1 $ не делится на $ n $.
 %	рассмотрим наименьшее нечетное простое q. Окажется, что у n и q-1 есть неединичный НОД то есть простое поменьше
-	
-	\item Найдите все пары простых чисел $ p $ и $ q $ таких, что $ (5^p - 2^p)(5^q - 2^q) \,\vdots\, pq $.
+
+        \item Найдите все пары простых чисел $ p $ и $ q $ таких, что $ (5^p - 2^p)(5^q - 2^q) \dividedinto pq $.
 %	(3,13)(13,3),(3,3)
-	
-\end{enumerate}
+
+    \end{enumerate_boxed}
 \end{document}

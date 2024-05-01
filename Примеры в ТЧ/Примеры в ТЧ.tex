@@ -1,70 +1,40 @@
 \documentclass{article}
-\usepackage[12pt]{extsizes}
-\usepackage[T2A]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[english, russian]{babel}
 
-\usepackage{amssymb}
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage{enumitem}
-\usepackage{graphics}
-\usepackage{graphicx}
+\include{../commons/libraries}
+\include{../commons/aliases}
 
-\usepackage{lipsum}
+\smallindent
 
-\newtheorem{theorem}{Теорема}
-\newtheorem{task}{Задача}
-\newtheorem{lemma}{Лемма}
-\newtheorem{definition}{Определение}
-\newtheorem{example}{Пример}
-\newtheorem{statement}{Утверждение}
-\newtheorem{corollary}{Следствие}
-
-
-\usepackage{geometry} % Меняем поля страницы
-\geometry{left=1cm}% левое поле
-\geometry{right=1cm}% правое поле
-\geometry{top=1.5cm}% верхнее поле
-\geometry{bottom=1cm}% нижнее поле
-
-
-\usepackage{fancyhdr} % Headers and footers
-\pagestyle{fancy} % All pages have headers and footers
-\fancyhead{} % Blank out the default header
-\fancyfoot{} % Blank out the default footer
-\fancyhead[L]{Математика}
-\fancyhead[C]{\textit{Теория чисел}}
-\fancyhead[R]{27 февраля 2024}% Custom header text
-
+\header{Математика}{\textit{Теория чисел}}{27 февраля 2024}
 
 %----------------------------------------------------------------------------------------
 
-%\begin{document}\normalsize
-\begin{document}\large
-	
-\begin{center}
-	\textbf{Примеры в ТЧ}
-\end{center}
+\begin{document}
+    \large
+
+    \begin{center}
+        \textbf{Примеры в ТЧ}
+    \end{center}
 
 
-\begin{enumerate}[label*=\protect\fbox{\arabic{enumi}}]
-	
+    \begin{enumerate_boxed}
+
 %23.9.6
-\item Для натурального числа $n$ обозначим через $S_n$ наименьшее общее кратное всех чисел $1, 2, \dotsc , n$. Существует ли такое натуральное число $m$, что $S_{m+1} = 4S_m$? 
+        \item Для натурального числа $n$ обозначим через $S_n$ наименьшее общее кратное всех чисел $1, 2, \dotsc , n$.
+        Существует ли такое натуральное число $m$, что $S_{m+1} = 4S_m$?
 
-\item Докажите, что найдется такое натуральное число $n > 1$, что произведение некоторых $n$ последовательных натуральных чисел равно произведению некоторых $n+100$ последовательных натуральных чисел.
+        \item Докажите, что найдется такое натуральное число $n > 1$, что произведение некоторых $n$ последовательных натуральных чисел равно произведению некоторых $n+100$ последовательных натуральных чисел.
 
-\item Существует ли арифметическая прогрессия $a_1, a_2, \dotsc, a_{1000}$ с ненулевой разностью такая, что каждый её член имеет вид $\frac{1}{n}$, для некоторого натурального $n$?
+        \item Существует ли арифметическая прогрессия $a_1, a_2, \dotsc, a_{1000}$ с ненулевой разностью такая, что каждый её член имеет вид $\frac{1}{n}$, для некоторого натурального $n$?
 
-\item Существуют ли три попарно различных ненулевых целых числа, сумма которых равна нулю, а сумма тринадцатых степеней которых является квадратом некоторого натурального числа?
+        \item Существуют ли три попарно различных ненулевых целых числа, сумма которых равна нулю, а сумма тринадцатых степеней которых является квадратом некоторого натурального числа?
 
-\item Докажите, что существует бесконечно много таких троек натуральных чисел $a, b, c$, что $$a^{21} + b^{23} = c^{22}$$
+        \item Докажите, что существует бесконечно много таких троек натуральных чисел $a, b, c$, что \[a^{21} + b^{23} = c^{22}\]
 
-\item Существуют ли такие натуральные $a, b, c > 10^5$, что $a^2 - 1$ делится на $b$, $b^2 - 1$ делится на $c$, $c^2 - 1$ делится на $a$,?
+        \item Существуют ли такие натуральные $a, b, c > 10^5$, что $a^2 - 1$ делится на $b$, $b^2 - 1$ делится на $c$, $c^2 - 1$ делится на $a$?
 
-\item Существует ли возрастающая арифметическая прогрессия длины 2023, все члены которой являются точными степенями, выше десятой?
+        \item Существует ли возрастающая арифметическая прогрессия длины 2023, все члены которой являются точными степенями, выше десятой?
 
 
-\end{enumerate}
+    \end{enumerate_boxed}
 \end{document}
