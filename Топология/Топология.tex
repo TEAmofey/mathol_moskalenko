@@ -1,0 +1,143 @@
+\documentclass{article}
+
+\include{../commons/libraries}
+\include{../commons/aliases}
+\include{../commons/theorems}
+
+\smallindent
+
+\header{Математика}{\textit{Топология}}{}
+
+%----------------------------------------------------------------------------------------
+
+
+\begin{document}
+    \large
+
+    \setcounter{task_boxed}{0}
+
+    \begin{definition_boxed}
+        \textit{\textbf{Топологическое пространство}}~--- это пара $\lr*{X, \Omega}$, где $\Omega \subset 2^X$ и выполнено 3 свойства:
+
+        1) $\varnothing, X \in \Omega$,
+
+        2) $A,B \in X \Rightarrow A \cap B \in X$,
+
+        3) $A_i \in X, i \in I \Rightarrow \bigcup\limits_{i \in I} A_i \in X$.\\
+        Элементы множества $\Omega$ называются \textbf{\textit{открытыми}} множествами.\\
+        Если $A$~--- \textit{открыто}, то $X \setminus A$~--- \textbf{\textit{замкнуто}}.
+    \end{definition_boxed}
+
+    \begin{task_boxed}
+        Переформулируйте аксиомы для замкнутых множеств.
+    \end{task_boxed}
+
+    \begin{example}
+        Топология называется \textit{тривиальной}, если $\Omega = {\varnothing, X}$.
+    \end{example}
+
+    \begin{task_boxed}
+        Докажите, что \textit{тривиальная} топология~--- топология.
+    \end{task_boxed}
+
+    \begin{example}
+        Топология называется \textit{дискретной}, если $\Omega = 2^X$.
+    \end{example}
+
+    \begin{task_boxed}
+        Докажите, что \textit{дискретная} топология~--- топология.
+    \end{task_boxed}
+
+
+    \begin{definition_boxed}
+        \textit{\textbf{Метрическое пространство}}~--- это пара $\lr*{X, d}$, где $d : X \times X \rightarrow R_+$ и выполнено 3 свойства:
+
+        1) $d(x, y) = 0 \Leftrightarrow x = y,$
+
+        2) $d(x, y) = d(y, x), \forall x, y \in X,$
+
+        3) Неравенство треугольника $\forall x, y, z$
+        \[
+            d(x, y) + d(y, z) \geqslant d(x, z).
+        \]
+        $d$ называется \textbf{\textit{метрикой}} или \textbf{\textit{расстоянием}}
+    \end{definition_boxed}
+
+    \begin{example}
+        $\lr*{\R^n, \sqrt[p]{\sum\limits_{i=1}^{n}\lr*{x_i - y_i})}}$~--- \textit{Евклидово расстояние}
+    \end{example}
+
+    \begin{task_boxed}
+        Докажите, что \textit{Евклидово расстояние}~--- метрика
+    \end{task_boxed}
+
+    \begin{example}
+        $\lr*{X, d}, d =
+        \begin{cases*}
+            1, x \neq y \\
+            0, x = y
+        \end{cases*}$~---
+        \textit{метрика лентяя}, \textit{дискретная метрика}
+    \end{example}
+
+    \begin{task_boxed}
+        Докажите, что \textit{дискретная метрика}~--- метрика
+    \end{task_boxed}
+
+    \begin{definition_boxed}
+        $\norm*{x}_p = p ^ {-\nu_p(x)}$~--- \textit{$p$-адическая норма}
+    \end{definition_boxed}
+
+    \begin{example}
+        $\lr*{\Q, d}, d(r, s) = \norm*{r - s}_p$~---
+        \textit{$p$-адическая метрика}
+    \end{example}
+
+    \begin{task_boxed}
+        Докажите, что \textit{$p$-адическая метрика}~--- метрика
+    \end{task_boxed}
+
+    \begin{definition_boxed}
+        $\lr*{X, d}$~--- метрическое пространство.\\
+        \textbf{\textit{Открытый шар}}~--- $B_r(x_0) = \set*{y \in X \mid d(y, x_0) < x}.$\\
+        \textbf{\textit{Замкнутый шар}}~--- $\overline{B_r(x_0)} = \set*{y \in X \mid d(y, x_0) \leqslant x}.$
+    \end{definition_boxed}
+
+    \begin{task_boxed}
+        Как устроены шары в \textit{метрике лентяя}?
+    \end{task_boxed}
+
+    \begin{task_boxed}
+        Как устроены шары в \textit{$p$-адической метрике}?
+    \end{task_boxed}
+
+    \begin{definition_boxed}
+        $\lr*{X, d}$~--- метрическое пространство.\\
+        Топология $\Omega_d$ \textbf{\textit{индуцированная}} метрикой определяется так:\\
+        $A \in \Omega_d$, если $A$ представляется как объединение открытых шаров в $X$.
+    \end{definition_boxed}
+
+    \begin{task_boxed}
+        Проверьте корректность определения \textit{индуцированной} топологии.
+    \end{task_boxed}
+
+    \begin{example}
+        $\R$ со стандартной метрикой.\\
+        Открытые шары = открытые интервалы.\\
+        Примеры замкнутых множеств: $[0,1], \set*{2, 3, 9}$;
+    \end{example}
+
+    \begin{task_boxed}
+        Докажите, что $A = \set*{\dfrac{1}{n}}_{n\in \Z_{>0}}$ \textit{замкнутым} не является, а
+        $A \cup \set*{0}$~--- \textit{замкнуто}
+    \end{task_boxed}
+
+
+    \begin{task_boxed}
+        $\lr*{X, d}$~--- метрическое пространство.\\
+        $U \subset X$~--- \textit{открыто} $\Leftrightarrow \forall x \in U \exists \varepsilon: B_{\varepsilon}(x) \subset U$
+    \end{task_boxed}
+
+
+
+\end{document}

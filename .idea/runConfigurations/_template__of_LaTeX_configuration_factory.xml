@@ -8,6 +8,7 @@
       <viewer-command />
       <compiler-arguments />
       <envs />
+      <before-run-command />
       <main-file />
       <output-path>{mainFileParent}</output-path>
       <auxil-path>{projectDir}/auxil</auxil-path>
