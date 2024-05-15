@@ -5,6 +5,7 @@
 *.synctex
 *.bbl
 *.blg
+*.eps
 *.pre
 *.600gf
 *.tfm
