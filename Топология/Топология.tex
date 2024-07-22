@@ -73,14 +73,14 @@
     \end{task_boxed}
 
     \begin{task_boxed}
-        \textbf{Свойства замкнутых множеств.}
+        \textbf{Свойства замкнутых множеств.}
         Докажите что:
 
         1) Пересечение любого набора замкнутых множеств замкнуто;
 
         2) Объединение любого конечного набора замкнутых множеств замкнуто;
 
-        3) Пустое множество и всё пространство (т.е. всё множество — носитель топологической структуры) замкнуты.
+        3) Пустое множество и всё пространство (т.е. всё множество — носитель топологической структуры) замкнуты.
     \end{task_boxed}
 
 
@@ -123,7 +123,7 @@
     \end{definition_boxed}
 
     \begin{example}
-        Дискретная топология самая тонкая, а антидискретная самая грубая.
+        \textit{Дискретная} топология самая тонкая, а \textit{антидискретная} самая грубая.
     \end{example}
 
     \newpage
@@ -145,7 +145,7 @@
     \end{definition_boxed}
 
     \begin{example}
-        $\lr*{\R^n, \sqrt[p]{\sum\limits_{i=1}^{n}\lr*{x_i - y_i})}}$~--- \textit{Евклидово расстояние}
+        $\lr*{\R^n, \sqrt{\sum\limits_{i=1}^{n}\lr*{x_i - y_i}^2}}$~--- \textit{Евклидово расстояние}
     \end{example}
 
     \begin{task_boxed}
@@ -178,10 +178,23 @@
         Докажите, что \textit{$p$-адическая метрика}~--- метрика
     \end{task_boxed}
 
+    \begin{example}
+        $\lr*{\R^n, d}, d(x, y) = \lr*{\sum\limits_{i=1}^{n}\lr*{x_i - y_i}^p}^{\frac{1}{p}}$~---
+        \textit{метрика $\ell_p$}
+    \end{example}
+
+
+    \begin{task_boxed}
+        Докажите, что \textit{метрика $\ell_p$}~--- метрика
+    \end{task_boxed}
+
+
     \begin{definition_boxed}
-        $\lr*{X, d}$~--- метрическое пространство.\\
+        $\lr*{X, d}$~--- метрическое пространство. $r > 0$\\
         \textbf{\textit{Открытый шар}}~--- $B_r(x_0) = \set*{y \in X \mid d(y, x_0) < x}.$\\
-        \textbf{\textit{Замкнутый шар}}~--- $\overline{B_r(x_0)} = \set*{y \in X \mid d(y, x_0) \leqslant x}.$
+        \textbf{\textit{Замкнутый шар}}~--- $\overline{B_r(x_0)} = \set*{y \in X \mid d(y, x_0) \leqslant x}.$\\
+        \textit{Замкнутый шар}, также называют \textbf{\textit{диском}} и обозначают $D_r(x_0) = \overline{B_r(x_0)}$\\
+        \textbf{\textit{Сфера}}~--- $S_r(x_0) = \set*{y \in X \mid d(y, x_0) = x}.$\\
     \end{definition_boxed}
 
     \begin{task_boxed}
@@ -190,6 +203,10 @@
 
     \begin{task_boxed}
         Как устроены шары в \textit{$p$-адической метрике}?
+    \end{task_boxed}
+
+    \begin{task_boxed}
+        Как устроены шары в метриках $\ell_1$, $\ell_{2}$, $\ell_\infty$?
     \end{task_boxed}
 
     \begin{definition_boxed}
@@ -219,5 +236,29 @@
         $U \subset X$~--- \textit{открыто} $\Leftrightarrow \forall x \in U \exists \varepsilon: B_{\varepsilon}(x) \subset U$
     \end{task_boxed}
 
+
+    \begin{definition_boxed}
+        $\lr*{X, \rho}$~--- метрическое пространство, $A \subset X$.
+        Тогда сужение метрики $\rho$ на $A \times A$ является метрикой в $A$ и $\lr*{A, \restr{\rho}{A\times A}}$ — метрическое пространство.
+        Оно называется подпространством пространства $\lr*{X, \rho}$.
+    \end{definition_boxed}
+
+    \begin{definition_boxed}
+        Шар $D_1(0)$ и сфера $S_1(0)$ пространства $\R^n$ (с евклидовой метрикой) обозначаются символами $D^n$ и $S^{n-1}$ и называются $n$-мерным шаром и $(n-1)$-мерной
+        сферой.
+        Они рассматриваются как метрические пространства — подпространства пространства $\R^n$.
+    \end{definition_boxed}
+
+    \begin{example}
+        Убедитесь в том, что: $D^1$ есть отрезок $[-1;1]$, $D^2$ есть круг, $S^0$~--- пара
+        точек $\set{-1, 1}$; $S^1$~--- окружность, $S^2$~--- сфера, $D^3$~--- шар.
+    \end{example}
+
+    \begin{task_boxed}
+        Докажите, что для любых точек $x, a$ произвольного метрического пространства и любого числа $r > \rho(x, a)$ имеют место включения
+        \[
+            B_{r - \rho(a, x)}(x) \subset B_r(a), \text{ а } D_{r - \rho(a, x)}(x) \subset D_r(a)
+        \]
+    \end{task_boxed}
 
 \end{document}

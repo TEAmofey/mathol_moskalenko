@@ -41,6 +41,15 @@
     \,\,\,\vdots\,\,\,
 }
 
+\newcommand{\littletaller}{\mathchoice{\vphantom{\big|}}{}{}{}}
+
+\newcommand\restr[2]{{
+    \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+    #1 % the function
+    \littletaller % pretend it's a little taller at normal size
+    \right|_{#2} % this is the delimiter
+}}
+
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
 
 \newenvironment{enumerate_boxed}[1][enumi]{\begin{enumerate}[label*=\protect\fbox{\arabic{#1}}]}{\end{enumerate}}
