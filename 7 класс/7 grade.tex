@@ -149,10 +149,88 @@
         Расстояния между некоторыми сторонами квадратов отмечены на рисунке.
         На сколько периметр большого квадрата больше, чем периметр маленького?
 
+        \begin{center}
+            \begin{asy}
+                import geometry;
+
+
+                size(7cm,0);
+
+                point pA = (-11,-11);
+                point pB = (-11,11);
+                point pC = (11,11);
+                point pD = (11,-11);
+
+                draw(pA -- pB -- pC -- pD -- cycle);
+
+
+                point pA1 = (-7,-5);
+                point pB1 = (-7,6);
+                point pC1 = (4,6);
+                point pD1 = (4,-5);
+
+                distance("2", pA1, pA1 - 4, 10mm, grey);
+                distance("3", pA1 - (0,6) , pA1, 20mm, grey);
+                distance("6", pD1, pD1 + 7, -10mm, grey);
+                draw(pA1 -- pB1 -- pC1 -- pD1 -- cycle);
+            \end{asy}
+        \end{center}
+
         \item Прямоугольник разделён на 9 прямоугольных частей, площади некоторых частей указаны.
         Найдите площадь всего прямоугольника.
 
+        \begin{center}
+            \begin{asy}
+                import geometry;
+
+                size(5cm,0);
+
+                point pA = (-3,-2);
+                point pB = (-3,2);
+                point pC = (3,2);
+                point pD = (3,-2);
+
+                draw(pA -- pB -- pC -- pD -- cycle);
+
+                real alpha = 1/4;
+
+                draw((alpha * pA + (1 - alpha) * pB) -- (alpha * pD + (1 - alpha) * pC));
+                draw((alpha * pB + (1 - alpha) * pC) -- (alpha * pA + (1 - alpha) * pD));
+
+                alpha = 2/3;
+
+                draw((alpha * pA + (1 - alpha) * pB) -- (alpha * pD + (1 - alpha) * pC));
+                draw((alpha * pB + (1 - alpha) * pC) -- (alpha * pA + (1 - alpha) * pD));
+
+                label("6", (-2, 1.5));
+                label("14", (0.25, 1.5));
+                label("35", (0.25, 0.166));
+                label("20", (2.25, 0.166));
+                label("9", (-2, -1.3333));
+            \end{asy}
+        \end{center}
+
         \item На рисунке 9 прямоугольников, сумма их площадей равна 740.
         Найдите площадь самого большого прямоугольника.
+
+        \begin{center}
+            \begin{asy}
+                import geometry;
+
+                size(5cm,0);
+
+                point pA = (-3,-2);
+                point pB = (-3,2);
+                point pC = (3,2);
+                point pD = (3,-2);
+
+                draw(pA -- pB -- pC -- pD -- cycle);
+
+                draw((pA + 2 * pB) / 3 -- (pD + 2 * pC) / 3);
+                draw((pB + 2 * pC) / 3 -- (pA + 2 * pD) / 3);
+            \end{asy}
+        \end{center}
+
+        \item
     \end{enumerate_boxed}
 \end{document}
